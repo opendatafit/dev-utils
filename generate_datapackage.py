@@ -7,7 +7,7 @@
 import json
 import base64
 
-with open("datapackage-template.json") as f:
+with open("datapackage.template") as f:
     pkg = json.load(f)
 
 for algo in pkg["algorithms"]:
