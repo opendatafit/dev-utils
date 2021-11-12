@@ -1,0 +1,82 @@
+{
+  "pipeline": {
+    "name": "SAS",
+    "title": "SAS Analysis Pipeline",
+    "initialNode": "uuid1",
+    "graph": {
+      "directed": true,
+      "nodes": {
+        "uuid1": {
+          "algorithm": "sas",
+          "view": ""
+        }
+      }
+    }
+  },
+  "algorithms": [
+    {
+      "name": "sas",
+      "title": "SAS 1D",
+      "code": "",
+      "inputs": [
+        {
+          "name": "data",
+          "title": "Data",
+          "description": "SAS data",
+          "type": "resource",
+          "resource": "",
+          "resources": []
+        },
+        {
+          "name": "params",
+          "title": "Parameters",
+          "description": "Parameters",
+          "type": "resource",
+          "resource": "",
+          "resources": []
+        },
+        {
+          "name": "sf_params",
+          "title": "Structure factor parameters",
+          "description": "Structure factor parameters",
+          "type": "resource",
+          "resource": "",
+          "resources": []
+        },
+        {
+          "name": "options",
+          "title": "Options",
+          "description": "Options",
+          "type": "resource",
+          "resource": "",
+          "resources": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result_fit",
+          "title": "Fit curve",
+          "description": "Fit curve",
+          "type": "resource",
+          "resource": "sas_result_fit"
+        },
+        {
+          "name": "result_params",
+          "title": "Fitted parameters",
+          "description": "Fitted parameters",
+          "type": "resource",
+          "resource": "sas_result_params"
+        },
+        {
+          "name": "result_sf_params",
+          "title": "Fitted parameters",
+          "description": "Fitted parameters",
+          "type": "resource",
+          "resource": "sas_result_sf_params"
+        }
+      ]
+    }
+  ],
+  "resources": [],
+  "views": []
+}
