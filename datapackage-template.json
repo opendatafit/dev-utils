@@ -1,0 +1,101 @@
+{
+  "pipeline": {
+    "name": "test",
+    "title": "Test Pipeline",
+    "initialNode": "uuid1",
+    "graph": {
+      "directed": true,
+      "nodes": {
+        "uuid1": {
+          "algorithm": "add",
+          "view": "add"
+        },
+        "uuid2": {
+          "algorithm": "power",
+          "view": "power"
+        }
+      },
+      "edges": [
+        {
+          "source": "uuid1",
+          "target": "uuid2",
+          "metadata": {
+            "output": "number",
+            "input": "number"
+          }
+        }
+      ]
+    }
+  },
+  "algorithms": [
+    {
+      "name": "add",
+      "title": "Add",
+      "code": "",
+      "container": "opendatafit-exec-lib-base",
+      "inputs": [
+        {
+          "name": "number",
+          "title": "Number",
+          "description": "Number to add",
+          "type": "float",
+          "resource": "input_number"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "number",
+          "title": "Number",
+          "description": "Added number",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "power",
+      "title": "Power",
+      "code": "",
+      "container": "opendatafit-exec-lib-base",
+      "inputs": [
+        {
+          "name": "number",
+          "title": "Number",
+          "description": "Number to exponent",
+          "type": "float"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "number",
+          "title": "Number",
+          "description": "Exponented number",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "containers": [
+    {
+      "name": "opendatafit-exec-lib-base",
+      "dockerfile": ""
+    }
+  ],
+  "resources": [
+    {
+      "name": "input_number",
+      "data": 42
+    }
+  ],
+  "views": [
+    {
+      "name": "add",
+      "profile": "opendatafit-layout",
+      "viewSpec": {}
+    },
+    {
+      "name": "power",
+      "profile": "opendatafit-layout",
+      "viewSpec": {}
+    }
+  ]
+}
