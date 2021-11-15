@@ -7,6 +7,7 @@
 import json
 import base64
 import os
+from copy import deepcopy
 
 with open("datapackage-sas.template") as f:
     pkg = json.load(f)
@@ -18,7 +19,6 @@ for algo in pkg["algorithms"]:
     ) as f:
         algo["code"] = base64.b64encode(f.read()).decode("utf-8")
 
-    # Populate resources and views for all inputs and outputs
     for i in algo["inputs"]:
         path = "algorithms/" + algo["name"] + "/inputs/" + i["name"] + ".json"
 
@@ -27,18 +27,25 @@ for algo in pkg["algorithms"]:
                 jsn = json.load(f)
 
                 resources = jsn.get("resources", False)
+                scaffolds = jsn.get("resourceScaffolds", False)
                 views = jsn.get("views", False)
 
                 if resources:
-                    # Add all resources to package
                     pkg["resources"].extend(resources)
-                    # Set default resource for input
+
+                    # Set input resource
                     i["resource"] = resources[0]["name"]
-                    # Populate all available resources for input
-                    i["resources"] = [ r["name"] for r in resources ]
+
+                if scaffolds:
+                    i["resourceScaffolds"] = scaffolds
+
+                    # Set default input resource from scaffold
+                    i["resource"] = algo["name"]+"_"+i["name"]
+                    default_resource = deepcopy(scaffolds[0])
+                    default_resource["name"] = i["resource"]
+                    pkg["resources"].append(default_resource)
 
                 if views:
-                    # Add all resources to package
                     pkg["views"].extend(views)
 
     for o in algo["outputs"]:

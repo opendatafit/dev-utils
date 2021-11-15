@@ -24,8 +24,7 @@
           "title": "Data",
           "description": "SAS data",
           "type": "resource",
-          "resource": "",
-          "resources": []
+          "resource": ""
         },
         {
           "name": "params",
@@ -33,7 +32,7 @@
           "description": "Parameters",
           "type": "resource",
           "resource": "",
-          "resources": []
+          "resourceScaffolds": []
         },
         {
           "name": "sf_params",
@@ -41,15 +40,14 @@
           "description": "Structure factor parameters",
           "type": "resource",
           "resource": "",
-          "resources": []
+          "resourceScaffolds": []
         },
         {
           "name": "options",
           "title": "Options",
           "description": "Options",
           "type": "resource",
-          "resource": "",
-          "resources": []
+          "resource": ""
         }
       ],
       "outputs": [
