@@ -9,8 +9,17 @@ import base64
 import os
 from copy import deepcopy
 
+
+def find(lst, key, value):
+    for i in lst:
+        if i[key] == value:
+            return i
+    return None
+
+
 with open("datapackage-sas.template") as f:
     pkg = json.load(f)
+
 
 for algo in pkg["algorithms"]:
     # Populate code in B64
@@ -27,8 +36,9 @@ for algo in pkg["algorithms"]:
                 jsn = json.load(f)
 
                 resources = jsn.get("resources", False)
-                scaffolds = jsn.get("resourceScaffolds", False)
+                resource_scaffolds = jsn.get("resourceScaffolds", False)
                 views = jsn.get("views", False)
+                view_scaffolds = jsn.get("viewScaffolds", False)
 
                 if resources:
                     pkg["resources"].extend(resources)
@@ -36,17 +46,34 @@ for algo in pkg["algorithms"]:
                     # Set input resource
                     i["resource"] = resources[0]["name"]
 
-                if scaffolds:
-                    i["resourceScaffolds"] = scaffolds
+                if resource_scaffolds:
+                    i["resourceScaffolds"] = resource_scaffolds
 
                     # Set default input resource from scaffold
                     i["resource"] = algo["name"]+"_"+i["name"]
-                    default_resource = deepcopy(scaffolds[0])
+                    default_resource = deepcopy(resource_scaffolds[0])
                     default_resource["name"] = i["resource"]
                     pkg["resources"].append(default_resource)
 
                 if views:
                     pkg["views"].extend(views)
+
+                if view_scaffolds:
+                    i["viewScaffolds"] = view_scaffolds
+
+                    # TODO: Set default input view for the default resource
+                    # (copy into "views" root key)
+                    default_view = deepcopy(find(
+                        view_scaffolds,
+                        "name",
+                        resource_scaffolds[0]["name"]+"_view",
+                    ))
+                    default_view["resources"] = [
+                        default_resource["name"],
+                    ]
+                    default_view["name"] = default_resource["name"]+"_view"
+                    pkg["views"].append(default_view)
+
 
     for o in algo["outputs"]:
         # Create placeholder empty resource for all outputs with name in
@@ -67,7 +94,9 @@ for algo in pkg["algorithms"]:
                     # Add all resources to package
                     pkg["views"].extend(views)
 
+
 with open("./datapackage_sas.json", "w") as f:
     json.dump(pkg, f)
+
 
 print("Done!")
