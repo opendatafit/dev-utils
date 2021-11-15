@@ -17,7 +17,7 @@ def find(lst, key, value):
     return None
 
 
-with open("datapackage-sas.template") as f:
+with open("datapackage_sas.template") as f:
     pkg = json.load(f)
 
 
