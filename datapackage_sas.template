@@ -47,7 +47,17 @@
           "title": "Options",
           "description": "Options",
           "type": "resource",
-          "resource": ""
+          "resource": "",
+          "actions": [
+            {
+              "name": "onModelChange",
+              "on": "fieldValueChange('model')",
+              "do": [
+                "deleteResource('sas_options')",
+                "copyResource(getFieldValue('model'),'sas_options')"
+              ]
+            }
+          ]
         }
       ],
       "outputs": [
