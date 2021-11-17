@@ -17,19 +17,19 @@ def find(lst, key, value):
     return None
 
 
-with open("datapackage_sas.template") as f:
+with open("sas.template") as f:
     pkg = json.load(f)
 
 
 for algo in pkg["algorithms"]:
     # Populate code in B64
     with open(
-        "algorithms/" + algo["name"] + "/" + algo["name"] + ".py", "rb"
+        "algorithms/" + "/" + algo["name"] + ".py", "rb"
     ) as f:
         algo["code"] = base64.b64encode(f.read()).decode("utf-8")
 
     for i in algo["inputs"]:
-        path = "algorithms/" + algo["name"] + "/inputs/" + i["name"] + ".json"
+        path = "algorithms/inputs/" + i["name"] + ".json"
 
         if os.path.isfile(path):
             with open(path, "r") as f:
@@ -82,7 +82,7 @@ for algo in pkg["algorithms"]:
             "name": o["resource"],
         })
 
-        path = "algorithms/" + algo["name"] + "/outputs/" + o["name"] + ".json"
+        path = "algorithms/outputs/" + o["name"] + ".json"
 
         if os.path.isfile(path):
             with open(path, "r") as f:
@@ -95,7 +95,7 @@ for algo in pkg["algorithms"]:
                     pkg["views"].extend(views)
 
 
-with open("./datapackage_sas.json", "w") as f:
+with open("./datapackage.json", "w") as f:
     json.dump(pkg, f)
 
 
