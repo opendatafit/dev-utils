@@ -186,8 +186,12 @@ def main(
     # TODO: TEMP
     # Convert params JSON into Resource
     params_resource = ParameterResource(descriptor=params)
+    # TODO: TEMP gross, used below to convert bumps results to resources
+    model_params = params_resource
     if sf_params is not None:
         sf_params_resource = ParameterResource(descriptor=sf_params)
+        # TODO: TEMP gross, used below to convert bumps results to resources
+        sf_model_params = sf_params_resource
 
     # Combine form factor/polydispersity params with SF params
     params_resource.concat(sf_params_resource)
@@ -258,24 +262,34 @@ def main(
         }
     )
 
-    fit_pkg.resources = [fit_table, *data.resources]
+    # TODO: Old Pandas encoder - should we use this instead?
+    # See: datafit-framework -> pipeline/framework/datatypes/package.py
+
+    #class PandasJSONEncoder(json.JSONEncoder):
+    #    def default(self, obj):
+    #        """
+    #        " Convert Pandas dataframes to json
+    #        """
+    #        if type(obj) == pd.DataFrame:
+    #            # Return dataframe as list of keyed rows
+    #            return obj.to_dict("records")
+
+    #        return super().default(obj)
+
+    # TODO: TEMP
+    # Convert data from Pandas DataFrame to JSON rows for serialization
+    rows = fit_table.data.to_dict("records")
+    fit_table.data = rows
 
     # Optimised parameter resources
     fit_model_params = bumps_model_to_parameter_resource(model, model_params)
-    fit_model_params_pkg = Package(resources=[fit_model_params])
-    # TODO: TEMP HACK
-    fit_model_params_pkg["views"] = params["views"]
 
-    fit_model_sf_params_pkg = Package()
     if sf_name:
         fit_model_sf_params = bumps_model_to_parameter_resource(model, sf_model_params)
-        fit_model_sf_params_pkg.resources = [fit_model_sf_params]
-        # TODO: TEMP HACK
-        fit_model_sf_params_pkg["views"] = sf_params["views"]
 
     return {
-      'result_fit': fit_pkg,
-      'result_params': fit_model_params_pkg,
-      'result_sf_params': fit_model_sf_params_pkg,
+      'result_fit': fit_table,
+      'result_params': fit_model_params,
+      'result_sf_params': fit_model_sf_params,
     }
 
