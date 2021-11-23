@@ -51,7 +51,12 @@ for algo in pkg["algorithms"]:
 
                     # Set default input resource from scaffold
                     i["resource"] = algo["name"]+"_"+i["name"]
-                    default_resource = deepcopy(resource_scaffolds[0])
+
+                    if i["name"] == "params":
+                        default_resource = deepcopy(find(resource_scaffolds, "name", "sphere"))
+                    elif i["name"] == "sf_params":
+                        default_resource = deepcopy(find(resource_scaffolds, "name", "hayter_msa"))
+
                     default_resource["name"] = i["resource"]
                     pkg["resources"].append(default_resource)
 
