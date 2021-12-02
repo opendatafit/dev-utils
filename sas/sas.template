@@ -32,7 +32,8 @@
           "description": "Parameters",
           "type": "resource",
           "resource": "",
-          "resourceScaffolds": []
+          "resourceScaffolds": [],
+          "viewScaffolds": []
         },
         {
           "name": "sf_params",
@@ -40,7 +41,8 @@
           "description": "Structure factor parameters",
           "type": "resource",
           "resource": "",
-          "resourceScaffolds": []
+          "resourceScaffolds": [],
+          "viewScaffolds": []
         },
         {
           "name": "options",
@@ -51,12 +53,25 @@
           "actions": [
             {
               "name": "onModelChange",
-              "on": "fieldValueChange('model')",
+              "on": "fieldValueChange('resource', 'options', 'model')",
               "do": [
-                "deleteResource('sas_options')",
-                "copyResource(getFieldValue('model'),'sas_options')",
-                "deleteView('sas_options')",
-                "copyView(getFieldValue('model'),'sas_options')"
+                "deleteResource('params')",
+                "deleteView('params')",
+                "deleteResource('sf_params')",
+                "deleteView('sf_params')",
+                "copyResourceScaffold('sas', 'params', getFieldValue('resource', 'options', 'model.name'), 'params')",
+                "copyViewScaffold('sas', 'params', getFieldValue('resource', 'options', 'model.name', 'params')",
+                {
+                  "if": "getFieldValue('resource', 'options', 'model.structureFactor')",
+                  "then": [
+                    "setFieldValue('view', 'options', 'structureFactor.disabled', false)",
+                    "copyResourceScaffold('sas', 'sf_params', getFieldValue('resource', 'options', 'structureFactor.name'), 'sf_params')",
+                    "copyViewScaffold('sas', 'sf_params', getFieldValue('resource', 'options', 'structureFactor.name', 'sf_params')"
+                  ],
+                  "else": [
+                    "setFieldValue('view', 'options', 'structureFactor.disabled', true)"
+                  ]
+                }
               ]
             }
           ]
