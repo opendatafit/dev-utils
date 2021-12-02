@@ -53,23 +53,23 @@
           "actions": [
             {
               "name": "onModelChange",
-              "on": "fieldValueChange('resource', 'options', 'model')",
+              "on": "fieldValueChange('resource', 'sas_options', 'model')",
               "do": [
-                "deleteResource('params')",
-                "deleteView('params')",
-                "deleteResource('sf_params')",
-                "deleteView('sf_params')",
-                "copyResourceScaffold('sas', 'params', getFieldValue('resource', 'options', 'model.name'), 'params')",
-                "copyViewScaffold('sas', 'params', getFieldValue('resource', 'options', 'model.name', 'params')",
+                "deleteResource('sas_params')",
+                "deleteView('sas_params')",
+                "deleteResource('sas_sf_params')",
+                "deleteView('sas_sf_params')",
+                "copyResourceScaffold('sas', 'params', getFieldValue('resource', 'options', 'model.name'), 'sas_params')",
+                "copyViewScaffold('sas', 'params', getFieldValue('resource', 'options', 'model.name', 'sas_params')",
                 {
-                  "if": "getFieldValue('resource', 'options', 'model.structureFactor')",
+                  "if": "getFieldValue('resource', 'sas_options', 'model.structureFactor')",
                   "then": [
-                    "setFieldValue('view', 'options', 'structureFactor.disabled', false)",
-                    "copyResourceScaffold('sas', 'sf_params', getFieldValue('resource', 'options', 'structureFactor.name'), 'sf_params')",
-                    "copyViewScaffold('sas', 'sf_params', getFieldValue('resource', 'options', 'structureFactor.name', 'sf_params')"
+                    "setFieldValue('view', 'sas_options', 'structureFactor.disabled', false)",
+                    "copyResourceScaffold('sas', 'sf_params', getFieldValue('resource', 'options', 'structureFactor.name'), 'sas_sf_params')",
+                    "copyViewScaffold('sas', 'sf_params', getFieldValue('resource', 'options', 'structureFactor.name', 'sas_sf_params')"
                   ],
                   "else": [
-                    "setFieldValue('view', 'options', 'structureFactor.disabled', true)"
+                    "setFieldValue('view', 'sas_options', 'structureFactor.disabled', true)"
                   ]
                 }
               ]
