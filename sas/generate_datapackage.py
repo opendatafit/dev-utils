@@ -35,49 +35,49 @@ for algo in pkg["algorithms"]:
             with open(path, "r") as f:
                 jsn = json.load(f)
 
-                resources = jsn.get("resources", False)
-                resource_scaffolds = jsn.get("resourceScaffolds", False)
-                views = jsn.get("views", False)
-                view_scaffolds = jsn.get("viewScaffolds", False)
+            resources = jsn.get("resources", False)
+            resource_scaffolds = jsn.get("resourceScaffolds", False)
+            views = jsn.get("views", False)
+            view_scaffolds = jsn.get("viewScaffolds", False)
 
-                if resources:
-                    pkg["resources"].extend(resources)
+            if resources:
+                pkg["resources"].extend(resources)
 
-                    # Set input resource
-                    i["resource"] = resources[0]["name"]
+                # Set input resource
+                i["resource"] = resources[0]["name"]
 
-                if resource_scaffolds:
-                    i["resourceScaffolds"] = resource_scaffolds
+            if resource_scaffolds:
+                i["resourceScaffolds"] = resource_scaffolds
 
-                    # Set default input resource from scaffold
-                    i["resource"] = algo["name"]+"_"+i["name"]
+                # Set default input resource from scaffold
+                i["resource"] = algo["name"]+"_"+i["name"]
 
-                    if i["name"] == "params":
-                        default_resource = deepcopy(find(resource_scaffolds, "name", "sphere"))
-                    elif i["name"] == "sf_params":
-                        default_resource = deepcopy(find(resource_scaffolds, "name", "hayter_msa"))
+                if i["name"] == "params":
+                    default_resource = deepcopy(find(resource_scaffolds, "name", "sphere"))
+                elif i["name"] == "sf_params":
+                    default_resource = deepcopy(find(resource_scaffolds, "name", "hayter_msa"))
 
-                    default_resource["name"] = i["resource"]
-                    pkg["resources"].append(default_resource)
+                default_resource["name"] = i["resource"]
+                pkg["resources"].append(default_resource)
 
-                if views:
-                    pkg["views"].extend(views)
+            if views:
+                pkg["views"].extend(views)
 
-                if view_scaffolds:
-                    i["viewScaffolds"] = view_scaffolds
+            if view_scaffolds:
+                i["viewScaffolds"] = view_scaffolds
 
-                    # TODO: Set default input view for the default resource
-                    # (copy into "views" root key)
-                    default_view = deepcopy(find(
-                        view_scaffolds,
-                        "name",
-                        resource_scaffolds[0]["name"]+"_view",
-                    ))
-                    default_view["resources"] = [
-                        default_resource["name"],
-                    ]
-                    default_view["name"] = default_resource["name"]+"_view"
-                    pkg["views"].append(default_view)
+                # TODO: Set default input view for the default resource
+                # (copy into "views" root key)
+                default_view = deepcopy(find(
+                    view_scaffolds,
+                    "name",
+                    resource_scaffolds[0]["name"]+"_view",
+                ))
+                default_view["resources"] = [
+                    default_resource["name"],
+                ]
+                default_view["name"] = default_resource["name"]+"_view"
+                pkg["views"].append(default_view)
 
 
     for o in algo["outputs"]:
