@@ -60,13 +60,13 @@
                 "deleteView('sas_params_view')",
                 "deleteView('sas_sf_params_view')",
                 "copyResourceScaffold('sas', 'params', getFieldValue('resource', 'options', 'model.name'), 'sas_params')",
-                "copyViewScaffold('sas', 'params', getFieldValue('resource', 'options', 'model.name', 'sas_params_view')",
+                "copyViewScaffold('sas', 'params', getFieldValue('resource', 'options', 'model.name'), 'sas_params_view')",
                 {
                   "if": "getFieldValue('resource', 'sas_options', 'model.structureFactor')",
                   "then": [
                     "setFieldValue('view', 'sas_options', 'structureFactor.disabled', false)",
                     "copyResourceScaffold('sas', 'sf_params', getFieldValue('resource', 'options', 'structureFactor.name'), 'sas_sf_params')",
-                    "copyViewScaffold('sas', 'sf_params', getFieldValue('resource', 'options', 'structureFactor.name', 'sas_sf_params_view')"
+                    "copyViewScaffold('sas', 'sf_params', getFieldValue('resource', 'options', 'structureFactor.name'), 'sas_sf_params_view')"
                   ],
                   "else": [
                     "setFieldValue('view', 'sas_options', 'structureFactor.disabled', true)"
