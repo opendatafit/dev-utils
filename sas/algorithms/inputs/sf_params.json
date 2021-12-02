@@ -1,0 +1,702 @@
+{
+  "viewScaffolds": [
+    {
+      "name": "hardsphere_view",
+      "spec": {
+        "keys": [
+          {
+            "name": "radius_effective"
+          },
+          {
+            "name": "volfraction"
+          }
+        ]
+      },
+      "title": "hardsphere",
+      "specType": "parameter-data",
+      "resources": [
+        "hardsphere"
+      ]
+    },
+    {
+      "name": "hayter_msa_view",
+      "spec": {
+        "keys": [
+          {
+            "name": "concentration_salt"
+          },
+          {
+            "name": "temperature"
+          },
+          {
+            "name": "volfraction"
+          },
+          {
+            "name": "charge"
+          },
+          {
+            "name": "dielectconst"
+          },
+          {
+            "name": "radius_effective"
+          }
+        ]
+      },
+      "title": "hayter_msa",
+      "specType": "parameter-data",
+      "resources": [
+        "hayter_msa"
+      ]
+    },
+    {
+      "name": "squarewell_view",
+      "spec": {
+        "keys": [
+          {
+            "name": "wellwidth"
+          },
+          {
+            "name": "welldepth"
+          },
+          {
+            "name": "radius_effective"
+          },
+          {
+            "name": "volfraction"
+          }
+        ]
+      },
+      "title": "squarewell",
+      "specType": "parameter-data",
+      "resources": [
+        "squarewell"
+      ]
+    },
+    {
+      "name": "stickyhardsphere_view",
+      "spec": {
+        "keys": [
+          {
+            "name": "perturb"
+          },
+          {
+            "name": "radius_effective"
+          },
+          {
+            "name": "stickiness"
+          },
+          {
+            "name": "volfraction"
+          }
+        ]
+      },
+      "title": "stickyhardsphere",
+      "specType": "parameter-data",
+      "resources": [
+        "stickyhardsphere"
+      ]
+    }
+  ],
+  "resourceScaffolds": [
+    {
+      "data": {
+        "volfraction": {
+          "vary": false,
+          "value": 0.2,
+          "lowerBound": 0,
+          "upperBound": 0.74
+        },
+        "radius_effective": {
+          "vary": false,
+          "value": 50,
+          "lowerBound": 0,
+          "upperBound": "Infinity"
+        }
+      },
+      "name": "hardsphere",
+      "format": "json",
+      "schema": {
+        "keys": [
+          {
+            "name": "radius_effective",
+            "unit": "Ang",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          },
+          {
+            "name": "volfraction",
+            "unit": "",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          }
+        ],
+        "fields": []
+      },
+      "scheme": "memory",
+      "profile": "data-resource",
+      "tmpprofile": "parameter-data-resource"
+    },
+    {
+      "data": {
+        "charge": {
+          "vary": true,
+          "value": 19,
+          "lowerBound": 0.000001,
+          "upperBound": 200
+        },
+        "temperature": {
+          "vary": false,
+          "value": 298,
+          "lowerBound": 0,
+          "upperBound": 450
+        },
+        "volfraction": {
+          "vary": true,
+          "value": 0.18,
+          "lowerBound": 0,
+          "upperBound": 0.74
+        },
+        "dielectconst": {
+          "vary": false,
+          "value": 78.39,
+          "lowerBound": "-Infinity",
+          "upperBound": "Infinity"
+        },
+        "radius_effective": {
+          "vary": false,
+          "value": 20.75,
+          "lowerBound": 0,
+          "upperBound": "Infinity"
+        },
+        "concentration_salt": {
+          "vary": false,
+          "value": 0,
+          "lowerBound": 0,
+          "upperBound": "Infinity"
+        }
+      },
+      "name": "hayter_msa",
+      "format": "json",
+      "schema": {
+        "keys": [
+          {
+            "name": "concentration_salt",
+            "unit": "M",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          },
+          {
+            "name": "temperature",
+            "unit": "K",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          },
+          {
+            "name": "volfraction",
+            "unit": "None",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          },
+          {
+            "name": "charge",
+            "unit": "e",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          },
+          {
+            "name": "dielectconst",
+            "unit": "None",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          },
+          {
+            "name": "radius_effective",
+            "unit": "Ang",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          }
+        ],
+        "fields": []
+      },
+      "scheme": "memory",
+      "profile": "data-resource",
+      "tmpprofile": "parameter-data-resource"
+    },
+    {
+      "data": {
+        "welldepth": {
+          "vary": false,
+          "value": 1.5,
+          "lowerBound": 0,
+          "upperBound": 1.5
+        },
+        "wellwidth": {
+          "vary": false,
+          "value": 1.2,
+          "lowerBound": 1,
+          "upperBound": "Infinity"
+        },
+        "volfraction": {
+          "vary": false,
+          "value": 0.04,
+          "lowerBound": 0,
+          "upperBound": 0.08
+        },
+        "radius_effective": {
+          "vary": false,
+          "value": 50,
+          "lowerBound": 0,
+          "upperBound": "Infinity"
+        }
+      },
+      "name": "squarewell",
+      "format": "json",
+      "schema": {
+        "keys": [
+          {
+            "name": "wellwidth",
+            "unit": "diameters",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          },
+          {
+            "name": "welldepth",
+            "unit": "kT",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          },
+          {
+            "name": "radius_effective",
+            "unit": "Ang",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          },
+          {
+            "name": "volfraction",
+            "unit": "",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          }
+        ],
+        "fields": []
+      },
+      "scheme": "memory",
+      "profile": "data-resource",
+      "tmpprofile": "parameter-data-resource"
+    },
+    {
+      "data": {
+        "perturb": {
+          "vary": false,
+          "value": 0.05,
+          "lowerBound": 0.01,
+          "upperBound": 0.1
+        },
+        "stickiness": {
+          "vary": false,
+          "value": 0.2,
+          "lowerBound": "-Infinity",
+          "upperBound": "Infinity"
+        },
+        "volfraction": {
+          "vary": false,
+          "value": 0.2,
+          "lowerBound": 0,
+          "upperBound": 0.74
+        },
+        "radius_effective": {
+          "vary": false,
+          "value": 50,
+          "lowerBound": 0,
+          "upperBound": "Infinity"
+        }
+      },
+      "name": "stickyhardsphere",
+      "format": "json",
+      "schema": {
+        "keys": [
+          {
+            "name": "perturb",
+            "unit": "",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          },
+          {
+            "name": "radius_effective",
+            "unit": "Ang",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          },
+          {
+            "name": "stickiness",
+            "unit": "",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          },
+          {
+            "name": "volfraction",
+            "unit": "",
+            "fields": [
+              {
+                "name": "value",
+                "type": "number",
+                "title": "Value"
+              },
+              {
+                "name": "vary",
+                "type": "boolean",
+                "title": "Vary"
+              },
+              {
+                "name": "lowerBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Lower bound"
+              },
+              {
+                "name": "upperBound",
+                "type": "number",
+                "group": "constraints",
+                "title": "Upper bound"
+              }
+            ]
+          }
+        ],
+        "fields": []
+      },
+      "scheme": "memory",
+      "profile": "data-resource",
+      "tmpprofile": "parameter-data-resource"
+    }
+  ]
+}
