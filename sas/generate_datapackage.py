@@ -35,8 +35,16 @@ for algo in pkg["algorithms"]:
             with open(path, "r") as f:
                 jsn = json.load(f)
 
+                resources = jsn.get("resources", False)
                 resource_scaffolds = jsn.get("resourceScaffolds", False)
+                views = jsn.get("views", False)
                 view_scaffolds = jsn.get("viewScaffolds", False)
+
+                if resources:
+                    pkg["resources"].extend(resources)
+
+                    # Set input resource
+                    i["resource"] = resources[0]["name"]
 
                 if resource_scaffolds:
                     i["resourceScaffolds"] = resource_scaffolds
@@ -51,6 +59,9 @@ for algo in pkg["algorithms"]:
 
                     default_resource["name"] = i["resource"]
                     pkg["resources"].append(default_resource)
+
+                if views:
+                    pkg["views"].extend(views)
 
                 if view_scaffolds:
                     i["viewScaffolds"] = view_scaffolds
