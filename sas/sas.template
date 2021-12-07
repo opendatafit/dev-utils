@@ -55,21 +55,21 @@
               "name": "onModelChange",
               "on": "fieldValueChange('resource', 'sas_options', 'model')",
               "do": [
-                "deleteResource(datapackage, 'sas_params')",
-                "deleteResource(datapackage, 'sas_sf_params')",
-                "deleteView(datapackage, 'sas_params_view')",
-                "deleteView(datapackage, 'sas_sf_params_view')",
-                "copyResourceScaffold(datapackage, 'sas', 'params', getFieldValue(datapackage, 'resources', 'sas_options', 'model.name'), 'sas_params')",
-                "copyViewScaffold(datapackage, 'sas', 'params', getFieldValue(datapackage, 'resources', 'sas_options', 'model.name'), 'sas_params_view')",
+                "deleteResource('sas_params')",
+                "deleteResource('sas_sf_params')",
+                "deleteView('sas_params_view')",
+                "deleteView('sas_sf_params_view')",
+                "copyResourceScaffold('sas', 'params', getFieldValue('resources', 'sas_options', 'model.name'), 'sas_params')",
+                "copyViewScaffold('sas', 'params', getFieldValue('resources', 'sas_options', 'model.name'), 'sas_params_view')",
                 {
-                  "if": "getFieldValue(datapackage, 'resources', 'sas_options', 'model.structureFactor')",
+                  "if": "getFieldValue('resources', 'sas_options', 'model.structureFactor')",
                   "then": [
-                    "setFieldValue(datapackage, 'views', 'sas_options', 'structureFactor.disabled', false)",
-                    "copyResourceScaffold(datapackage, 'sas', 'sf_params', getFieldValue(datapackage, 'resources', 'sas_options', 'structureFactor.name'), 'sas_sf_params')",
-                    "copyViewScaffold(datapackage, 'sas', 'sf_params', getFieldValue(datapackage, 'resources', 'sas_options', 'structureFactor.name'), 'sas_sf_params_view')"
+                    "setFieldValue('views', 'sas_options', 'structureFactor.disabled', false)",
+                    "copyResourceScaffold('sas', 'sf_params', getFieldValue('resources', 'sas_options', 'structureFactor.name'), 'sas_sf_params')",
+                    "copyViewScaffold('sas', 'sf_params', getFieldValue('resources', 'sas_options', 'structureFactor.name'), 'sas_sf_params_view')"
                   ],
                   "else": [
-                    "setFieldValue(datapackage, 'views', 'sas_options', 'structureFactor.disabled', true)"
+                    "setFieldValue('views', 'sas_options', 'structureFactor.disabled', true)"
                   ]
                 }
               ]
