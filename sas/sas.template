@@ -64,12 +64,12 @@
                 {
                   "if": "getFieldValue('resources', 'sas_options', 'model.structureFactor')",
                   "then": [
-                    "setFieldValue('views', 'sas_options', 'structureFactor.disabled', false)",
+                    "setFieldValue('views', 'sas_options_view', 'structureFactor.disabled', false)",
                     "copyResourceScaffold('sas', 'sf_params', getFieldValue('resources', 'sas_options', 'structureFactor.name'), 'sas_sf_params')",
-                    "copyViewScaffold('sas', 'sf_params', getFieldValue('resources', 'sas_options', 'structureFactor.name') + 'view', 'sas_sf_params_view')"
+                    "copyViewScaffold('sas', 'sf_params', getFieldValue('resources', 'sas_options', 'structureFactor.name') + '_view', 'sas_sf_params_view')"
                   ],
                   "else": [
-                    "setFieldValue('views', 'sas_options', 'structureFactor.disabled', true)"
+                    "setFieldValue('views', 'sas_options_view', 'structureFactor.disabled', true)"
                   ]
                 }
               ]
