@@ -59,19 +59,17 @@
                 "deleteResource('sas_sf_params')",
                 "deleteView('sas_params_view')",
                 "deleteView('sas_sf_params_view')",
-                "copyResourceScaffold('sas', 'params', getFieldValue('resources', 'sas_options', 'model.name'), 'sas_params')",
-                "copyViewScaffold('sas', 'params', getFieldValue('resources', 'sas_options', 'model.name') + '_view', 'sas_params_view')",
-                {
-                  "if": "getFieldValue('resources', 'sas_options', 'model.structureFactor')",
-                  "then": [
-                    "setFieldValue('views', 'sas_options_view', 'structureFactor.disabled', false)",
-                    "copyResourceScaffold('sas', 'sf_params', getFieldValue('resources', 'sas_options', 'structureFactor.name'), 'sas_sf_params')",
-                    "copyViewScaffold('sas', 'sf_params', getFieldValue('resources', 'sas_options', 'structureFactor.name') + '_view', 'sas_sf_params_view')"
-                  ],
-                  "else": [
-                    "setFieldValue('views', 'sas_options_view', 'structureFactor.disabled', true)"
-                  ]
-                }
+                "copyResourceScaffold('sas', 'params', getResourceFieldValue('sas_options', 'model.name'), 'sas_params')",
+                "copyViewScaffold('sas', 'params', getResourceFieldValue('sas_options', 'model.name') + '_view', 'sas_params_view')",
+                [
+                  "if (getResourceFieldValue('sas_options', 'model.structureFactor')) {",
+                  "  setViewFieldValue('sas_options_view', 'structureFactor', 'disabled', false);",
+                  "  copyResourceScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name'), 'sas_sf_params');",
+                  "  copyViewScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name') + '_view', 'sas_sf_params_view');",
+                  "} else {",
+                  "  setViewFieldValue('sas_options_view', 'structureFactor', 'disabled', true);",
+                  "}"
+                ]
               ]
             }
           ]
