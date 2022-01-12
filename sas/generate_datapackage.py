@@ -45,8 +45,8 @@ for algo in pkg["algorithms"]:
 
                 default_resource = resources[0]
 
-                if i.get("actions", False):
-                    default_resource["actions"] = i.pop("actions")
+                if i.get("behaviours", False):
+                    default_resource["behaviours"] = i.pop("behaviours")
 
                 i["resource"] = default_resource["name"]
 
@@ -63,8 +63,8 @@ for algo in pkg["algorithms"]:
 
                 default_resource["name"] = i["resource"]
 
-                if i.get("actions", False):
-                    default_resource["actions"] = i.pop("actions")
+                if i.get("behaviours", False):
+                    default_resource["behaviours"] = i.pop("behaviours")
 
                 pkg["resources"].append(default_resource)
 
