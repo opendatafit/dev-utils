@@ -57,9 +57,17 @@ for algo in pkg["algorithms"]:
                 i["resource"] = algo["name"]+"_"+i["name"]
 
                 if i["name"] == "params":
-                    default_resource = deepcopy(find(resource_scaffolds, "name", "sphere"))
+                    default_resource = deepcopy(find(
+                        resource_scaffolds,
+                        "name",
+                        "sphere",
+                    ))
                 elif i["name"] == "sf_params":
-                    default_resource = deepcopy(find(resource_scaffolds, "name", "hayter_msa"))
+                    default_resource = deepcopy(find(
+                        resource_scaffolds,
+                        "name",
+                        "hayter_msa",
+                    ))
 
                 default_resource["name"] = i["resource"]
 
@@ -74,11 +82,20 @@ for algo in pkg["algorithms"]:
             if view_scaffolds:
                 i["viewScaffolds"] = view_scaffolds
 
-                default_view = deepcopy(find(
-                    view_scaffolds,
-                    "name",
-                    resource_scaffolds[0]["name"]+"_view",
-                ))
+                scaffold_keys =  [i["name"] for i in view_scaffolds ]
+
+                if "sphere_view" in scaffold_keys:
+                    default_view = deepcopy(find(
+                        view_scaffolds,
+                        "name",
+                        "sphere_view",
+                    ))
+                elif "hayter_msa_view" in scaffold_keys:
+                    default_view = deepcopy(find(
+                        view_scaffolds,
+                        "name",
+                        "hayter_msa_view",
+                    ))
 
                 default_view["resources"] = [
                     default_resource["name"],
