@@ -11,7 +11,7 @@
                         "name": "model",
                         "behaviours": [
                           {
-                            "name": "onModelChange",
+                            "name": "changeModel",
                             "do": [
                               "replaceResourceWithScaffold('sas', 'params', getResourceFieldValue('sas_options', 'model.name'), 'sas_params');",
                               "replaceViewWithScaffold('sas', 'params', getResourceFieldValue('sas_options', 'model.name') + '_view', 'sas_params_view');",
@@ -29,7 +29,16 @@
                         ]
                     },
                     {
-                        "name": "structureFactor"
+                        "name": "structureFactor",
+                        "behaviours": [
+                          {
+                            "name": "changeStructureFactor",
+                            "do": [
+                              "replaceResourceWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name'), 'sas_sf_params');",
+                              "replaceViewWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name') + '_view', 'sas_sf_params_view');"
+                            ]
+                          }
+                        ]
                     }
                 ]
             },
