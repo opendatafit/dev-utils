@@ -18,7 +18,6 @@
                               "if (getResourceFieldValue('sas_options', 'model.structureFactor')) {",
                               "  setViewFieldValue('sas_options_view', 'structureFactor', 'disabled', false);",
                               "  setViewValue('sas_sf_params_view', 'disabled', false);",
-                              "  replaceResourceWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name'), 'sas_sf_params');",
                               "  replaceViewWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name') + '_view', 'sas_sf_params_view');",
                               "} else {",
                               "  setViewFieldValue('sas_options_view', 'structureFactor', 'disabled', true);",
