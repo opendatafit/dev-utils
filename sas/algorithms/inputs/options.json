@@ -33,8 +33,13 @@
                           {
                             "name": "changeStructureFactor",
                             "do": [
-                              "replaceResourceWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name'), 'sas_sf_params');",
-                              "replaceViewWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name') + '_view', 'sas_sf_params_view');"
+                              "if (getResourceFieldValue('sas_options', 'structureFactor.name')) {",
+                              "  setViewValue('sas_sf_params_view', 'disabled', false);",
+                              "  replaceResourceWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name'), 'sas_sf_params');",
+                              "  replaceViewWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name') + '_view', 'sas_sf_params_view');",
+                              "} else {",
+                              "  setViewValue('sas_sf_params_view', 'disabled', true);",
+                              "}"
                             ]
                           }
                         ]
