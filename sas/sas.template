@@ -49,26 +49,7 @@
           "title": "Options",
           "description": "Options",
           "type": "resource",
-          "resource": "",
-          "behaviours": [
-            {
-              "name": "onModelChange",
-              "on": "fieldValueChange('resource', 'sas_options', 'model')",
-              "do": [
-                "replaceResourceWithScaffold('sas', 'params', getResourceFieldValue('sas_options', 'model.name'), 'sas_params');",
-                "replaceViewWithScaffold('sas', 'params', getResourceFieldValue('sas_options', 'model.name') + '_view', 'sas_params_view');",
-                "if (getResourceFieldValue('sas_options', 'model.structureFactor')) {",
-                "  setViewFieldValue('sas_options_view', 'structureFactor', 'disabled', false);",
-                "  setViewValue('sas_sf_params_view', 'disabled', false);",
-                "  replaceResourceWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name'), 'sas_sf_params');",
-                "  replaceViewWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name') + '_view', 'sas_sf_params_view');",
-                "} else {",
-                "  setViewFieldValue('sas_options_view', 'structureFactor', 'disabled', true);",
-                "  setViewValue('sas_sf_params_view', 'disabled', true);",
-                "}"
-              ]
-            }
-          ]
+          "resource": ""
         }
       ],
       "outputs": [

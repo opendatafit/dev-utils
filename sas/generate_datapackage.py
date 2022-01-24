@@ -45,9 +45,6 @@ for algo in pkg["algorithms"]:
 
                 default_resource = resources[0]
 
-                if i.get("behaviours", False):
-                    default_resource["behaviours"] = i.pop("behaviours")
-
                 i["resource"] = default_resource["name"]
 
             if resource_scaffolds:
@@ -71,9 +68,6 @@ for algo in pkg["algorithms"]:
 
                 default_resource["name"] = i["resource"]
 
-                if i.get("behaviours", False):
-                    default_resource["behaviours"] = i.pop("behaviours")
-
                 pkg["resources"].append(default_resource)
 
             if views:
@@ -82,7 +76,7 @@ for algo in pkg["algorithms"]:
             if view_scaffolds:
                 i["viewScaffolds"] = view_scaffolds
 
-                scaffold_keys =  [i["name"] for i in view_scaffolds ]
+                scaffold_keys =  [ i["name"] for i in view_scaffolds ]
 
                 if "sphere_view" in scaffold_keys:
                     default_view = deepcopy(find(
@@ -102,6 +96,7 @@ for algo in pkg["algorithms"]:
                 ]
 
                 default_view["name"] = default_resource["name"]+"_view"
+
                 pkg["views"].append(default_view)
 
 
