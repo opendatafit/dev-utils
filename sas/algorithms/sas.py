@@ -90,6 +90,48 @@ def main(
         return params
 
 
+    def data_1d_to_resource(data):
+        """
+        " Convert SASView Data1D object to a Frictionless Data Resource
+        """
+
+        df = pd.DataFrame(data={
+            'x': data.x,
+            'y': data.y,
+            'dx': data.dx,
+            'dy': data.dy,
+            'lam': data.lam,
+            'dlam': data.dlam,
+        })
+
+        return Resource(
+            df,
+            name="data",
+            format="pandas",
+            schema={
+                'primaryKey': 'x',
+                'fields': [
+                    {
+                        'name': 'x',
+                        'type': 'number',
+                        'title': data._xaxis,
+                        'unit': data._xunit,
+                    },
+                    {
+                        'name': 'y',
+                        'type': 'number',
+                        'title': data._yaxis,
+                        'unit': data._yunit,
+                    },
+                    {'name': 'dx', 'type': 'number'},
+                    {'name': 'dy', 'type': 'number'},
+                    {'name': 'lam', 'type': 'number'},
+                    {'name': 'dlam', 'type': 'number'},
+                ]
+            }
+        )
+
+
     # =========================================================================
     # Extended Resource classes
 
@@ -191,11 +233,6 @@ def main(
         # TODO: Handle Data2D case
         data_sas = loader.load(f.name)
         data_sas = data_sas[0]
-
-    print("==================================================")
-    print("Got SAS data:")
-    print(data_sas)
-    print("==================================================")
 
     # TODO: Setting beamstop breaks dataset construction as X doesn't match 
     # fitted data - fix this via to_masked_array maybe??
@@ -299,24 +336,17 @@ def main(
         }
     )
 
-    # TODO: Old Pandas encoder - should we use this instead?
-    # See: datafit-framework -> pipeline/framework/datatypes/package.py
+    # TODO: Move this to a library function OR find a way to use 
+    # PandasJSONEncoder from datafit-framework:datatypes/package.js inside
+    # container-base before data is returned...
 
-    # class PandasJSONEncoder(json.JSONEncoder):
-    #     def default(self, obj):
-    #         """
-    #         " Convert Pandas dataframes to json
-    #         """
-    #         if type(obj) == pd.DataFrame:
-    #             # Return dataframe as list of keyed rows
-    #             return obj.to_dict("records")
-
-    #         return super().default(obj)
-
-    # TODO: TEMP
     # Convert data from Pandas DataFrame to JSON rows for serialization
     rows = fit_table.data.to_dict("records")
     fit_table.data = rows
+
+    data_sas_resource = data_1d_to_resource(data_sas)
+    rows = data_sas_resource.data.to_dict("records")
+    data_sas_resource.data = rows
 
     # Optimised parameter resources
     fit_model_params = bumps_model_to_parameter_resource(model, model_params)
@@ -325,8 +355,9 @@ def main(
         fit_model_sf_params = bumps_model_to_parameter_resource(model, sf_model_params)
 
     return {
-      'result_fit': fit_table,
-      'result_params': fit_model_params,
-      'result_sf_params': fit_model_sf_params,
+        'result_data': data_sas_resource,
+        'result_fit': fit_table,
+        'result_params': fit_model_params,
+        'result_sf_params': fit_model_sf_params,
     }
 

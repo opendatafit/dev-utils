@@ -752,7 +752,7 @@
             },
             "specType": "vega",
             "resources": [
-                "sas_data",
+                "sas_result_data",
                 "sas_result_fit"
             ]
         }

@@ -54,6 +54,13 @@
       ],
       "outputs": [
         {
+          "name": "result_data",
+          "title": "Data",
+          "description": "Input data",
+          "type": "resource",
+          "resource": "sas_result_data"
+        },
+        {
           "name": "result_fit",
           "title": "Fit curve",
           "description": "Fit curve",
