@@ -11,7 +11,9 @@ def main(
     import sasmodels.data
     import sasmodels.core
     import sasmodels.bumps_model
+
     from sas.sascalc.dataloader.data_info import Data1D
+    from sas.sascalc.dataloader.loader import Loader
 
     import bumps.fitproblem
     import bumps.fitters
@@ -22,10 +24,25 @@ def main(
 
     from frictionless import Resource, Package
 
+    import base64
+    import io
+
+    import tempfile
 
 
     # =========================================================================
-    # SAS helper functions
+    # General helpers
+
+    def find(lst, key, value):
+        # Return item item matching i[key] == value in a list of dicts
+        for dic in lst:
+            if dic[key] == value:
+                return dic
+        return None
+
+
+    # =========================================================================
+    # SAS helpers
 
 
     def parameter_resource_to_bumps_model(kernel, resource):
@@ -75,14 +92,6 @@ def main(
 
     # =========================================================================
     # Extended Resource classes
-
-
-    def find(lst, key, value):
-        # Return item item matching i[key] == value in a list of dicts
-        for dic in lst:
-            if dic[key] == value:
-                return dic
-        return None
 
 
     class ParameterResource(Resource):
@@ -147,22 +156,50 @@ def main(
             return find(field["constraints"]["enum"], "name", key)
 
 
+    class FileResource(Resource):
+        @property
+        def file(self):
+            return io.BytesIO(base64.b64decode(self.data))
+
+        @property
+        def file_name(self):
+            return self.title.rsplit(".", 1)[0]
+
+        @property
+        def file_ext(self):
+            return self.title.rsplit(".", 1)[1]
+
+
     # =========================================================================
-    # Algorithm
+    # Analysis algorithm
 
+    data_resource = FileResource(descriptor=data)
 
-    # TODO: TEMP
-    # Convert data from JSON rows to Pandas DataFrame expected by sasview fork
-    data_resource = Resource(descriptor=data)
-    df = pd.DataFrame.from_records(data_resource.data)
-    data_resource.data = df
+    # Write to temporary file for reading by SASView
+    # TODO: Would be ideal not to have to do this...
+    with tempfile.NamedTemporaryFile(
+            dir="/tmp",
+            prefix=data_resource.file_name+"_",
+            suffix="."+data_resource.file_ext) as f:
 
-    # Load data as sasview Data1D object
-    sasdata = Data1D.from_resource(data_resource)
+        # Create temporary file to be loaded by sasview
+        f.write(data_resource.file.getbuffer())
+
+        loader = Loader()
+
+        # TODO: Handle multiple return Data objs - example file for this case?
+        # TODO: Handle Data2D case
+        data_sas = loader.load(f.name)
+        data_sas = data_sas[0]
+
+    print("==================================================")
+    print("Got SAS data:")
+    print(data_sas)
+    print("==================================================")
 
     # TODO: Setting beamstop breaks dataset construction as X doesn't match 
     # fitted data - fix this via to_masked_array maybe??
-    #sm.data.set_beam_stop(sasdata, 0.008, 0.19)
+    # sm.data.set_beam_stop(data_sas, 0.008, 0.19)
 
     # TODO: TEMP
     # Convert options JSON into Resource
@@ -208,7 +245,7 @@ def main(
     model = parameter_resource_to_bumps_model(kernel, params_resource)
 
     # Set up bumps fitter
-    M = sm.bumps_model.Experiment(data=sasdata, model=model)
+    M = sm.bumps_model.Experiment(data=data_sas, model=model)
     problem = bumps.fitproblem.FitProblem(M)
 
     # Set bumps to use selected fitter method
@@ -243,20 +280,20 @@ def main(
                 {
                     'name': 'x',
                     'type': 'number',
-                    'title': sasdata._xaxis,
-                    'unit': sasdata._xunit,
+                    'title': data_sas._xaxis,
+                    'unit': data_sas._xunit,
                 },
                 {
                     'name': 'y',
                     'type': 'number',
-                    'title': sasdata._yaxis,
-                    'unit': sasdata._yunit,
+                    'title': data_sas._yaxis,
+                    'unit': data_sas._yunit,
                 },
                 {
                     'name': 'residuals',
                     'type': 'number',
-                    'title': sasdata._yaxis,
-                    'unit': sasdata._yunit,
+                    'title': data_sas._yaxis,
+                    'unit': data_sas._yunit,
                 },
             ]
         }
@@ -265,16 +302,16 @@ def main(
     # TODO: Old Pandas encoder - should we use this instead?
     # See: datafit-framework -> pipeline/framework/datatypes/package.py
 
-    #class PandasJSONEncoder(json.JSONEncoder):
-    #    def default(self, obj):
-    #        """
-    #        " Convert Pandas dataframes to json
-    #        """
-    #        if type(obj) == pd.DataFrame:
-    #            # Return dataframe as list of keyed rows
-    #            return obj.to_dict("records")
+    # class PandasJSONEncoder(json.JSONEncoder):
+    #     def default(self, obj):
+    #         """
+    #         " Convert Pandas dataframes to json
+    #         """
+    #         if type(obj) == pd.DataFrame:
+    #             # Return dataframe as list of keyed rows
+    #             return obj.to_dict("records")
 
-    #        return super().default(obj)
+    #         return super().default(obj)
 
     # TODO: TEMP
     # Convert data from Pandas DataFrame to JSON rows for serialization
