@@ -748,7 +748,7 @@
                         "value": 0.8
                     }
                 ],
-                "autosize": "sas_result_fit"
+                "autosize": "fit"
             },
             "specType": "vega",
             "resources": [
