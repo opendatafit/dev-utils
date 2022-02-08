@@ -13,10 +13,10 @@
             "spec": {
                 "data": [
                     {
-                        "name": "fit"
+                        "name": "sas_result_fit"
                     },
                     {
-                        "name": "data",
+                        "name": "sas_result_data",
                         "transform": [
                             {
                                 "as": "errorLower",
@@ -34,7 +34,7 @@
                                     "residuals"
                                 ],
                                 "key": "x",
-                                "from": "fit",
+                                "from": "sas_result_fit",
                                 "type": "lookup",
                                 "fields": [
                                     "x"
@@ -48,7 +48,7 @@
                     },
                     {
                         "name": "highlightedDataPoint",
-                        "source": "data",
+                        "source": "sas_result_data",
                         "transform": [
                             {
                                 "expr": "hover && hover.datum.x === datum.x && hover.datum.y === datum.y",
@@ -58,7 +58,7 @@
                     },
                     {
                         "name": "highlightedFitPoint",
-                        "source": "fit",
+                        "source": "sas_result_fit",
                         "transform": [
                             {
                                 "expr": "hover && hover.datum.x === datum.x",
@@ -68,7 +68,7 @@
                     },
                     {
                         "name": "highlightedResidualsPoint",
-                        "source": "fit",
+                        "source": "sas_result_fit",
                         "transform": [
                             {
                                 "expr": "hover && hover.datum.x === datum.x",
@@ -121,7 +121,7 @@
                         "marks": [
                             {
                                 "from": {
-                                    "data": "data"
+                                    "data": "sas_result_data"
                                 },
                                 "name": "dataPlot",
                                 "type": "line",
@@ -143,7 +143,7 @@
                             },
                             {
                                 "from": {
-                                    "data": "data"
+                                    "data": "sas_result_data"
                                 },
                                 "name": "dataErrorPlot",
                                 "type": "area",
@@ -175,7 +175,7 @@
                             },
                             {
                                 "from": {
-                                    "data": "fit"
+                                    "data": "sas_result_fit"
                                 },
                                 "name": "fitPlot",
                                 "type": "line",
@@ -197,7 +197,7 @@
                             },
                             {
                                 "from": {
-                                    "data": "data"
+                                    "data": "sas_result_data"
                                 },
                                 "name": "vPoints",
                                 "type": "symbol",
@@ -412,7 +412,7 @@
                             {
                                 "clip": true,
                                 "from": {
-                                    "data": "fit"
+                                    "data": "sas_result_fit"
                                 },
                                 "name": "residualsPlot",
                                 "type": "line",
@@ -527,11 +527,11 @@
                         "domain": {
                             "fields": [
                                 {
-                                    "data": "data",
+                                    "data": "sas_result_data",
                                     "field": "x"
                                 },
                                 {
-                                    "data": "fit",
+                                    "data": "sas_result_fit",
                                     "field": "x"
                                 }
                             ]
@@ -552,11 +552,11 @@
                         "domain": {
                             "fields": [
                                 {
-                                    "data": "data",
+                                    "data": "sas_result_data",
                                     "field": "y"
                                 },
                                 {
-                                    "data": "fit",
+                                    "data": "sas_result_fit",
                                     "field": "y"
                                 }
                             ]
@@ -576,11 +576,11 @@
                         "domain": {
                             "fields": [
                                 {
-                                    "data": "data",
+                                    "data": "sas_result_data",
                                     "field": "x"
                                 },
                                 {
-                                    "data": "fit",
+                                    "data": "sas_result_fit",
                                     "field": "x"
                                 }
                             ]
@@ -601,7 +601,7 @@
                         "domain": {
                             "fields": [
                                 {
-                                    "data": "fit",
+                                    "data": "sas_result_fit",
                                     "field": "residuals"
                                 }
                             ]
@@ -748,7 +748,7 @@
                         "value": 0.8
                     }
                 ],
-                "autosize": "fit"
+                "autosize": "sas_result_fit"
             },
             "specType": "vega",
             "resources": [
