@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 
-# Import pipeline-template.json
-# Populate all algorithm code and Dockerfile fields (in base64)
-# Export to text
-
 import json
 import base64
 import os
@@ -42,9 +38,7 @@ for algo in pkg["algorithms"]:
 
             if resources:
                 pkg["resources"].extend(resources)
-
                 default_resource = resources[0]
-
                 i["resource"] = default_resource["name"]
 
             if resource_scaffolds:
