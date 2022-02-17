@@ -101,23 +101,19 @@ for algo in pkg["algorithms"]:
 
 
     for o in algo["outputs"]:
-        # Create placeholder empty resource for all outputs with name in
-        # "resource" field
-        pkg["resources"].append({
-            "name": o["resource"],
-        })
-
         path = "algorithms/outputs/" + o["name"] + ".json"
 
-        if os.path.isfile(path):
-            with open(path, "r") as f:
-                jsn = json.load(f)
+        with open(path, "r") as f:
+            jsn = json.load(f)
 
-                views = jsn.get("views", False)
+            views = jsn.get("views")
+            resources = jsn.get("resources")
 
-                if views:
-                    # Add all resources to package
-                    pkg["views"].extend(views)
+            if views is not None:
+                pkg["views"].extend(views)
+
+            if resources is not None:
+                pkg["resources"].extend(resources)
 
 
 with open("./datapackage.json", "w") as f:

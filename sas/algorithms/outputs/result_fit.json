@@ -1,4 +1,13 @@
 {
+    "resources": [
+      {
+        "name": "sas_result_fit",
+        "title": "Fit curve",
+        "description": "Fit curve",
+        "profile": "tabular-data-resource",
+        "tmpprofile": "tabular-data-resource"
+      }
+    ],
     "views": [
         {
             "name": "sas_fit_table_view",

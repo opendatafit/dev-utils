@@ -1,0 +1,11 @@
+{
+  "resources": [
+    {
+      "name": "sas_result_data",
+      "title": "Data",
+      "description": "Input data",
+      "profile": "tabular-data-resource",
+      "tmpprofile": "tabular-data-resource"
+    }
+  ]
+}

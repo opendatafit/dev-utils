@@ -1,0 +1,11 @@
+{
+  "resources": [
+    {
+      "name": "sas_result_sf_params",
+      "title": "Fitted parameters",
+      "description": "Fitted parameters",
+      "profile": "data-resource",
+      "tmpprofile": "parameter-data-resource"
+    }
+  ]
+}

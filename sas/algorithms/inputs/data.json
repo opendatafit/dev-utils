@@ -3,7 +3,9 @@
     {
       "name": "sas_data",
       "format": "file",
-      "data": ""
+      "data": "",
+      "profile": "data-resource",
+      "tmpprofile": "file-data-resource"
     }
   ]
 }
