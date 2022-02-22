@@ -89,20 +89,23 @@
     {
       "name": "sas_view",
       "title": "",
-      "displays": [
-        {
-          "title": "Untitled",
-          "icon": "",
-          "layout": "stacked",
-          "views": [
-            "sas_data_view",
-            "sas_options_view",
-            "sas_params_view",
-            "sas_sf_params_view",
-            "sas_fit_graph_view"
-          ]
-        }
-      ]
+      "specType": "opendatafit-display",
+      "spec": {
+        "displays": [
+          {
+            "title": "Untitled",
+            "icon": "",
+            "layout": "stacked",
+            "views": [
+              "sas_data_view",
+              "sas_options_view",
+              "sas_params_view",
+              "sas_sf_params_view",
+              "sas_fit_graph_view"
+            ]
+          }
+        ]
+      }
     }
   ]
 }
