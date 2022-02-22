@@ -8,7 +8,7 @@
       "nodes": {
         "uuid1": {
           "algorithm": "sas",
-          "view": ""
+          "view": "sas_view"
         }
       }
     }
@@ -85,5 +85,24 @@
     }
   ],
   "resources": [],
-  "views": []
+  "views": [
+    {
+      "name": "sas_view",
+      "title": "",
+      "displays": [
+        {
+          "title": "Untitled",
+          "icon": "",
+          "layout": "stacked",
+          "views": [
+            "sas_data_view",
+            "sas_options_view",
+            "sas_params_view",
+            "sas_sf_params_view",
+            "sas_fit_graph_view"
+          ]
+        }
+      ]
+    }
+  ]
 }
