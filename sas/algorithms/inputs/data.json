@@ -1,4 +1,15 @@
 {
+  "views": [
+    {
+      "name": "sas_data_view",
+      "specType": "file",
+      "spec": {
+      },
+      "resources": [
+        "sas_data"
+      ]
+    }
+  ],
   "resources": [
     {
       "name": "sas_data",
