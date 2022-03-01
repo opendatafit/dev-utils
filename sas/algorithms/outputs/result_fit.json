@@ -12,7 +12,7 @@
         {
             "name": "sas_fit_table_view",
             "spec": {},
-            "specType": "handsontable",
+            "specType": "table",
             "resources": [
                 "sas_result_fit"
             ]

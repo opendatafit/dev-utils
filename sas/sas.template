@@ -101,7 +101,8 @@
               "sas_options_view",
               "sas_params_view",
               "sas_sf_params_view",
-              "sas_fit_graph_view"
+              "sas_fit_graph_view",
+              "sas_fit_table_view"
             ]
           }
         ]
