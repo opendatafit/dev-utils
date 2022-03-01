@@ -1,18 +1,4 @@
 {
-  "pipeline": {
-    "name": "SAS",
-    "title": "SAS Analysis Pipeline",
-    "initialNode": "uuid1",
-    "graph": {
-      "directed": true,
-      "nodes": {
-        "uuid1": {
-          "algorithm": "sas",
-          "view": "sas_view"
-        }
-      }
-    }
-  },
   "algorithms": [
     {
       "name": "sas",
@@ -86,27 +72,24 @@
   ],
   "resources": [],
   "views": [
+  ],
+  "displays": [
     {
-      "name": "sas_view",
-      "title": "",
-      "specType": "opendatafit-display",
-      "spec": {
-        "displays": [
-          {
-            "title": "Untitled",
-            "icon": "",
-            "layout": "stacked",
-            "views": [
-              "sas_data_view",
-              "sas_options_view",
-              "sas_params_view",
-              "sas_sf_params_view",
-              "sas_fit_graph_view",
-              "sas_fit_table_view"
-            ]
-          }
-        ]
-      }
+      "name": "sas_display",
+      "title": "SAS Analysis Pipeline",
+      "icon": "",
+      "layout": "stacked",
+      "algorithms": [
+        "sas"
+      ],
+      "views": [
+        "sas_data_view",
+        "sas_options_view",
+        "sas_params_view",
+        "sas_sf_params_view",
+        "sas_fit_graph_view",
+        "sas_fit_table_view"
+      ]
     }
   ]
 }
