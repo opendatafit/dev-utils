@@ -88,6 +88,10 @@ for algo in pkg["algorithms"]:
                 default_view["resources"] = [
                     default_resource["name"],
                 ]
+                if i["name"] == "params":
+                    default_view["resources"].append("sas_result_params")
+                if i["name"] == "sf_params":
+                    default_view["resources"].append("sas_result_sf_params")
 
                 default_view["name"] = default_resource["name"]+"_view"
 
