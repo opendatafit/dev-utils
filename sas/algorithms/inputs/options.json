@@ -46,7 +46,7 @@
                     }
                 ]
             },
-            "specType": "options-data",
+            "specType": "opendatafit-options",
             "resources": [
                 "sas_options"
             ]

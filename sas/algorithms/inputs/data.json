@@ -2,7 +2,7 @@
   "views": [
     {
       "name": "sas_data_view",
-      "specType": "file",
+      "specType": "opendatafit-file",
       "spec": {
       },
       "resources": [

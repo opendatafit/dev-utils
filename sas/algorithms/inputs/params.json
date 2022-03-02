@@ -34,7 +34,7 @@
         ]
       },
       "title": "adsorbed_layer",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "adsorbed_layer"
       ]
@@ -109,7 +109,7 @@
         ]
       },
       "title": "barbell",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "barbell"
       ]
@@ -156,7 +156,7 @@
         ]
       },
       "title": "bcc_paracrystal",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "bcc_paracrystal"
       ]
@@ -195,7 +195,7 @@
         ]
       },
       "title": "be_polyelectrolyte",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "be_polyelectrolyte"
       ]
@@ -234,7 +234,7 @@
         ]
       },
       "title": "binary_hard_sphere",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "binary_hard_sphere"
       ]
@@ -270,7 +270,7 @@
         ]
       },
       "title": "broad_peak",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "broad_peak"
       ]
@@ -345,7 +345,7 @@
         ]
       },
       "title": "capped_cylinder",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "capped_cylinder"
       ]
@@ -589,7 +589,7 @@
         ]
       },
       "title": "core_multi_shell",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "core_multi_shell"
       ]
@@ -687,7 +687,7 @@
         ]
       },
       "title": "core_shell_bicelle",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "core_shell_bicelle"
       ]
@@ -802,7 +802,7 @@
         ]
       },
       "title": "core_shell_bicelle_elliptical",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "core_shell_bicelle_elliptical"
       ]
@@ -920,7 +920,7 @@
         ]
       },
       "title": "core_shell_bicelle_elliptical_belt_rough",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "core_shell_bicelle_elliptical_belt_rough"
       ]
@@ -998,7 +998,7 @@
         ]
       },
       "title": "core_shell_cylinder",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "core_shell_cylinder"
       ]
@@ -1093,7 +1093,7 @@
         ]
       },
       "title": "core_shell_ellipsoid",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "core_shell_ellipsoid"
       ]
@@ -1228,7 +1228,7 @@
         ]
       },
       "title": "core_shell_parallelepiped",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "core_shell_parallelepiped"
       ]
@@ -1289,7 +1289,7 @@
         ]
       },
       "title": "core_shell_sphere",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "core_shell_sphere"
       ]
@@ -1322,7 +1322,7 @@
         ]
       },
       "title": "correlation_length",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "correlation_length"
       ]
@@ -1380,7 +1380,7 @@
         ]
       },
       "title": "cylinder",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "cylinder"
       ]
@@ -1401,7 +1401,7 @@
         ]
       },
       "title": "dab",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "dab"
       ]
@@ -1459,7 +1459,7 @@
         ]
       },
       "title": "ellipsoid",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "ellipsoid"
       ]
@@ -1534,7 +1534,7 @@
         ]
       },
       "title": "elliptical_cylinder",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "elliptical_cylinder"
       ]
@@ -1581,7 +1581,7 @@
         ]
       },
       "title": "fcc_paracrystal",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "fcc_paracrystal"
       ]
@@ -1656,7 +1656,7 @@
         ]
       },
       "title": "flexible_cylinder",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "flexible_cylinder"
       ]
@@ -1734,7 +1734,7 @@
         ]
       },
       "title": "flexible_cylinder_elliptical",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "flexible_cylinder_elliptical"
       ]
@@ -1784,7 +1784,7 @@
         ]
       },
       "title": "fractal",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "fractal"
       ]
@@ -1854,7 +1854,7 @@
         ]
       },
       "title": "fractal_core_shell",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "fractal_core_shell"
       ]
@@ -1912,7 +1912,7 @@
         ]
       },
       "title": "fuzzy_sphere",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "fuzzy_sphere"
       ]
@@ -1942,7 +1942,7 @@
         ]
       },
       "title": "gauss_lorentz_gel",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "gauss_lorentz_gel"
       ]
@@ -1966,7 +1966,7 @@
         ]
       },
       "title": "gaussian_peak",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "gaussian_peak"
       ]
@@ -1999,7 +1999,7 @@
         ]
       },
       "title": "gel_fit",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "gel_fit"
       ]
@@ -2020,7 +2020,7 @@
         ]
       },
       "title": "guinier",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "guinier"
       ]
@@ -2047,7 +2047,7 @@
         ]
       },
       "title": "guinier_porod",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "guinier_porod"
       ]
@@ -2122,7 +2122,7 @@
         ]
       },
       "title": "hollow_cylinder",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "hollow_cylinder"
       ]
@@ -2214,7 +2214,7 @@
         ]
       },
       "title": "hollow_rectangular_prism",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "hollow_rectangular_prism"
       ]
@@ -2289,7 +2289,7 @@
         ]
       },
       "title": "hollow_rectangular_prism_thin_walls",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "hollow_rectangular_prism_thin_walls"
       ]
@@ -2330,7 +2330,7 @@
         ]
       },
       "title": "lamellar",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "lamellar"
       ]
@@ -2391,7 +2391,7 @@
         ]
       },
       "title": "lamellar_hg",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "lamellar_hg"
       ]
@@ -2475,7 +2475,7 @@
         ]
       },
       "title": "lamellar_hg_stack_caille",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "lamellar_hg_stack_caille"
       ]
@@ -2539,7 +2539,7 @@
         ]
       },
       "title": "lamellar_stack_caille",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "lamellar_stack_caille"
       ]
@@ -2589,7 +2589,7 @@
         ]
       },
       "title": "lamellar_stack_paracrystal",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "lamellar_stack_paracrystal"
       ]
@@ -2613,7 +2613,7 @@
         ]
       },
       "title": "line",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "line"
       ]
@@ -2646,7 +2646,7 @@
         ]
       },
       "title": "linear_pearls",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "linear_pearls"
       ]
@@ -2667,7 +2667,7 @@
         ]
       },
       "title": "lorentz",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "lorentz"
       ]
@@ -2694,7 +2694,7 @@
         ]
       },
       "title": "mass_fractal",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "mass_fractal"
       ]
@@ -2724,7 +2724,7 @@
         ]
       },
       "title": "mass_surface_fractal",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "mass_surface_fractal"
       ]
@@ -2762,7 +2762,7 @@
         ]
       },
       "title": "mono_gauss_coil",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "mono_gauss_coil"
       ]
@@ -2857,7 +2857,7 @@
         ]
       },
       "title": "multilayer_vesicle",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "multilayer_vesicle"
       ]
@@ -3161,7 +3161,7 @@
         ]
       },
       "title": "onion",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "onion"
       ]
@@ -3236,7 +3236,7 @@
         ]
       },
       "title": "parallelepiped",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "parallelepiped"
       ]
@@ -3260,7 +3260,7 @@
         ]
       },
       "title": "peak_lorentz",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "peak_lorentz"
       ]
@@ -3355,7 +3355,7 @@
         ]
       },
       "title": "pearl_necklace",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "pearl_necklace"
       ]
@@ -3382,7 +3382,7 @@
         ]
       },
       "title": "poly_gauss_coil",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "poly_gauss_coil"
       ]
@@ -3406,7 +3406,7 @@
         ]
       },
       "title": "polymer_excl_volume",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "polymer_excl_volume"
       ]
@@ -3454,7 +3454,7 @@
         ]
       },
       "title": "polymer_micelle",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "polymer_micelle"
       ]
@@ -3472,7 +3472,7 @@
         ]
       },
       "title": "porod",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "porod"
       ]
@@ -3493,7 +3493,7 @@
         ]
       },
       "title": "power_law",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "power_law"
       ]
@@ -3585,7 +3585,7 @@
         ]
       },
       "title": "pringle",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "pringle"
       ]
@@ -3672,7 +3672,7 @@
         ]
       },
       "title": "raspberry",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "raspberry"
       ]
@@ -3747,7 +3747,7 @@
         ]
       },
       "title": "rectangular_prism",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "rectangular_prism"
       ]
@@ -3846,7 +3846,7 @@
         ]
       },
       "title": "rpa",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "rpa"
       ]
@@ -3893,7 +3893,7 @@
         ]
       },
       "title": "sc_paracrystal",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "sc_paracrystal"
       ]
@@ -3934,7 +3934,7 @@
         ]
       },
       "title": "sphere",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "sphere"
       ]
@@ -4391,7 +4391,7 @@
         ]
       },
       "title": "spherical_sld",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "spherical_sld"
       ]
@@ -4415,7 +4415,7 @@
         ]
       },
       "title": "spinodal",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "spinodal"
       ]
@@ -4513,7 +4513,7 @@
         ]
       },
       "title": "stacked_disks",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "stacked_disks"
       ]
@@ -4537,7 +4537,7 @@
         ]
       },
       "title": "star_polymer",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "star_polymer"
       ]
@@ -4564,7 +4564,7 @@
         ]
       },
       "title": "surface_fractal",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "surface_fractal"
       ]
@@ -4597,7 +4597,7 @@
         ]
       },
       "title": "teubner_strey",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "teubner_strey"
       ]
@@ -4672,7 +4672,7 @@
         ]
       },
       "title": "triaxial_ellipsoid",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "triaxial_ellipsoid"
       ]
@@ -4708,7 +4708,7 @@
         ]
       },
       "title": "two_lorentzian",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "two_lorentzian"
       ]
@@ -4738,7 +4738,7 @@
         ]
       },
       "title": "two_power_law",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "two_power_law"
       ]
@@ -4831,7 +4831,7 @@
         ]
       },
       "title": "unified_power_Rg",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "unified_power_Rg"
       ]
@@ -4892,7 +4892,7 @@
         ]
       },
       "title": "vesicle",
-      "specType": "parameter-data",
+      "specType": "opendatafit-params",
       "resources": [
         "vesicle"
       ]
