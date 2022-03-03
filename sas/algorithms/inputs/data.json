@@ -13,7 +13,7 @@
   "resources": [
     {
       "name": "sas_data",
-      "filename": "",
+      "title": "",
       "format": "file",
       "data": "",
       "profile": "data-resource",
