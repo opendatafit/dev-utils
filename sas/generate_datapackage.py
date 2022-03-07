@@ -20,12 +20,12 @@ with open("sas.template") as f:
 for algo in pkg["algorithms"]:
     # Populate code in B64
     with open(
-        "algorithms/" + "/" + algo["name"] + ".py", "rb"
+        "algorithms/sas/" + "/" + algo["name"] + ".py", "rb"
     ) as f:
         algo["code"] = base64.b64encode(f.read()).decode("utf-8")
 
     for i in algo["inputs"]:
-        path = "algorithms/inputs/" + i["name"] + ".json"
+        path = "algorithms/sas/inputs/" + i["name"] + ".json"
 
         if os.path.isfile(path):
             with open(path, "r") as f:
@@ -99,7 +99,7 @@ for algo in pkg["algorithms"]:
 
 
     for o in algo["outputs"]:
-        path = "algorithms/outputs/" + o["name"] + ".json"
+        path = "algorithms/sas/outputs/" + o["name"] + ".json"
 
         with open(path, "r") as f:
             jsn = json.load(f)
