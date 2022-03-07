@@ -5,35 +5,35 @@
       "format": "json",
       "scheme": "memory",
       "data": {
-        "radius_effective": {
-          "value": 50.0,
-          "lowerBound": 0.0,
-          "upperBound": "Infinity",
-          "vary": false
-        },
         "volfraction": {
+          "vary": false,
           "value": 0.2,
           "lowerBound": 0.0,
-          "upperBound": 0.74,
-          "vary": false
+          "upperBound": 0.74
+        },
+        "radius_effective": {
+          "vary": false,
+          "value": 50.0,
+          "lowerBound": 0.0,
+          "upperBound": "Infinity"
         }
       },
       "schema": {
         "fields": [],
         "keys": [
           {
-            "name": "radius_effective",
-            "unit": "Ang",
+            "name": "volfraction",
+            "unit": "",
             "fields": [
-              {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
               {
                 "name": "vary",
                 "title": "Vary",
                 "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
               },
               {
                 "name": "lowerBound",
@@ -50,18 +50,18 @@
             ]
           },
           {
-            "name": "volfraction",
-            "unit": "",
+            "name": "radius_effective",
+            "unit": "Ang",
             "fields": [
-              {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
               {
                 "name": "vary",
                 "title": "Vary",
                 "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
               },
               {
                 "name": "lowerBound",
@@ -87,115 +87,59 @@
       "format": "json",
       "scheme": "memory",
       "data": {
-        "temperature": {
-          "value": 318.16,
-          "lowerBound": 0.0,
-          "upperBound": 450.0,
-          "vary": false
-        },
-        "dielectconst": {
-          "value": 71.08,
-          "lowerBound": "-Infinity",
-          "upperBound": "Infinity",
-          "vary": false
-        },
         "charge": {
+          "vary": false,
           "value": 19.0,
           "lowerBound": 1e-06,
-          "upperBound": 200.0,
-          "vary": false
+          "upperBound": 200.0
         },
-        "radius_effective": {
-          "value": 20.75,
+        "temperature": {
+          "vary": false,
+          "value": 318.16,
           "lowerBound": 0.0,
-          "upperBound": "Infinity",
-          "vary": false
-        },
-        "concentration_salt": {
-          "value": 0.0,
-          "lowerBound": 0.0,
-          "upperBound": "Infinity",
-          "vary": false
+          "upperBound": 450.0
         },
         "volfraction": {
+          "vary": false,
           "value": 0.0192,
           "lowerBound": 0.0,
-          "upperBound": 0.74,
-          "vary": false
+          "upperBound": 0.74
+        },
+        "concentration_salt": {
+          "vary": false,
+          "value": 0.0,
+          "lowerBound": 0.0,
+          "upperBound": "Infinity"
+        },
+        "radius_effective": {
+          "vary": false,
+          "value": 20.75,
+          "lowerBound": 0.0,
+          "upperBound": "Infinity"
+        },
+        "dielectconst": {
+          "vary": false,
+          "value": 71.08,
+          "lowerBound": "-Infinity",
+          "upperBound": "Infinity"
         }
       },
       "schema": {
         "fields": [],
         "keys": [
           {
-            "name": "temperature",
-            "unit": "K",
-            "fields": [
-              {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
-              {
-                "name": "vary",
-                "title": "Vary",
-                "type": "boolean"
-              },
-              {
-                "name": "lowerBound",
-                "group": "constraints",
-                "title": "Lower bound",
-                "type": "number"
-              },
-              {
-                "name": "upperBound",
-                "group": "constraints",
-                "title": "Upper bound",
-                "type": "number"
-              }
-            ]
-          },
-          {
-            "name": "dielectconst",
-            "unit": "None",
-            "fields": [
-              {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
-              {
-                "name": "vary",
-                "title": "Vary",
-                "type": "boolean"
-              },
-              {
-                "name": "lowerBound",
-                "group": "constraints",
-                "title": "Lower bound",
-                "type": "number"
-              },
-              {
-                "name": "upperBound",
-                "group": "constraints",
-                "title": "Upper bound",
-                "type": "number"
-              }
-            ]
-          },
-          {
             "name": "charge",
             "unit": "e",
             "fields": [
               {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
-              {
                 "name": "vary",
                 "title": "Vary",
                 "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
               },
               {
                 "name": "lowerBound",
@@ -212,46 +156,18 @@
             ]
           },
           {
-            "name": "radius_effective",
-            "unit": "Ang",
+            "name": "temperature",
+            "unit": "K",
             "fields": [
-              {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
               {
                 "name": "vary",
                 "title": "Vary",
                 "type": "boolean"
               },
               {
-                "name": "lowerBound",
-                "group": "constraints",
-                "title": "Lower bound",
-                "type": "number"
-              },
-              {
-                "name": "upperBound",
-                "group": "constraints",
-                "title": "Upper bound",
-                "type": "number"
-              }
-            ]
-          },
-          {
-            "name": "concentration_salt",
-            "unit": "M",
-            "fields": [
-              {
                 "name": "value",
                 "title": "Value",
                 "type": "number"
-              },
-              {
-                "name": "vary",
-                "title": "Vary",
-                "type": "boolean"
               },
               {
                 "name": "lowerBound",
@@ -272,14 +188,98 @@
             "unit": "None",
             "fields": [
               {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
                 "name": "value",
                 "title": "Value",
                 "type": "number"
               },
               {
+                "name": "lowerBound",
+                "group": "constraints",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "group": "constraints",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "concentration_salt",
+            "unit": "M",
+            "fields": [
+              {
                 "name": "vary",
                 "title": "Vary",
                 "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "group": "constraints",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "group": "constraints",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "radius_effective",
+            "unit": "Ang",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "group": "constraints",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "group": "constraints",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "dielectconst",
+            "unit": "None",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
               },
               {
                 "name": "lowerBound",
@@ -305,103 +305,47 @@
       "format": "json",
       "scheme": "memory",
       "data": {
-        "welldepth": {
-          "value": 1.5,
-          "lowerBound": 0.0,
-          "upperBound": 1.5,
-          "vary": false
-        },
         "wellwidth": {
+          "vary": false,
           "value": 1.2,
           "lowerBound": 1.0,
-          "upperBound": "Infinity",
-          "vary": false
-        },
-        "radius_effective": {
-          "value": 50.0,
-          "lowerBound": 0.0,
-          "upperBound": "Infinity",
-          "vary": false
+          "upperBound": "Infinity"
         },
         "volfraction": {
+          "vary": false,
           "value": 0.04,
           "lowerBound": 0.0,
-          "upperBound": 0.08,
-          "vary": false
+          "upperBound": 0.08
+        },
+        "welldepth": {
+          "vary": false,
+          "value": 1.5,
+          "lowerBound": 0.0,
+          "upperBound": 1.5
+        },
+        "radius_effective": {
+          "vary": false,
+          "value": 50.0,
+          "lowerBound": 0.0,
+          "upperBound": "Infinity"
         }
       },
       "schema": {
         "fields": [],
         "keys": [
           {
-            "name": "welldepth",
-            "unit": "kT",
-            "fields": [
-              {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
-              {
-                "name": "vary",
-                "title": "Vary",
-                "type": "boolean"
-              },
-              {
-                "name": "lowerBound",
-                "group": "constraints",
-                "title": "Lower bound",
-                "type": "number"
-              },
-              {
-                "name": "upperBound",
-                "group": "constraints",
-                "title": "Upper bound",
-                "type": "number"
-              }
-            ]
-          },
-          {
             "name": "wellwidth",
             "unit": "diameters",
             "fields": [
               {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
-              {
                 "name": "vary",
                 "title": "Vary",
                 "type": "boolean"
               },
               {
-                "name": "lowerBound",
-                "group": "constraints",
-                "title": "Lower bound",
-                "type": "number"
-              },
-              {
-                "name": "upperBound",
-                "group": "constraints",
-                "title": "Upper bound",
-                "type": "number"
-              }
-            ]
-          },
-          {
-            "name": "radius_effective",
-            "unit": "Ang",
-            "fields": [
-              {
                 "name": "value",
                 "title": "Value",
                 "type": "number"
-              },
-              {
-                "name": "vary",
-                "title": "Vary",
-                "type": "boolean"
               },
               {
                 "name": "lowerBound",
@@ -422,14 +366,70 @@
             "unit": "",
             "fields": [
               {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
                 "name": "value",
                 "title": "Value",
                 "type": "number"
               },
               {
+                "name": "lowerBound",
+                "group": "constraints",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "group": "constraints",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "welldepth",
+            "unit": "kT",
+            "fields": [
+              {
                 "name": "vary",
                 "title": "Vary",
                 "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "group": "constraints",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "group": "constraints",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "radius_effective",
+            "unit": "Ang",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
               },
               {
                 "name": "lowerBound",
@@ -455,47 +455,47 @@
       "format": "json",
       "scheme": "memory",
       "data": {
-        "perturb": {
-          "value": 0.05,
-          "lowerBound": 0.01,
-          "upperBound": 0.1,
-          "vary": false
+        "volfraction": {
+          "vary": false,
+          "value": 0.2,
+          "lowerBound": 0.0,
+          "upperBound": 0.74
         },
         "stickiness": {
+          "vary": false,
           "value": 0.2,
           "lowerBound": "-Infinity",
-          "upperBound": "Infinity",
-          "vary": false
+          "upperBound": "Infinity"
+        },
+        "perturb": {
+          "vary": false,
+          "value": 0.05,
+          "lowerBound": 0.01,
+          "upperBound": 0.1
         },
         "radius_effective": {
+          "vary": false,
           "value": 50.0,
           "lowerBound": 0.0,
-          "upperBound": "Infinity",
-          "vary": false
-        },
-        "volfraction": {
-          "value": 0.2,
-          "lowerBound": 0.0,
-          "upperBound": 0.74,
-          "vary": false
+          "upperBound": "Infinity"
         }
       },
       "schema": {
         "fields": [],
         "keys": [
           {
-            "name": "perturb",
+            "name": "volfraction",
             "unit": "",
             "fields": [
-              {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
               {
                 "name": "vary",
                 "title": "Vary",
                 "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
               },
               {
                 "name": "lowerBound",
@@ -516,14 +516,42 @@
             "unit": "",
             "fields": [
               {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
                 "name": "value",
                 "title": "Value",
                 "type": "number"
               },
               {
+                "name": "lowerBound",
+                "group": "constraints",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "group": "constraints",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "perturb",
+            "unit": "",
+            "fields": [
+              {
                 "name": "vary",
                 "title": "Vary",
                 "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
               },
               {
                 "name": "lowerBound",
@@ -544,42 +572,14 @@
             "unit": "Ang",
             "fields": [
               {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
-              {
                 "name": "vary",
                 "title": "Vary",
                 "type": "boolean"
               },
               {
-                "name": "lowerBound",
-                "group": "constraints",
-                "title": "Lower bound",
-                "type": "number"
-              },
-              {
-                "name": "upperBound",
-                "group": "constraints",
-                "title": "Upper bound",
-                "type": "number"
-              }
-            ]
-          },
-          {
-            "name": "volfraction",
-            "unit": "",
-            "fields": [
-              {
                 "name": "value",
                 "title": "Value",
                 "type": "number"
-              },
-              {
-                "name": "vary",
-                "title": "Vary",
-                "type": "boolean"
               },
               {
                 "name": "lowerBound",
@@ -612,10 +612,10 @@
       "spec": {
         "keys": [
           {
-            "name": "radius_effective"
+            "name": "volfraction"
           },
           {
-            "name": "volfraction"
+            "name": "radius_effective"
           }
         ]
       }
@@ -630,22 +630,22 @@
       "spec": {
         "keys": [
           {
-            "name": "temperature"
-          },
-          {
-            "name": "dielectconst"
-          },
-          {
             "name": "charge"
           },
           {
-            "name": "radius_effective"
+            "name": "temperature"
+          },
+          {
+            "name": "volfraction"
           },
           {
             "name": "concentration_salt"
           },
           {
-            "name": "volfraction"
+            "name": "radius_effective"
+          },
+          {
+            "name": "dielectconst"
           }
         ]
       }
@@ -660,16 +660,16 @@
       "spec": {
         "keys": [
           {
-            "name": "welldepth"
-          },
-          {
             "name": "wellwidth"
           },
           {
-            "name": "radius_effective"
+            "name": "volfraction"
           },
           {
-            "name": "volfraction"
+            "name": "welldepth"
+          },
+          {
+            "name": "radius_effective"
           }
         ]
       }
@@ -684,16 +684,16 @@
       "spec": {
         "keys": [
           {
-            "name": "perturb"
+            "name": "volfraction"
           },
           {
             "name": "stickiness"
           },
           {
-            "name": "radius_effective"
+            "name": "perturb"
           },
           {
-            "name": "volfraction"
+            "name": "radius_effective"
           }
         ]
       }

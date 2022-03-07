@@ -142,14 +142,14 @@ def _base_sasview_model_to_parameter_resource(model):
                     "unit": unit,
                     "fields": [
                         {
-                            "name": "value",
-                            "title": "Value",
-                            "type": "number",
-                        },
-                        {
                             "name": "vary",
                             "title": "Vary",
                             "type": "boolean",
+                        },
+                        {
+                            "name": "value",
+                            "title": "Value",
+                            "type": "number",
                         },
                         {
                             "name": "lowerBound",
@@ -173,11 +173,11 @@ def _base_sasview_model_to_parameter_resource(model):
             )
 
             data[param] = {
+                "vary": vary,
                 "value": value,
                 "lowerBound": lower,
                 "upperBound": upper,
                 # "fittable": fittable,
-                "vary": vary,
             }
 
     resource = {
