@@ -78,18 +78,42 @@
       "name": "sas_display",
       "title": "SAS Analysis Pipeline",
       "icon": "",
-      "layout": "stacked",
       "algorithms": [
         "sas"
       ],
-      "views": [
-        "sas_data_view",
-        "sas_options_view",
-        "sas_params_view",
-        "sas_sf_params_view",
-        "sas_fit_graph_view",
-        "sas_fit_table_view"
-      ]
+      "layout": {
+        "type": "bindfit",
+        "spec": {
+          "control": ["model", "params"],
+          "main": ["graph", "table"],
+          "tabs": [
+            {
+              "name": "model",
+              "title": "Model",
+              "icon": "",
+              "views": ["sas_data_view", "sas_options_view"]
+            },
+            {
+              "name": "params",
+              "title": "Params",
+              "icon": "",
+              "views": ["sas_params_view", "sas_sf_params_view"]
+            },
+            {
+              "name": "graph",
+              "title": "Fit graph",
+              "icon": "",
+              "views": ["sas_fit_graph_view"]
+            },
+            {
+              "name": "table",
+              "title": "Fit table",
+              "icon": "",
+              "views": ["sas_fit_table_view"]
+            }
+          ]
+        }
+      }
     }
   ]
 }
