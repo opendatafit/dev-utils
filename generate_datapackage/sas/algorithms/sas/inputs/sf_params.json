@@ -87,6 +87,12 @@
       "format": "json",
       "scheme": "memory",
       "data": {
+        "volfraction": {
+          "vary": false,
+          "value": 0.0192,
+          "lowerBound": 0.0,
+          "upperBound": 0.74
+        },
         "charge": {
           "vary": false,
           "value": 19.0,
@@ -99,18 +105,6 @@
           "lowerBound": 0.0,
           "upperBound": 450.0
         },
-        "volfraction": {
-          "vary": false,
-          "value": 0.0192,
-          "lowerBound": 0.0,
-          "upperBound": 0.74
-        },
-        "concentration_salt": {
-          "vary": false,
-          "value": 0.0,
-          "lowerBound": 0.0,
-          "upperBound": "Infinity"
-        },
         "radius_effective": {
           "vary": false,
           "value": 20.75,
@@ -122,11 +116,45 @@
           "value": 71.08,
           "lowerBound": "-Infinity",
           "upperBound": "Infinity"
+        },
+        "concentration_salt": {
+          "vary": false,
+          "value": 0.0,
+          "lowerBound": 0.0,
+          "upperBound": "Infinity"
         }
       },
       "schema": {
         "fields": [],
         "keys": [
+          {
+            "name": "volfraction",
+            "unit": "None",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "group": "constraints",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "group": "constraints",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
           {
             "name": "charge",
             "unit": "e",
@@ -158,62 +186,6 @@
           {
             "name": "temperature",
             "unit": "K",
-            "fields": [
-              {
-                "name": "vary",
-                "title": "Vary",
-                "type": "boolean"
-              },
-              {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
-              {
-                "name": "lowerBound",
-                "group": "constraints",
-                "title": "Lower bound",
-                "type": "number"
-              },
-              {
-                "name": "upperBound",
-                "group": "constraints",
-                "title": "Upper bound",
-                "type": "number"
-              }
-            ]
-          },
-          {
-            "name": "volfraction",
-            "unit": "None",
-            "fields": [
-              {
-                "name": "vary",
-                "title": "Vary",
-                "type": "boolean"
-              },
-              {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
-              {
-                "name": "lowerBound",
-                "group": "constraints",
-                "title": "Lower bound",
-                "type": "number"
-              },
-              {
-                "name": "upperBound",
-                "group": "constraints",
-                "title": "Upper bound",
-                "type": "number"
-              }
-            ]
-          },
-          {
-            "name": "concentration_salt",
-            "unit": "M",
             "fields": [
               {
                 "name": "vary",
@@ -294,48 +266,10 @@
                 "type": "number"
               }
             ]
-          }
-        ]
-      },
-      "profile": "data-resource",
-      "tmpprofile": "parameter-data-resource"
-    },
-    {
-      "name": "squarewell",
-      "format": "json",
-      "scheme": "memory",
-      "data": {
-        "wellwidth": {
-          "vary": false,
-          "value": 1.2,
-          "lowerBound": 1.0,
-          "upperBound": "Infinity"
-        },
-        "volfraction": {
-          "vary": false,
-          "value": 0.04,
-          "lowerBound": 0.0,
-          "upperBound": 0.08
-        },
-        "welldepth": {
-          "vary": false,
-          "value": 1.5,
-          "lowerBound": 0.0,
-          "upperBound": 1.5
-        },
-        "radius_effective": {
-          "vary": false,
-          "value": 50.0,
-          "lowerBound": 0.0,
-          "upperBound": "Infinity"
-        }
-      },
-      "schema": {
-        "fields": [],
-        "keys": [
+          },
           {
-            "name": "wellwidth",
-            "unit": "diameters",
+            "name": "concentration_salt",
+            "unit": "M",
             "fields": [
               {
                 "name": "vary",
@@ -360,7 +294,45 @@
                 "type": "number"
               }
             ]
-          },
+          }
+        ]
+      },
+      "profile": "data-resource",
+      "tmpprofile": "parameter-data-resource"
+    },
+    {
+      "name": "squarewell",
+      "format": "json",
+      "scheme": "memory",
+      "data": {
+        "volfraction": {
+          "vary": false,
+          "value": 0.04,
+          "lowerBound": 0.0,
+          "upperBound": 0.08
+        },
+        "welldepth": {
+          "vary": false,
+          "value": 1.5,
+          "lowerBound": 0.0,
+          "upperBound": 1.5
+        },
+        "wellwidth": {
+          "vary": false,
+          "value": 1.2,
+          "lowerBound": 1.0,
+          "upperBound": "Infinity"
+        },
+        "radius_effective": {
+          "vary": false,
+          "value": 50.0,
+          "lowerBound": 0.0,
+          "upperBound": "Infinity"
+        }
+      },
+      "schema": {
+        "fields": [],
+        "keys": [
           {
             "name": "volfraction",
             "unit": "",
@@ -392,6 +364,34 @@
           {
             "name": "welldepth",
             "unit": "kT",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "group": "constraints",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "group": "constraints",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "wellwidth",
+            "unit": "diameters",
             "fields": [
               {
                 "name": "vary",
@@ -461,12 +461,6 @@
           "lowerBound": 0.0,
           "upperBound": 0.74
         },
-        "stickiness": {
-          "vary": false,
-          "value": 0.2,
-          "lowerBound": "-Infinity",
-          "upperBound": "Infinity"
-        },
         "perturb": {
           "vary": false,
           "value": 0.05,
@@ -478,6 +472,12 @@
           "value": 50.0,
           "lowerBound": 0.0,
           "upperBound": "Infinity"
+        },
+        "stickiness": {
+          "vary": false,
+          "value": 0.2,
+          "lowerBound": "-Infinity",
+          "upperBound": "Infinity"
         }
       },
       "schema": {
@@ -485,34 +485,6 @@
         "keys": [
           {
             "name": "volfraction",
-            "unit": "",
-            "fields": [
-              {
-                "name": "vary",
-                "title": "Vary",
-                "type": "boolean"
-              },
-              {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
-              {
-                "name": "lowerBound",
-                "group": "constraints",
-                "title": "Lower bound",
-                "type": "number"
-              },
-              {
-                "name": "upperBound",
-                "group": "constraints",
-                "title": "Upper bound",
-                "type": "number"
-              }
-            ]
-          },
-          {
-            "name": "stickiness",
             "unit": "",
             "fields": [
               {
@@ -594,6 +566,34 @@
                 "type": "number"
               }
             ]
+          },
+          {
+            "name": "stickiness",
+            "unit": "",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "group": "constraints",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "group": "constraints",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
           }
         ]
       },
@@ -630,22 +630,22 @@
       "spec": {
         "keys": [
           {
+            "name": "volfraction"
+          },
+          {
             "name": "charge"
           },
           {
             "name": "temperature"
           },
           {
-            "name": "volfraction"
-          },
-          {
-            "name": "concentration_salt"
-          },
-          {
             "name": "radius_effective"
           },
           {
             "name": "dielectconst"
+          },
+          {
+            "name": "concentration_salt"
           }
         ]
       }
@@ -660,13 +660,13 @@
       "spec": {
         "keys": [
           {
-            "name": "wellwidth"
-          },
-          {
             "name": "volfraction"
           },
           {
             "name": "welldepth"
+          },
+          {
+            "name": "wellwidth"
           },
           {
             "name": "radius_effective"
@@ -687,13 +687,13 @@
             "name": "volfraction"
           },
           {
-            "name": "stickiness"
-          },
-          {
             "name": "perturb"
           },
           {
             "name": "radius_effective"
+          },
+          {
+            "name": "stickiness"
           }
         ]
       }

@@ -264,17 +264,17 @@ def sasview_model_to_parameter_resource(model, polydispersity=False):
                         "groups": ["polydispersity"],
                         "fields": [
                             {
+                                "name": "vary",
+                                "title": "Vary",
+                                "type": "boolean",
+                            },
+                            {
                                 "name": "value",
                                 "title": "Value",
                                 "type": "integer",
                                 "constraints": {
                                     "min": 0,
                                 },
-                            },
-                            {
-                                "name": "vary",
-                                "title": "Vary",
-                                "type": "boolean",
                             },
                             {
                                 "name": "lowerBound",
