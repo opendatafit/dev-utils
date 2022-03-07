@@ -115,7 +115,7 @@ for algo in pkg["algorithms"]:
 
 
 with open("./datapackage.json", "w") as f:
-    json.dump(pkg, f)
+    json.dump(pkg, f, indent=2)
 
 
 print("Done!")
