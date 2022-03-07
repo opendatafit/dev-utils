@@ -11,7 +11,7 @@ import sasmodels as sm
 from sasmodels.sasview_model import load_standard_models 
 
 
-SCAFFOLD_DIR = "./test/"
+SCAFFOLD_DIR = "./algorithms/sas/inputs/"
 
 
 # Available methods for fitting

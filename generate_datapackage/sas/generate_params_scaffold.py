@@ -12,7 +12,7 @@ from sasmodels.sasview_model import load_standard_models
 from sasmodels.weights import MODELS as POLYDISPERSITY_MODELS
 
 
-SCAFFOLD_DIR = "./test/"
+SCAFFOLD_DIR = "./algorithms/sas/inputs/"
 
 
 # =============================================================================

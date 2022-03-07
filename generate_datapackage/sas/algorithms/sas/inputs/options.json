@@ -1,617 +1,617 @@
 {
-    "views": [
-        {
-            "name": "sas_options_view",
-            "spec": {
-                "fields": [
-                    {
-                        "name": "method"
-                    },
-                    {
-                        "name": "model",
-                        "behaviours": [
-                          {
-                            "name": "changeModel",
-                            "do": [
-                              "replaceResourceWithScaffold('sas', 'params', getResourceFieldValue('sas_options', 'model.name'), 'sas_params');",
-                              "replaceViewWithScaffold('sas', 'params', getResourceFieldValue('sas_options', 'model.name') + '_view', 'sas_params_view');",
-                              "if (getResourceFieldValue('sas_options', 'model.structureFactor')) {",
-                              "  setViewFieldValue('sas_options_view', 'structureFactor', 'disabled', false);",
-                              "  setViewValue('sas_sf_params_view', 'disabled', false);",
-                              "  replaceViewWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name') + '_view', 'sas_sf_params_view');",
-                              "} else {",
-                              "  setViewFieldValue('sas_options_view', 'structureFactor', 'disabled', true);",
-                              "  setViewValue('sas_sf_params_view', 'disabled', true);",
-                              "}"
-                            ]
-                          }
-                        ]
-                    },
-                    {
-                        "name": "structureFactor",
-                        "behaviours": [
-                          {
-                            "name": "changeStructureFactor",
-                            "do": [
-                              "if (getResourceFieldValue('sas_options', 'structureFactor.name')) {",
-                              "  setViewValue('sas_sf_params_view', 'disabled', false);",
-                              "  replaceResourceWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name'), 'sas_sf_params');",
-                              "  replaceViewWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name') + '_view', 'sas_sf_params_view');",
-                              "} else {",
-                              "  setViewValue('sas_sf_params_view', 'disabled', true);",
-                              "}"
-                            ]
-                          }
-                        ]
-                    }
-                ]
-            },
-            "specType": "opendatafit-options",
-            "resources": [
-                "sas_options"
-            ]
+  "resources": [
+    {
+      "name": "sas_options",
+      "profile": "data-resource",
+      "tmpprofile": "opendatafit-options",
+      "format": "json",
+      "data": {
+        "method": {
+          "title": "Levenberg-Marquardt",
+          "name": "LevenbergMarquardtFit"
+        },
+        "model": {
+          "title": "adsorbed_layer",
+          "name": "adsorbed_layer",
+          "category": "shape:sphere",
+          "structureFactor": false
+        },
+        "structureFactor": {
+          "title": "None",
+          "name": ""
         }
-    ],
-    "resources": [
-        {
-            "data": {
-                "model": {
-                    "name": "sphere",
-                    "title": "sphere",
-                    "category": "shape:sphere",
-                    "structureFactor": true
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "method",
+            "title": "Method",
+            "description": "The optimisation method to use for fitting",
+            "type": "object",
+            "objectFields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              }
+            ],
+            "constraints": {
+              "enum": [
+                {
+                  "title": "Levenberg-Marquardt",
+                  "name": "LevenbergMarquardtFit"
                 },
-                "method": {
-                    "name": "LevenbergMarquardtFit",
-                    "title": "Levenberg-Marquardt"
+                {
+                  "title": "BFGS",
+                  "name": "BFGSFit"
                 },
-                "structureFactor": {
-                    "name": "hayter_msa",
-                    "title": "hayter_msa"
+                {
+                  "title": "Simplex",
+                  "name": "SimplexFit"
                 }
-            },
-            "name": "sas_options",
-            "format": "json",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "method",
-                        "type": "object",
-                        "title": "Method",
-                        "constraints": {
-                            "enum": [
-                                {
-                                    "name": "LevenbergMarquardtFit",
-                                    "title": "Levenberg-Marquardt"
-                                },
-                                {
-                                    "name": "BFGSFit",
-                                    "title": "BFGS"
-                                },
-                                {
-                                    "name": "SimplexFit",
-                                    "title": "Simplex"
-                                }
-                            ]
-                        },
-                        "description": "The optimisation method to use for fitting",
-                        "objectFields": [
-                            {
-                                "name": "title",
-                                "type": "string"
-                            },
-                            {
-                                "name": "name",
-                                "type": "string"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "model",
-                        "type": "object",
-                        "title": "Model",
-                        "constraints": {
-                            "enum": [
-                                {
-                                    "name": "adsorbed_layer",
-                                    "title": "adsorbed_layer",
-                                    "category": "shape:sphere",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "barbell",
-                                    "title": "barbell",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "bcc_paracrystal",
-                                    "title": "bcc_paracrystal",
-                                    "category": "shape:paracrystal",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "be_polyelectrolyte",
-                                    "title": "be_polyelectrolyte",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "binary_hard_sphere",
-                                    "title": "binary_hard_sphere",
-                                    "category": "shape:sphere",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "broad_peak",
-                                    "title": "broad_peak",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "capped_cylinder",
-                                    "title": "capped_cylinder",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "core_multi_shell",
-                                    "title": "core_multi_shell",
-                                    "category": "shape:sphere",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "core_shell_bicelle",
-                                    "title": "core_shell_bicelle",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "core_shell_bicelle_elliptical",
-                                    "title": "core_shell_bicelle_elliptical",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "core_shell_bicelle_elliptical_belt_rough",
-                                    "title": "core_shell_bicelle_elliptical_belt_rough",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "core_shell_cylinder",
-                                    "title": "core_shell_cylinder",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "core_shell_ellipsoid",
-                                    "title": "core_shell_ellipsoid",
-                                    "category": "shape:ellipsoid",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "core_shell_parallelepiped",
-                                    "title": "core_shell_parallelepiped",
-                                    "category": "shape:parallelepiped",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "core_shell_sphere",
-                                    "title": "core_shell_sphere",
-                                    "category": "shape:sphere",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "correlation_length",
-                                    "title": "correlation_length",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "cylinder",
-                                    "title": "cylinder",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "dab",
-                                    "title": "dab",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "ellipsoid",
-                                    "title": "ellipsoid",
-                                    "category": "shape:ellipsoid",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "elliptical_cylinder",
-                                    "title": "elliptical_cylinder",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "fcc_paracrystal",
-                                    "title": "fcc_paracrystal",
-                                    "category": "shape:paracrystal",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "flexible_cylinder",
-                                    "title": "flexible_cylinder",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "flexible_cylinder_elliptical",
-                                    "title": "flexible_cylinder_elliptical",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "fractal",
-                                    "title": "fractal",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "fractal_core_shell",
-                                    "title": "fractal_core_shell",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "fuzzy_sphere",
-                                    "title": "fuzzy_sphere",
-                                    "category": "shape:sphere",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "gauss_lorentz_gel",
-                                    "title": "gauss_lorentz_gel",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "gaussian_peak",
-                                    "title": "gaussian_peak",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "gel_fit",
-                                    "title": "gel_fit",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "guinier",
-                                    "title": "guinier",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "guinier_porod",
-                                    "title": "guinier_porod",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "hollow_cylinder",
-                                    "title": "hollow_cylinder",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "hollow_rectangular_prism",
-                                    "title": "hollow_rectangular_prism",
-                                    "category": "shape:parallelepiped",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "hollow_rectangular_prism_thin_walls",
-                                    "title": "hollow_rectangular_prism_thin_walls",
-                                    "category": "shape:parallelepiped",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "lamellar",
-                                    "title": "lamellar",
-                                    "category": "shape:lamellae",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "lamellar_hg",
-                                    "title": "lamellar_hg",
-                                    "category": "shape:lamellae",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "lamellar_hg_stack_caille",
-                                    "title": "lamellar_hg_stack_caille",
-                                    "category": "shape:lamellae",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "lamellar_stack_caille",
-                                    "title": "lamellar_stack_caille",
-                                    "category": "shape:lamellae",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "lamellar_stack_paracrystal",
-                                    "title": "lamellar_stack_paracrystal",
-                                    "category": "shape:lamellae",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "line",
-                                    "title": "line",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "linear_pearls",
-                                    "title": "linear_pearls",
-                                    "category": "shape:sphere",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "lorentz",
-                                    "title": "lorentz",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "mass_fractal",
-                                    "title": "mass_fractal",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "mass_surface_fractal",
-                                    "title": "mass_surface_fractal",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "mono_gauss_coil",
-                                    "title": "mono_gauss_coil",
-                                    "category": "shape-independent",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "multilayer_vesicle",
-                                    "title": "multilayer_vesicle",
-                                    "category": "shape:sphere",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "onion",
-                                    "title": "onion",
-                                    "category": "shape:sphere",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "parallelepiped",
-                                    "title": "parallelepiped",
-                                    "category": "shape:parallelepiped",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "peak_lorentz",
-                                    "title": "peak_lorentz",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "pearl_necklace",
-                                    "title": "pearl_necklace",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "poly_gauss_coil",
-                                    "title": "poly_gauss_coil",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "polymer_excl_volume",
-                                    "title": "polymer_excl_volume",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "polymer_micelle",
-                                    "title": "polymer_micelle",
-                                    "category": "shape:sphere",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "porod",
-                                    "title": "porod",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "power_law",
-                                    "title": "power_law",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "pringle",
-                                    "title": "pringle",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "raspberry",
-                                    "title": "raspberry",
-                                    "category": "shape:sphere",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "rectangular_prism",
-                                    "title": "rectangular_prism",
-                                    "category": "shape:parallelepiped",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "rpa",
-                                    "title": "rpa",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "sc_paracrystal",
-                                    "title": "sc_paracrystal",
-                                    "category": "shape:paracrystal",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "sphere",
-                                    "title": "sphere",
-                                    "category": "shape:sphere",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "spherical_sld",
-                                    "title": "spherical_sld",
-                                    "category": "shape:sphere",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "spinodal",
-                                    "title": "spinodal",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "stacked_disks",
-                                    "title": "stacked_disks",
-                                    "category": "shape:cylinder",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "star_polymer",
-                                    "title": "star_polymer",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "surface_fractal",
-                                    "title": "surface_fractal",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "teubner_strey",
-                                    "title": "teubner_strey",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "triaxial_ellipsoid",
-                                    "title": "triaxial_ellipsoid",
-                                    "category": "shape:ellipsoid",
-                                    "structureFactor": true
-                                },
-                                {
-                                    "name": "two_lorentzian",
-                                    "title": "two_lorentzian",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "two_power_law",
-                                    "title": "two_power_law",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "unified_power_Rg",
-                                    "title": "unified_power_Rg",
-                                    "category": "shape-independent",
-                                    "structureFactor": false
-                                },
-                                {
-                                    "name": "vesicle",
-                                    "title": "vesicle",
-                                    "category": "shape:sphere",
-                                    "structureFactor": true
-                                }
-                            ]
-                        },
-                        "description": "Model to use for fitting",
-                        "objectFields": [
-                            {
-                                "name": "title",
-                                "type": "string"
-                            },
-                            {
-                                "name": "name",
-                                "type": "string"
-                            },
-                            {
-                                "name": "category",
-                                "type": "string",
-                                "description": "Model category"
-                            },
-                            {
-                                "name": "structureFactor",
-                                "type": "string",
-                                "description": "Whether structure factor fitting is available for this model"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "structureFactor",
-                        "type": "object",
-                        "title": "Structure factor",
-                        "constraints": {
-                            "enum": [
-                                {
-                                    "name": "hardsphere",
-                                    "title": "hardsphere"
-                                },
-                                {
-                                    "name": "hayter_msa",
-                                    "title": "hayter_msa"
-                                },
-                                {
-                                    "name": "squarewell",
-                                    "title": "squarewell"
-                                },
-                                {
-                                    "name": "stickyhardsphere",
-                                    "title": "stickyhardsphere"
-                                },
-                                {
-                                    "name": "",
-                                    "title": "None"
-                                }
-                            ]
-                        },
-                        "description": "Structure factor model to fit",
-                        "objectFields": [
-                            {
-                                "name": "title",
-                                "type": "string"
-                            },
-                            {
-                                "name": "name",
-                                "type": "string"
-                            }
-                        ]
-                    }
+              ]
+            }
+          },
+          {
+            "name": "model",
+            "title": "Model",
+            "description": "Model to use for fitting",
+            "type": "object",
+            "objectFields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "category",
+                "type": "string",
+                "description": "Model category"
+              },
+              {
+                "name": "structureFactor",
+                "type": "string",
+                "description": "Whether structure factor fitting is available for this model"
+              }
+            ],
+            "constraints": {
+              "enum": [
+                {
+                  "title": "adsorbed_layer",
+                  "name": "adsorbed_layer",
+                  "category": "shape:sphere",
+                  "structureFactor": false
+                },
+                {
+                  "title": "barbell",
+                  "name": "barbell",
+                  "category": "shape:cylinder",
+                  "structureFactor": true
+                },
+                {
+                  "title": "bcc_paracrystal",
+                  "name": "bcc_paracrystal",
+                  "category": "shape:paracrystal",
+                  "structureFactor": false
+                },
+                {
+                  "title": "be_polyelectrolyte",
+                  "name": "be_polyelectrolyte",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "binary_hard_sphere",
+                  "name": "binary_hard_sphere",
+                  "category": "shape:sphere",
+                  "structureFactor": false
+                },
+                {
+                  "title": "broad_peak",
+                  "name": "broad_peak",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "capped_cylinder",
+                  "name": "capped_cylinder",
+                  "category": "shape:cylinder",
+                  "structureFactor": true
+                },
+                {
+                  "title": "core_multi_shell",
+                  "name": "core_multi_shell",
+                  "category": "shape:sphere",
+                  "structureFactor": true
+                },
+                {
+                  "title": "core_shell_bicelle",
+                  "name": "core_shell_bicelle",
+                  "category": "shape:cylinder",
+                  "structureFactor": true
+                },
+                {
+                  "title": "core_shell_bicelle_elliptical",
+                  "name": "core_shell_bicelle_elliptical",
+                  "category": "shape:cylinder",
+                  "structureFactor": true
+                },
+                {
+                  "title": "core_shell_bicelle_elliptical_belt_rough",
+                  "name": "core_shell_bicelle_elliptical_belt_rough",
+                  "category": "shape:cylinder",
+                  "structureFactor": true
+                },
+                {
+                  "title": "core_shell_cylinder",
+                  "name": "core_shell_cylinder",
+                  "category": "shape:cylinder",
+                  "structureFactor": true
+                },
+                {
+                  "title": "core_shell_ellipsoid",
+                  "name": "core_shell_ellipsoid",
+                  "category": "shape:ellipsoid",
+                  "structureFactor": true
+                },
+                {
+                  "title": "core_shell_parallelepiped",
+                  "name": "core_shell_parallelepiped",
+                  "category": "shape:parallelepiped",
+                  "structureFactor": true
+                },
+                {
+                  "title": "core_shell_sphere",
+                  "name": "core_shell_sphere",
+                  "category": "shape:sphere",
+                  "structureFactor": true
+                },
+                {
+                  "title": "correlation_length",
+                  "name": "correlation_length",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "cylinder",
+                  "name": "cylinder",
+                  "category": "shape:cylinder",
+                  "structureFactor": true
+                },
+                {
+                  "title": "dab",
+                  "name": "dab",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "ellipsoid",
+                  "name": "ellipsoid",
+                  "category": "shape:ellipsoid",
+                  "structureFactor": true
+                },
+                {
+                  "title": "elliptical_cylinder",
+                  "name": "elliptical_cylinder",
+                  "category": "shape:cylinder",
+                  "structureFactor": true
+                },
+                {
+                  "title": "fcc_paracrystal",
+                  "name": "fcc_paracrystal",
+                  "category": "shape:paracrystal",
+                  "structureFactor": false
+                },
+                {
+                  "title": "flexible_cylinder",
+                  "name": "flexible_cylinder",
+                  "category": "shape:cylinder",
+                  "structureFactor": false
+                },
+                {
+                  "title": "flexible_cylinder_elliptical",
+                  "name": "flexible_cylinder_elliptical",
+                  "category": "shape:cylinder",
+                  "structureFactor": false
+                },
+                {
+                  "title": "fractal",
+                  "name": "fractal",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "fractal_core_shell",
+                  "name": "fractal_core_shell",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "fuzzy_sphere",
+                  "name": "fuzzy_sphere",
+                  "category": "shape:sphere",
+                  "structureFactor": true
+                },
+                {
+                  "title": "gauss_lorentz_gel",
+                  "name": "gauss_lorentz_gel",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "gaussian_peak",
+                  "name": "gaussian_peak",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "gel_fit",
+                  "name": "gel_fit",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "guinier",
+                  "name": "guinier",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "guinier_porod",
+                  "name": "guinier_porod",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "hollow_cylinder",
+                  "name": "hollow_cylinder",
+                  "category": "shape:cylinder",
+                  "structureFactor": true
+                },
+                {
+                  "title": "hollow_rectangular_prism",
+                  "name": "hollow_rectangular_prism",
+                  "category": "shape:parallelepiped",
+                  "structureFactor": true
+                },
+                {
+                  "title": "hollow_rectangular_prism_thin_walls",
+                  "name": "hollow_rectangular_prism_thin_walls",
+                  "category": "shape:parallelepiped",
+                  "structureFactor": true
+                },
+                {
+                  "title": "lamellar",
+                  "name": "lamellar",
+                  "category": "shape:lamellae",
+                  "structureFactor": false
+                },
+                {
+                  "title": "lamellar_hg",
+                  "name": "lamellar_hg",
+                  "category": "shape:lamellae",
+                  "structureFactor": false
+                },
+                {
+                  "title": "lamellar_hg_stack_caille",
+                  "name": "lamellar_hg_stack_caille",
+                  "category": "shape:lamellae",
+                  "structureFactor": false
+                },
+                {
+                  "title": "lamellar_stack_caille",
+                  "name": "lamellar_stack_caille",
+                  "category": "shape:lamellae",
+                  "structureFactor": false
+                },
+                {
+                  "title": "lamellar_stack_paracrystal",
+                  "name": "lamellar_stack_paracrystal",
+                  "category": "shape:lamellae",
+                  "structureFactor": false
+                },
+                {
+                  "title": "line",
+                  "name": "line",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "linear_pearls",
+                  "name": "linear_pearls",
+                  "category": "shape:sphere",
+                  "structureFactor": false
+                },
+                {
+                  "title": "lorentz",
+                  "name": "lorentz",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "mass_fractal",
+                  "name": "mass_fractal",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "mass_surface_fractal",
+                  "name": "mass_surface_fractal",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "mono_gauss_coil",
+                  "name": "mono_gauss_coil",
+                  "category": "shape-independent",
+                  "structureFactor": true
+                },
+                {
+                  "title": "multilayer_vesicle",
+                  "name": "multilayer_vesicle",
+                  "category": "shape:sphere",
+                  "structureFactor": true
+                },
+                {
+                  "title": "onion",
+                  "name": "onion",
+                  "category": "shape:sphere",
+                  "structureFactor": true
+                },
+                {
+                  "title": "parallelepiped",
+                  "name": "parallelepiped",
+                  "category": "shape:parallelepiped",
+                  "structureFactor": true
+                },
+                {
+                  "title": "peak_lorentz",
+                  "name": "peak_lorentz",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "pearl_necklace",
+                  "name": "pearl_necklace",
+                  "category": "shape:cylinder",
+                  "structureFactor": true
+                },
+                {
+                  "title": "poly_gauss_coil",
+                  "name": "poly_gauss_coil",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "polymer_excl_volume",
+                  "name": "polymer_excl_volume",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "polymer_micelle",
+                  "name": "polymer_micelle",
+                  "category": "shape:sphere",
+                  "structureFactor": false
+                },
+                {
+                  "title": "porod",
+                  "name": "porod",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "power_law",
+                  "name": "power_law",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "pringle",
+                  "name": "pringle",
+                  "category": "shape:cylinder",
+                  "structureFactor": true
+                },
+                {
+                  "title": "raspberry",
+                  "name": "raspberry",
+                  "category": "shape:sphere",
+                  "structureFactor": true
+                },
+                {
+                  "title": "rectangular_prism",
+                  "name": "rectangular_prism",
+                  "category": "shape:parallelepiped",
+                  "structureFactor": true
+                },
+                {
+                  "title": "rpa",
+                  "name": "rpa",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "sc_paracrystal",
+                  "name": "sc_paracrystal",
+                  "category": "shape:paracrystal",
+                  "structureFactor": false
+                },
+                {
+                  "title": "sphere",
+                  "name": "sphere",
+                  "category": "shape:sphere",
+                  "structureFactor": true
+                },
+                {
+                  "title": "spherical_sld",
+                  "name": "spherical_sld",
+                  "category": "shape:sphere",
+                  "structureFactor": true
+                },
+                {
+                  "title": "spinodal",
+                  "name": "spinodal",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "stacked_disks",
+                  "name": "stacked_disks",
+                  "category": "shape:cylinder",
+                  "structureFactor": false
+                },
+                {
+                  "title": "star_polymer",
+                  "name": "star_polymer",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "surface_fractal",
+                  "name": "surface_fractal",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "teubner_strey",
+                  "name": "teubner_strey",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "triaxial_ellipsoid",
+                  "name": "triaxial_ellipsoid",
+                  "category": "shape:ellipsoid",
+                  "structureFactor": true
+                },
+                {
+                  "title": "two_lorentzian",
+                  "name": "two_lorentzian",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "two_power_law",
+                  "name": "two_power_law",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "unified_power_Rg",
+                  "name": "unified_power_Rg",
+                  "category": "shape-independent",
+                  "structureFactor": false
+                },
+                {
+                  "title": "vesicle",
+                  "name": "vesicle",
+                  "category": "shape:sphere",
+                  "structureFactor": true
+                }
+              ]
+            }
+          },
+          {
+            "name": "structureFactor",
+            "title": "Structure factor",
+            "description": "Structure factor model to fit",
+            "type": "object",
+            "objectFields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              }
+            ],
+            "constraints": {
+              "enum": [
+                {
+                  "title": "hardsphere",
+                  "name": "hardsphere"
+                },
+                {
+                  "title": "hayter_msa",
+                  "name": "hayter_msa"
+                },
+                {
+                  "title": "squarewell",
+                  "name": "squarewell"
+                },
+                {
+                  "title": "stickyhardsphere",
+                  "name": "stickyhardsphere"
+                },
+                {
+                  "title": "None",
+                  "name": ""
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "views": [
+    {
+      "name": "sas_options_view",
+      "resources": [
+        "sas_options"
+      ],
+      "specType": "opendatafit-options",
+      "spec": {
+        "fields": [
+          {
+            "name": "method"
+          },
+          {
+            "name": "model",
+            "behaviours": [
+              {
+                "name": "changeModel",
+                "do": [
+                  "replaceResourceWithScaffold('sas', 'params', getResourceFieldValue('sas_options', 'model.name'), 'sas_params');",
+                  "replaceViewWithScaffold('sas', 'params', getResourceFieldValue('sas_options', 'model.name') + '_view', 'sas_params_view');",
+                  "if (getResourceFieldValue('sas_options', 'model.structureFactor')) {",
+                  "  setViewFieldValue('sas_options_view', 'structureFactor', 'disabled', false);",
+                  "  setViewValue('sas_sf_params_view', 'disabled', false);",
+                  "  replaceViewWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name') + '_view', 'sas_sf_params_view');",
+                  "} else {",
+                  "  setViewFieldValue('sas_options_view', 'structureFactor', 'disabled', true);",
+                  "  setViewValue('sas_sf_params_view', 'disabled', true);",
+                  "}"
                 ]
-            },
-            "profile": "data-resource",
-            "tmpprofile": "options-data-resource"
-        }
-    ]
+              }
+            ]
+          },
+          {
+            "name": "structureFactor",
+            "behaviours": [
+              {
+                "name": "changeStructureFactor",
+                "do": [
+                  "if (getResourceFieldValue('sas_options', 'structureFactor.name')) {",
+                  "  setViewValue('sas_sf_params_view', 'disabled', false);",
+                  "  replaceResourceWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name'), 'sas_sf_params');",
+                  "  replaceViewWithScaffold('sas', 'sf_params', getResourceFieldValue('sas_options', 'structureFactor.name') + '_view', 'sas_sf_params_view');",
+                  "} else {",
+                  "  setViewValue('sas_sf_params_view', 'disabled', true);",
+                  "}"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }
