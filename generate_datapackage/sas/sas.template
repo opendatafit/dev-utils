@@ -84,8 +84,16 @@
       "layout": {
         "type": "bindfit",
         "spec": {
-          "control": ["model", "params"],
-          "main": ["graph", "table"],
+          "panes": [
+            {
+              "name": "control",
+              "tabs": ["model", "params"]
+            },
+            {
+              "name": "main",
+              "tabs": ["graph", "table"]
+            }
+          ],
           "tabs": [
             {
               "name": "model",
