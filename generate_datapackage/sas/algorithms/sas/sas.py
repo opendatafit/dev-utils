@@ -199,17 +199,28 @@ def main(
 
 
     class FileResource(Resource):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            if not self.data:
+                raise RuntimeError("FileResource file data cannot be empty")
+
         @property
         def file(self):
             return io.BytesIO(base64.b64decode(self.data))
 
         @property
         def file_name(self):
-            return self.title.rsplit(".", 1)[0]
+            try:
+                return self.title.rsplit(".", 1)[0]
+            except IndexError:
+                return ""
 
         @property
         def file_ext(self):
-            return self.title.rsplit(".", 1)[1]
+            try:
+                return self.title.rsplit(".", 1)[1]
+            except IndexError:
+                return ""
 
 
     # =========================================================================
