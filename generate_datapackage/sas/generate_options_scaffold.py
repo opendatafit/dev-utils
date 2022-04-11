@@ -13,6 +13,9 @@ from sasmodels.sasview_model import load_standard_models
 
 SCAFFOLD_DIR = "./algorithms/sas/inputs/"
 
+DEFAULT_MODEL = "sphere"
+DEFAULT_SF_MODEL = "hayter_msa"
+
 
 # Available methods for fitting
 # See: list_bumps_fitters.py
@@ -142,9 +145,10 @@ fields = [
 # Default selections
 data = {
     "method": methods[0],
-    "model": models[0],
-    "structureFactor": sf_models[-1],  # No structure factor
+    "model": next(i for i in models if i["name"] == DEFAULT_MODEL),
+    "structureFactor": next(i for i in sf_models if i["name"] == DEFAULT_SF_MODEL),
 }
+
 
 # Build resource
 resource = {

@@ -6,6 +6,10 @@ import os
 from copy import deepcopy
 
 
+DEFAULT_MODEL = "sphere"
+DEFAULT_SF_MODEL = "hayter_msa"
+
+
 def find(lst, key, value):
     for i in lst:
         if i[key] == value:
@@ -51,13 +55,13 @@ for algo in pkg["algorithms"]:
                     default_resource = deepcopy(find(
                         resource_scaffolds,
                         "name",
-                        "sphere",
+                        DEFAULT_MODEL,
                     ))
                 elif i["name"] == "sf_params":
                     default_resource = deepcopy(find(
                         resource_scaffolds,
                         "name",
-                        "hayter_msa",
+                        DEFAULT_SF_MODEL,
                     ))
 
                 default_resource["name"] = i["resource"]
@@ -72,11 +76,11 @@ for algo in pkg["algorithms"]:
 
                 scaffold_keys =  [ i["name"] for i in view_scaffolds ]
 
-                if "sphere_view" in scaffold_keys:
+                if DEFAULT_MODEL+"_view" in scaffold_keys:
                     default_view = deepcopy(find(
                         view_scaffolds,
                         "name",
-                        "sphere_view",
+                        DEFAULT_MODEL+"_view",
                     ))
                 elif "hayter_msa_view" in scaffold_keys:
                     default_view = deepcopy(find(

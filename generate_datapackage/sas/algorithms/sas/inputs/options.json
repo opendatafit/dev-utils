@@ -11,14 +11,14 @@
           "name": "LevenbergMarquardtFit"
         },
         "model": {
-          "title": "adsorbed_layer",
-          "name": "adsorbed_layer",
+          "title": "sphere",
+          "name": "sphere",
           "category": "shape:sphere",
-          "structureFactor": false
+          "structureFactor": true
         },
         "structureFactor": {
-          "title": "None",
-          "name": ""
+          "title": "hayter_msa",
+          "name": "hayter_msa"
         }
       },
       "schema": {
