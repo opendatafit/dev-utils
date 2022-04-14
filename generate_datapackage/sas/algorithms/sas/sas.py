@@ -273,13 +273,13 @@ def main(
     params_resource = ParameterResource(descriptor=params)
     # TODO: TEMP gross, used below to convert bumps results to resources
     model_params = params_resource
-    if sf_params is not None:
+    if sf_name and sf_params is not None:
         sf_params_resource = ParameterResource(descriptor=sf_params)
         # TODO: TEMP gross, used below to convert bumps results to resources
         sf_model_params = sf_params_resource
 
-    # Combine form factor/polydispersity params with SF params
-    params_resource.concat(sf_params_resource)
+        # Combine form factor/polydispersity params with SF params
+        params_resource.concat(sf_params_resource)
 
     if kwargs.get('plot_only', False):
         # Don't fit if plot_only flag set
@@ -364,6 +364,8 @@ def main(
 
     if sf_name:
         fit_model_sf_params = bumps_model_to_parameter_resource(model, sf_model_params)
+    else:
+        fit_model_sf_params = {}
 
     return {
         'result_data': data_sas_resource,
