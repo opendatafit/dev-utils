@@ -17,22 +17,76 @@ DEFAULT_MODEL = "sphere"
 DEFAULT_SF_MODEL = "hayter_msa"
 
 
+# Convenience method for converting model names to human readable titles
+
+def make_human_readable(name):
+    exceptions = {
+        "hardsphere": "Hard Sphere",
+        "stickyhardsphere": "Sticky Hard Sphere",
+        "squarewell": "Square Well",
+        "hayter_msa": "Hayter MSA",
+        "bcc_paracrystal": "BCC Paracrystal",
+        "fcc_paracrystal": "FCC Paracrystal",
+        "sc_paracrystal": "SC Paracrystal",
+        "be_polyelectrolyte": "BE Polyelectrolyte",
+        "rpa": "RPA",
+        "dab": "DAB",
+        "shape-independent": "Shape-independent",
+    }
+
+    if name in exceptions:
+        return exceptions[name]
+    elif "shape:" in name:
+        return ": ".join([ i.capitalize() for i in name.split(":") ])
+    else:
+        return " ".join([ i.capitalize() for i in name.split("_") ])
+
+
+
 # Available methods for fitting
 # See: list_bumps_fitters.py
 
 methods = [
     {
-        "title": "Levenberg-Marquardt",
-        "name": "LevenbergMarquardtFit"
+        "title": "Levenberg-Marquardt Fit",
+        "name": "LevenbergMarquardtFit",
     },
     {
-        "title": "BFGS",
-        "name": "BFGSFit"
+        "title": "BFGS Fit",
+        "name": "BFGSFit",
     },
     {
-        "title": "Simplex",
-        "name": "SimplexFit"
-    }
+        "title": "Simplex Fit",
+        "name": "SimplexFit",
+    },
+    {
+        "title": "DE Fit",
+        "name": "DeFit",
+    },
+    {
+        "title": "Dream Fit",
+        "name": "DreamFit",
+    },
+    {
+        "title": "MP Fit",
+        "name": "MPFit",
+    },
+    {
+        "title": "PS Fit",
+        "name": "PSFit",
+    },
+    {
+        "title": "PT Fit",
+        "name": "PTFit",
+    },
+    {
+        "title": "RL Fit",
+        "name": "RLFit",
+    },
+    {
+        "title": "Snob Fit",
+        "name": "SnobFit",
+    },
 ]
 
 
@@ -47,7 +101,7 @@ sf_models = []
 for model in model_dict.values():
     if model.is_structure_factor:
         sf_models.append({
-            "title": model.name,
+            "title": make_human_readable(model.name),
             "name": model.name,
         })
     else:
@@ -59,9 +113,9 @@ for model in model_dict.values():
             sf = True
 
         models.append({
-            "title": model.name, # Human readable name
+            "title": make_human_readable(model.name), # Human readable name
             "name": model.name, # Model key
-            "category": model.category, # List category
+            "category": make_human_readable(model.category), # List category
             "structureFactor": sf, # Enable/disable structure factor selection
         })
 
@@ -74,7 +128,7 @@ sf_models.append({
 fields = [
     {
         "name": "method",
-        "title": "Method",
+        "title": "Fit method",
         "description": "The optimisation method to use for fitting",
         "type": "object",
         "objectFields": [
@@ -93,7 +147,7 @@ fields = [
     },
     {
         "name": "model",
-        "title": "Model",
+        "title": "Fit model",
         "description": "Model to use for fitting",
         "type": "object",
         "objectFields": [
@@ -122,7 +176,7 @@ fields = [
     },
     {
         "name": "structureFactor",
-        "title": "Structure factor",
+        "title": "Structure factor model",
         "description": "Structure factor model to fit",
         "type": "object",
         "objectFields": [
@@ -177,9 +231,11 @@ view = {
         "fields": [
             {
                 "name": "method",
+                "searchEnabled": False,
             },
             {
                 "name": "model",
+                "searchEnabled": True,
                 "behaviours": [
                     {
                         "name": "changeModel",
@@ -200,6 +256,7 @@ view = {
             },
             {
                 "name": "structureFactor",
+                "searchEnabled": False,
                 "behaviours": [
                     {
                         "name": "changeStructureFactor",
