@@ -87,7 +87,7 @@
           "panes": [
             {
               "name": "control",
-              "tabs": ["options"]
+              "tabs": ["options", "params", "sf_params"]
             },
             {
               "name": "main",
@@ -100,6 +100,18 @@
               "title": "Fit options",
               "icon": "",
               "views": ["sas_data_view", "sas_options_view", "sas_params_view", "sas_sf_params_view"]
+            },
+            {
+              "name": "params",
+              "title": "Model",
+              "icon": "",
+              "views": ["sas_params_view"]
+            },
+            {
+              "name": "sf_params",
+              "title": "Structure factor model",
+              "icon": "",
+              "views": ["sas_sf_params_view"]
             },
             {
               "name": "graph",
