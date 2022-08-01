@@ -11,6 +11,8 @@ import sasmodels as sm
 from sasmodels.sasview_model import load_standard_models 
 from sasmodels.weights import MODELS as POLYDISPERSITY_MODELS
 
+from helpers import make_human_readable
+
 
 SCAFFOLD_DIR = "./algorithms/sas/inputs/"
 
@@ -36,13 +38,14 @@ def index(lst, key, value):
 # SasView model conversion helpers
 
 
-def _base_sasview_model_to_view_spec(model):
+def _base_sasview_model_to_view_spec(model, title_prefix=""):
     params = diff(model.getParamList(), model.getDispParamList())
 
     # Make view descriptor
     view_descriptor = {
         "name": model.name + "_view",
-        "title": model.name,
+        # "title": title_prefix + " (" + make_human_readable(model.name) + ")",
+        "title": title_prefix,
         "resources": [model.name],
         "specType": "opendatafit-params",
         "spec": {
@@ -63,9 +66,12 @@ def _base_sasview_model_to_view_spec(model):
     return view_descriptor
 
 
-def sasview_model_to_view_spec(model, polydispersity=False):
+def sasview_model_to_view_spec(model, polydispersity=False, title_prefix=""):
     # Build base params view
-    view_descriptor = _base_sasview_model_to_view_spec(model)
+    view_descriptor = _base_sasview_model_to_view_spec(
+        model,
+        title_prefix=title_prefix
+    )
 
     if not polydispersity:
         return view_descriptor
@@ -414,6 +420,7 @@ if __name__ == "__main__":
             view = sasview_model_to_view_spec(
                 model(),
                 polydispersity=True,
+                title_prefix="Model parameters",
             )
 
             params_resources.append(resource)
@@ -427,6 +434,7 @@ if __name__ == "__main__":
             view = sasview_model_to_view_spec(
                 model(),
                 polydispersity=False,
+                title_prefix="Structure factor model parameters",
             )
 
             sf_params_resources.append(resource)

@@ -10,37 +10,13 @@ sys.path.append(SASVIEW_SOURCE_PATH)
 import sasmodels as sm
 from sasmodels.sasview_model import load_standard_models 
 
+from helpers import make_human_readable
+
 
 SCAFFOLD_DIR = "./algorithms/sas/inputs/"
 
 DEFAULT_MODEL = "sphere"
 DEFAULT_SF_MODEL = "hayter_msa"
-
-
-# Convenience method for converting model names to human readable titles
-
-def make_human_readable(name):
-    exceptions = {
-        "hardsphere": "Hard Sphere",
-        "stickyhardsphere": "Sticky Hard Sphere",
-        "squarewell": "Square Well",
-        "hayter_msa": "Hayter MSA",
-        "bcc_paracrystal": "BCC Paracrystal",
-        "fcc_paracrystal": "FCC Paracrystal",
-        "sc_paracrystal": "SC Paracrystal",
-        "be_polyelectrolyte": "BE Polyelectrolyte",
-        "rpa": "RPA",
-        "dab": "DAB",
-        "shape-independent": "Shape-independent",
-    }
-
-    if name in exceptions:
-        return exceptions[name]
-    elif "shape:" in name:
-        return ": ".join([ i.capitalize() for i in name.split(":") ])
-    else:
-        return " ".join([ i.capitalize() for i in name.split("_") ])
-
 
 
 # Available methods for fitting
