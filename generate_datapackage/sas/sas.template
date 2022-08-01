@@ -87,7 +87,7 @@
           "panes": [
             {
               "name": "control",
-              "tabs": ["model", "params"]
+              "tabs": ["options"]
             },
             {
               "name": "main",
@@ -96,16 +96,10 @@
           ],
           "tabs": [
             {
-              "name": "model",
-              "title": "Model",
+              "name": "options",
+              "title": "Fit options",
               "icon": "",
-              "views": ["sas_data_view", "sas_options_view"]
-            },
-            {
-              "name": "params",
-              "title": "Params",
-              "icon": "",
-              "views": ["sas_params_view", "sas_sf_params_view"]
+              "views": ["sas_data_view", "sas_options_view", "sas_params_view", "sas_sf_params_view"]
             },
             {
               "name": "graph",
