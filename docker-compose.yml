@@ -1,0 +1,95 @@
+version: "3"
+
+services:
+  mongodb:
+    image: mongo:4.4.5-bionic
+    volumes:
+      - ./db-data:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=opendatafit
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    networks:
+      - mongodb-network
+
+  rabbitmq:
+    image: "rabbitmq:3-management-alpine"
+    ports:
+      # AMQP port
+      - "5672:5672"
+      # Management UI port
+      - "15672:15672"
+    networks:
+      - rabbitmq-network
+
+  opendatafit-store:
+    image: opendatafit/opendatafit-store
+    ports:
+      - "5000:5000"
+    build:
+      context: ${OPENDATAFIT_STORE_SRC}
+    networks:
+      - opendatafit-store-network
+      - mongodb-network
+    depends_on:
+      - "mongodb"
+
+  opendatafit-users:
+    image: opendatafit/opendatafit-users
+    ports:
+      - "5001:5000"
+    build:
+      context: ${OPENDATAFIT_USERS_SRC}
+    networks:
+      - mongodb-network
+    depends_on:
+      - "mongodb"
+
+  opendatafit-notify:
+    image: opendatafit/opendatafit-notify
+    ports:
+      - "5002:5000"
+    build:
+      context: ${OPENDATAFIT_NOTIFY_SRC}
+    networks:
+      - opendatafit-notify-network  # Used by notify test-client
+      - rabbitmq-network
+    depends_on:
+      - "rabbitmq"
+
+  opendatafit-scheduler:
+    image: opendatafit/opendatafit-scheduler
+    build:
+      context: ${OPENDATAFIT_SCHEDULER_SRC}
+    networks:
+      - rabbitmq-network
+      - opendatafit-lambda-network
+    depends_on:
+      - "rabbitmq"
+      - "opendatafit-lambda"
+
+  opendatafit-lambda:
+    image: opendatafit/opendatafit-lambda
+    build:
+      context: ${OPENDATAFIT_CONTAINER_BASE_SRC}
+    environment:
+      # Use local Lambda RIE emulator
+      - LOCAL_LAMBDA=1
+    networks:
+      - opendatafit-lambda-network
+      - opendatafit-store-network
+    depends_on:
+      - "opendatafit-store"
+
+networks:
+  mongodb-network:
+    name: mongodb-network
+  rabbitmq-network:
+    name: rabbitmq-network
+  opendatafit-notify-network:
+    name: opendatafit-notify-network
+  opendatafit-store-network:
+    name: opendatafit-store-network
+  opendatafit-lambda-network:
+    name: opendatafit-lambda-network
