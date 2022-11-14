@@ -69,7 +69,7 @@ def main(
         return model
 
 
-    def bumps_model_to_parameter_resource(model, params):
+    def bumps_model_to_parameter_resource(model, params, stderr):
         """
         " params: frictionless.Resource
         " model: sasmodels.bumps_model.Model
@@ -80,6 +80,20 @@ def main(
         # bumps_model.Model class is a wrapper around sasview_model.Model,
         # containing fitting information on top of model definition
 
+        # Get array of only fitted parameters
+        fitted_params = []
+        for p in model.parameters().values():
+            if not p.fixed:
+                fitted_params.append(p.name)
+
+        # Create dict of fitted parameters vs. stderr values
+        if stderr is not None:
+            stderr_dict = dict(zip(fitted_params, stderr[0]))
+        else:
+            stderr_dict = None
+
+        print("=========================================")
+        # TODO: This actually sets SF parameters as well... oops
         for param in params.get_values().keys():
             params.set_param(
                 key=param,
@@ -87,6 +101,28 @@ def main(
                 field="value",
             )
 
+            # If parameter is fitted...
+            if params.get_param(key=param, field="vary"):
+                # Get parameter stderr
+                print(param, "error:", stderr_dict.get(param))
+
+                # Add error field
+                # TODO: check "vary" exists, and not PD parameter??
+                params.add_field(
+                    key=param,
+                    name="stderr",
+                    title="Error",
+                    type="number",
+                )
+
+                # Set error
+                params.set_param(
+                    key=param,
+                    value=stderr_dict.get(param),
+                    field="stderr",
+                )
+
+        print("=========================================")
         return params
 
 
@@ -152,10 +188,13 @@ def main(
             self.data.update(resource.data)
 
         def get_param(self, key, field=None):
-            if field is not None:
-                return self.data[key][field]
-            else:
-                return self.data[key]
+            try:
+                if field is not None:
+                    return self.data[key][field]
+                else:
+                    return self.data[key]
+            except KeyError:
+                return None
 
         def set_param(self, key, value, field=None):
             if field is not None:
@@ -182,7 +221,11 @@ def main(
 
         def add_field(self, key, name, **kwargs):
             # TODO: Test this works
-            key_schema = find(self.schema["keys"], "name", key)
+            try:
+                key_schema = find(self.schema["keys"], "name", key)
+            except TypeError:
+                # Ignore error caused by trying to add a field to a non-existent key... from add_field
+                return
             key_schema["fields"].append({"name": name, **kwargs})
 
 
@@ -308,19 +351,19 @@ def main(
 
     if run_fit:
         best, fbest = fitdriver.fit()
-        print("====================================================")
-        import pprint
-        pprint.pprint(dir(problem.fitness))
-        pprint.pprint(dir(problem))
-        print("chisq", problem.chisq())
-        print("nllf", problem.nllf())
-        print("cov", problem.cov())
-        print("dof", problem.dof)
+        # print("====================================================")
+        # import pprint
+        # pprint.pprint(dir(problem.fitness))
+        # pprint.pprint(dir(problem))
+        # print("chisq", problem.chisq())
+        # print("nllf", problem.nllf())
+        # print("cov", problem.cov())
+        # print("dof", problem.dof)
         # Returns array of stderr corresponding with all fitted params
         # + something else... see docs
-        print("stderr", problem.stderr())
-        print("summarize", problem.summarize())
-        print("====================================================")
+        # print("stderr", problem.stderr())
+        # print("summarize", problem.summarize())
+        # print("====================================================")
 
     # Build fit curve resource
     # TODO: CHECK CONVERGENCE
@@ -380,10 +423,14 @@ def main(
     data_sas_resource.data = rows
 
     # Optimised parameter resources
-    fit_model_params = bumps_model_to_parameter_resource(model, model_params)
+    if run_fit:
+        stderr = problem.stderr()
+    else:
+        stderr = None
+    fit_model_params = bumps_model_to_parameter_resource(model, model_params, stderr)
 
     if sf_name:
-        fit_model_sf_params = bumps_model_to_parameter_resource(model, sf_model_params)
+        fit_model_sf_params = bumps_model_to_parameter_resource(model, sf_model_params, stderr)
     else:
         fit_model_sf_params = {}
 
