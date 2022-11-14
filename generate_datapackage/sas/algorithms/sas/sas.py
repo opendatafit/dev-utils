@@ -308,6 +308,19 @@ def main(
 
     if run_fit:
         best, fbest = fitdriver.fit()
+        print("====================================================")
+        import pprint
+        pprint.pprint(dir(problem.fitness))
+        pprint.pprint(dir(problem))
+        print("chisq", problem.chisq())
+        print("nllf", problem.nllf())
+        print("cov", problem.cov())
+        print("dof", problem.dof)
+        # Returns array of stderr corresponding with all fitted params
+        # + something else... see docs
+        print("stderr", problem.stderr())
+        print("summarize", problem.summarize())
+        print("====================================================")
 
     # Build fit curve resource
     # TODO: CHECK CONVERGENCE
