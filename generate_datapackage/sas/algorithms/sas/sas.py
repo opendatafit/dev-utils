@@ -315,6 +315,7 @@ def main(
     fit_df = pd.DataFrame(data={
         'x':         problem.fitness._data.x.flatten(),
         'y':         problem.fitness.theory().flatten(),
+        'y_raw':     problem.fitness._data.y.flatten(),
         'residuals': problem.fitness.residuals().flatten(),
     })
 
@@ -333,6 +334,12 @@ def main(
                 },
                 {
                     'name': 'y',
+                    'type': 'number',
+                    'title': data_sas._yaxis,
+                    'unit': data_sas._yunit,
+                },
+                {
+                    'name': 'y_raw',
                     'type': 'number',
                     'title': data_sas._yaxis,
                     'unit': data_sas._yunit,
