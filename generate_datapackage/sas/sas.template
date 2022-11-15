@@ -101,7 +101,7 @@
             },
             {
               "name": "main",
-              "tabs": ["graph", "table"]
+              "tabs": ["graph", "table", "statistics"]
             }
           ],
           "tabs": [
@@ -134,6 +134,12 @@
               "title": "Fit table",
               "icon": "",
               "views": ["sas_fit_table_view"]
+            },
+            {
+              "name": "statistics",
+              "title": "Fit statistics",
+              "icon": "",
+              "views": ["sas_result_fit_statistics_view"]
             }
           ]
         }
