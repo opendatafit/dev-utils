@@ -68,11 +68,19 @@
           "description": "Fitted parameters",
           "type": "resource",
           "resource": "sas_result_sf_params"
+        },
+        {
+          "name": "result_fit_statistics",
+          "title": "Fit statistics",
+          "description": "Fit statistics",
+          "type": "resource",
+          "resource": "sas_result_fit_statistics"
         }
       ]
     }
   ],
-  "resources": [],
+  "resources": [
+  ],
   "views": [
   ],
   "displays": [

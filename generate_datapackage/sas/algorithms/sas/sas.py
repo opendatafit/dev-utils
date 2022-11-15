@@ -434,10 +434,83 @@ def main(
     else:
         fit_model_sf_params = {}
 
+    if run_fit:
+        chisq = problem.chisq()
+        nllf = problem.nllf()
+        dof = problem.dof
+    else:
+        chisq = None
+        nllf = None
+        dof = None
+
+    fit_statistics = {
+      "name": "sas_result_fit_statistics",
+      "title": "Fit statistics",
+      "description": "Goodness of fit statistics",
+      "profile": "data-resource",
+      "tmpprofile": "parameter-data-resource",
+      "data": {
+        "chisq": {
+          "value": chisq
+        },
+        "nllf": {
+          "value": nllf
+        },
+        "dof": {
+          "value": dof
+        }
+      },
+      "format": "json",
+      "schema": {
+        "fields": [
+
+        ],
+        "keys": [
+          {
+            "fields": [
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              }
+            ],
+            "name": "chisq",
+            "title": "Chi Squared",
+            "unit": ""
+          },
+          {
+            "fields": [
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              }
+            ],
+            "name": "nllf",
+            "title": "Negative Log Likelihood",
+            "unit": ""
+          },
+          {
+            "fields": [
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              }
+            ],
+            "name": "dof",
+            "title": "Degrees of Freedom",
+            "unit": ""
+          }
+        ]
+      }
+    }
+
     return {
         'result_data': data_sas_resource,
         'result_fit': fit_table,
         'result_params': fit_model_params,
         'result_sf_params': fit_model_sf_params,
+        'result_fit_statistics': fit_statistics,
     }
 
