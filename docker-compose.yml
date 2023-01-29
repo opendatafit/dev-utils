@@ -72,6 +72,7 @@ services:
   opendatafit-lambda:
     image: opendatafit/opendatafit-lambda
     build:
+      target: development
       context: ${OPENDATAFIT_CONTAINER_BASE_SRC}
     environment:
       # Use local Lambda RIE emulator
