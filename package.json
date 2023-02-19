@@ -1,5 +1,5 @@
 {
-  "name": "opendatafit-dev-utils",
+  "name": "@opendatafit/dev-utils",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opendatafit/opendatafit-dev-utils.git"
+    "url": "git+https://github.com/opendatafit/dev-utils.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/opendatafit/opendatafit-dev-utils/issues"
+    "url": "https://github.com/opendatafit/dev-utils/issues"
   },
-  "homepage": "https://github.com/opendatafit/opendatafit-dev-utils#readme"
+  "homepage": "https://github.com/opendatafit/dev-utils#readme"
 }
