@@ -29,6 +29,10 @@ services:
       - "5000:5000"
     build:
       context: ${ODF_STORE_SRC}
+    environment:
+      - FLASK_SECRET_KEY=icanhaxsecretkey?
+      - JWT_SECRET_KEY=icanhaxsecretkey?
+      - MONGO_URI=mongodb://opendatafit:password@mongodb:27017/
     networks:
       - store-network
       - mongodb-network
