@@ -45,6 +45,11 @@ services:
       - "5001:5000"
     build:
       context: ${ODF_USERS_SRC}
+    environment:
+      - FLASK_SECRET_KEY=icanhaxsecretkey?
+      - JWT_SECRET_KEY=icanhaxsecretkey?
+      - JWT_REFRESH_SECRET_KEY=icanhaxsecretkey??
+      - MONGO_URI=mongodb://opendatafit:password@mongodb:27017/
     networks:
       - mongodb-network
     depends_on:
