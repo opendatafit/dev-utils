@@ -1,4 +1,4 @@
-# opendatafit-dev-utils
+# dev-utils
 
 ## Scripts
 
