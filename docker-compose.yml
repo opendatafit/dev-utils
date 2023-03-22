@@ -33,6 +33,7 @@ services:
       - FLASK_SECRET_KEY=icanhaxsecretkey?
       - JWT_SECRET_KEY=icanhaxsecretkey?
       - MONGO_URI=mongodb://opendatafit:password@mongodb:27017/
+      - CORS_ALLOWED_ORIGINS=*
     networks:
       - store-network
       - mongodb-network
