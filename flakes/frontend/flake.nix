@@ -13,6 +13,7 @@
     (system: let
       pkgs = import nixpkgs {
         inherit system;
+        defaultPackage.x86_64-linux = self.packages.x86_64-linux.frontend;
       };
     in {
       devShells.default = pkgs.mkShell {
