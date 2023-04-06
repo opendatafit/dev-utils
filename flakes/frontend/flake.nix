@@ -19,11 +19,13 @@
         buildInputs = [
           # Set the major version of Node.js
           pkgs.nodejs-16_x
-
           pkgs.yarn
-
           pkgs.nodePackages.typescript
           # pkgs.nodePackages.typescript-language-server
+
+          # dependencies for grip markdown viewer
+          pkgs.python310
+          pkgs.python310.pkgs.grip
         ];
       };
     });
