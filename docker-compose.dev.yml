@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+  mongodb:
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=opendatafit
+      - MONGO_INITDB_ROOT_PASSWORD=password
+
+  rabbitmq:
+    ports:
+      # AMQP port
+      - "5672:5672"
+      # Management UI port
+      - "15672:15672"
+
+  store:
+    ports:
+      - "5000:5000"
+    env_file:
+      - store.dev.env
+
+  users:
+    ports:
+      - "5001:5000"
+    env_file:
+      - users.dev.env
+
+  jobjockey:
+    ports:
+      - "5002:5000"
+    env_file:
+      - jobjockey.dev.env
+
+  scheduler:
+    env_file:
+      - scheduler.dev.env
+
+  execution:
+    env_file:
+      - execution.dev.env
