@@ -8,26 +8,20 @@ import pymongo
 import json
 from pathlib import Path
 
-# Import helpers and configs from store repo
 sys.path.append(os.environ.get("ODF_STORE_SRC"))
 from app.helpers import create_datapackage
-from app.config import DevelopmentConfig, TestingConfig, ProductionConfig
 
 sys.path.append(os.environ.get("ODF_USERS_SRC") + "/tests")
-from helpers import create_user  # noqa: E402
+from helpers import create_or_return_user  # noqa: E402
 
 
-if os.environ.get("APP_ENV") == "production":
-    MONGO_URI = os.environ.get("MONGO_URI")
-    MONGO_DBNAME = ProductionConfig.MONGO_DBNAME
-    USERS_DBNAME = ProductionConfig.USERS_DBNAME
-    USERS_COLNAME = ProductionConfig.USERS_COLNAME
-else:
-    MONGO_URI = TestingConfig.MONGO_URI
-    MONGO_DBNAME = DevelopmentConfig.MONGO_DBNAME
-    USERS_DBNAME = TestingConfig.USERS_DBNAME
-    USERS_COLNAME = TestingConfig.USERS_COLNAME
-
+# These environment variables are set from dev-utils run scripts currently
+# This is a temp hack, will be set by direnv in future
+# Currently in production (maintenance box) we will have to set them manually
+MONGO_URI = os.environ.get("MONGO_URI") # Externally accessible Mongo DB URI
+MONGO_DBNAME = os.environ.get("MONGO_DBNAME")
+USERS_DBNAME = os.environ.get("USERS_DBNAME")
+USERS_COLNAME = os.environ.get("USERS_COLNAME")
 
 # Connect to DB
 client = pymongo.MongoClient(MONGO_URI)
@@ -35,8 +29,8 @@ db = client[MONGO_DBNAME]
 
 mugshot = Path("./mugshots/opendatafit.base64").read_text()
 
-# Create opendata.fit user
-opendatafit = create_user(
+# Create master opendata.fit user
+opendatafit = create_or_return_user(
     collection=client[USERS_DBNAME][USERS_COLNAME],
     email="opendatafit@proton.me",
     password="password",

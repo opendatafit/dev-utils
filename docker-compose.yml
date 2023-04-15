@@ -5,35 +5,18 @@ services:
     image: mongo:4.4.5-bionic
     volumes:
       - ./db-data:/data/db
-    ports:
-      - "27017:27017"
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=opendatafit
-      - MONGO_INITDB_ROOT_PASSWORD=password
     networks:
       - mongodb-network
 
   rabbitmq:
     image: "rabbitmq:3-management-alpine"
-    ports:
-      # AMQP port
-      - "5672:5672"
-      # Management UI port
-      - "15672:15672"
     networks:
       - rabbitmq-network
 
   store:
     image: opendatafit/store
-    ports:
-      - "5000:5000"
     build:
       context: ${ODF_STORE_SRC}
-    environment:
-      - FLASK_SECRET_KEY=icanhaxsecretkey?
-      - JWT_SECRET_KEY=icanhaxsecretkey?
-      - MONGO_URI=mongodb://opendatafit:password@mongodb:27017/
-      - CORS_ALLOWED_ORIGINS=*
     networks:
       - store-network
       - mongodb-network
@@ -42,16 +25,8 @@ services:
 
   users:
     image: opendatafit/users
-    ports:
-      - "5001:5000"
     build:
       context: ${ODF_USERS_SRC}
-    environment:
-      - FLASK_SECRET_KEY=icanhaxsecretkey?
-      - JWT_SECRET_KEY=icanhaxsecretkey?
-      - JWT_REFRESH_SECRET_KEY=icanhaxsecretkey??
-      - MONGO_URI=mongodb://opendatafit:password@mongodb:27017/
-      - CORS_ALLOWED_ORIGINS=*
     networks:
       - mongodb-network
     depends_on:
@@ -59,13 +34,8 @@ services:
 
   jobjockey:
     image: opendatafit/jobjockey
-    ports:
-      - "5002:5000"
     build:
       context: ${ODF_JOBJOCKEY_SRC}
-    environment:
-      - AMQP_HOST=http://rabbitmq:5672/
-      - CORS_ALLOWED_ORIGINS=*
     networks:
       - jobjockey-network  # Used by notify test-client
       - rabbitmq-network
@@ -76,9 +46,6 @@ services:
     image: opendatafit/scheduler
     build:
       context: ${ODF_SCHEDULER_SRC}
-    environment:
-      - AMQP_HOST=http://rabbitmq:5672/
-      - LAMBDA_HOST=http://execution:8080/2015-03-31/functions/function/invocations
     networks:
       - rabbitmq-network
       - execution-network
@@ -91,10 +58,6 @@ services:
     build:
       target: development
       context: ${ODF_EXECUTION_BASE_SRC}
-    environment:
-      - OPENDATAFIT_STORE_HOST=http://store:5000/api/v1
-      # Use local Lambda RIE emulator
-      - LOCAL_LAMBDA=1
     networks:
       - execution-network
       - store-network
