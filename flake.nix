@@ -1,5 +1,5 @@
 {
-  description = "opendata.fit services flake";
+  description = "opendata.fit dev-utils flake";
 
   # Use the unstable nixpkgs to use the latest set of node packages
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/master";
@@ -29,7 +29,7 @@
             python -m venv .venv
           fi
           source ./$VENV/bin/activate
-        ''
+        '';
       };
     });
 }
