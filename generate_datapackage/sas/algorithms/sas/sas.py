@@ -95,6 +95,8 @@ def main(
         print("=========================================")
         # TODO: This actually sets SF parameters as well... oops
         for param in params.get_values().keys():
+            stderr_value = stderr_dict.get(param) if stderr_dict is not None else None
+
             params.set_param(
                 key=param,
                 value=model.state()[param],
@@ -104,7 +106,7 @@ def main(
             # If parameter is fitted...
             if params.get_param(key=param, field="vary"):
                 # Get parameter stderr
-                print(param, "error:", stderr_dict.get(param))
+                print(param, "error:", stderr_value)
 
                 # Add error field
                 # TODO: check "vary" exists, and not PD parameter??
@@ -118,7 +120,7 @@ def main(
                 # Set error
                 params.set_param(
                     key=param,
-                    value=stderr_dict.get(param),
+                    value=stderr_value,
                     field="stderr",
                 )
 
