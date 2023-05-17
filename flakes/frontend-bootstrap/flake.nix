@@ -1,5 +1,5 @@
 {
-  description = "opendata.fit development environment for the webapp and frontend packages";
+  description = "opendata.fit flake for bootstrapping";
 
   # Use the unstable nixpkgs to use the latest set of node packages
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/master";
