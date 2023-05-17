@@ -1,0 +1,401 @@
+{
+  "title": "Bindfit",
+  "description": "Binding constant fitter",
+  "algorithms": [
+    {
+      "name": "bindfit",
+      "title": "Bindfit",
+      "code": "",
+      "inputs": [
+        {
+          "name": "data",
+          "title": "Data",
+          "description": "Input data",
+          "type": "resource",
+          "resource": "bindfit_data"
+        },
+        {
+          "name": "params",
+          "title": "Parameters",
+          "description": "Parameters",
+          "type": "resource",
+          "resource": "bindfit_params",
+          "resourceScaffolds": [
+            {
+              "name": "nmr_1to1",
+              "data": {
+                "k": {
+                  "vary": true,
+                  "value": 100,
+                  "lowerBound": 0,
+                  "upperBound": "Infinity"
+                }
+              },
+              "schema": {
+                "keys": [
+                  {
+                    "name": "nmr_1to1",
+                    "unit": "M^{-1}",
+                    "fields": [
+                      {
+                        "name": "vary",
+                        "title": "Vary",
+                        "type": "boolean"
+                      },
+                      {
+                        "name": "value",
+                        "title": "Value",
+                        "type": "number"
+                      },
+                      {
+                        "name": "lowerBound",
+                        "title": "Lower bound",
+                        "type": "number"
+                      },
+                      {
+                        "name": "upperBound",
+                        "title": "Upper bound",
+                        "type": "number"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "profile": "opendatafit-params"
+            }
+          ],
+          "viewScaffolds": [
+            {
+              "name": "nmr_1to1_view",
+              "title": "Parameters",
+              "resources": [
+                "nmr_1to1"
+              ],
+              "specType": "opendatafit-params",
+              "spec": {
+                "keys": [
+                  {
+                    "name": "k"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "options",
+          "title": "Options",
+          "description": "Options",
+          "type": "resource",
+          "resource": "bindfit_options"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result_data",
+          "title": "Data",
+          "description": "Output data",
+          "type": "resource",
+          "resource": "bindfit_result_data"
+        },
+        {
+          "name": "result_fit",
+          "title": "Fit curve",
+          "description": "Fit curve",
+          "type": "resource",
+          "resource": "bindfit_result_fit"
+        },
+        {
+          "name": "result_params",
+          "title": "Fitted parameters",
+          "description": "Fitted parameters",
+          "type": "resource",
+          "resource": "bindfit_result_params"
+        },
+        {
+          "name": "result_fit_statistics",
+          "title": "Fit statistics",
+          "description": "Fit statistics",
+          "type": "resource",
+          "resource": "bindfit_result_fit_statistics"
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "bindfit_data",
+      "title": "",
+      "format": "file",
+      "data": "",
+      "profile": "opendatafit-file"
+    },
+    {
+      "name": "bindfit_params",
+      "data": {
+        "k": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": "Infinity"
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "nmr_1to1",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      },
+      "profile": "opendatafit-params"
+    },
+    {
+      "name": "bindfit_options",
+      "data": {
+        "method": {
+          "name": "neldermead",
+          "title": "Nelder-Mead"
+        },
+        "model": {
+          "name": "nmr_1to1",
+          "title": "NMR 1:1"
+        },
+        "dilutionCorrection": {
+          "value": false
+        },
+        "subInitValues": {
+          "value": true
+        }
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "method",
+            "title": "Fit method",
+            "description": "The optimisation algorithm to use for fitting",
+            "type": "object",
+            "objectFields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              }
+            ],
+            "constraints": {
+              "enum": [
+                {
+                  "name": "neldermead",
+                  "title": "Nelder-Mead"
+                },
+                {
+                  "name": "lbfgsb",
+                  "title": "L-BFGS-B"
+                }
+              ]
+            }
+          },
+          {
+            "name": "model",
+            "title": "Fit model",
+            "description": "The model to use for fitting",
+            "type": "object",
+            "objectFields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              }
+            ],
+            "constraints": {
+              "enum": [
+                {
+                  "name": "nmr_1to1",
+                  "title": "NMR 1:1"
+                }
+              ]
+            }
+          },
+          {
+            "name": "dilutionCorrection",
+            "title": "Dilution correction",
+            "description": "Whether to apply dilution correction",
+            "type": "boolean"
+          },
+          {
+            "name": "subInitValues",
+            "title": "Subtract initial values",
+            "description": "Whether to subtract initial values",
+            "type": "boolean"
+          }
+        ]
+      },
+      "profile": "opendatafit-options"
+    },
+    {
+      "name": "bindfit_result_data",
+      "profile": "tabular-data-resource"
+    },
+    {
+      "name": "bindfit_result_fit",
+      "profile": "tabular-data-resource"
+    },
+    {
+      "name": "bindfit_result_params",
+      "profile": "opendatafit-params"
+    }
+  ],
+  "views": [
+    {
+      "name": "bindfit_data_view",
+      "specType": "opendatafit-file",
+      "spec": {},
+      "resources": [
+        "bindfit_data"
+      ]
+    },
+    {
+      "name": "bindfit_params_view",
+      "title": "Model parameters",
+      "resources": [
+        "bindfit_params",
+        "bindfit_result_params"
+      ],
+      "specType": "opendatafit-params",
+      "spec": {
+        "keys": [
+          {
+            "name": "k"
+          }
+        ]
+      }
+    },
+    {
+      "name": "bindfit_options_view",
+      "title": "Model parameters",
+      "resources": [
+        "bindfit_options"
+      ],
+      "specType": "opendatafit-options",
+      "spec": {
+        "fields": [
+          {
+            "name": "method"
+          },
+          {
+            "name": "model",
+            "behaviours": []
+          },
+          {
+            "name": "dilutionCorrection"
+          },
+          {
+            "name": "subInitValues"
+          }
+        ]
+      }
+    },
+    {
+      "name": "bindfit_fit_table_view",
+      "spec": {},
+      "specType": "opendatafit-table",
+      "resources": [
+        "bindfit_result_fit"
+      ]
+    },
+    {
+      "name": "bindfit_fit_graph_view",
+      "spec": {},
+      "specType": "vega",
+      "resources": [
+        "bindfit_result_data",
+        "bindfit_result_fit"
+      ]
+    }
+  ],
+  "displays": [
+    {
+      "name": "bindfit_display",
+      "title": "Bindfit",
+      "icon": "",
+      "algorithms": [
+        "bindfit"
+      ],
+      "layout": {
+        "type": "bindfit",
+        "spec": {
+          "panes": [
+            {
+              "name": "control",
+              "tabs": ["options", "params"]
+            },
+            {
+              "name": "main",
+              "tabs": ["graph", "table", "statistics"]
+            }
+          ],
+          "tabs": [
+            {
+              "name": "options",
+              "title": "Fit options",
+              "icon": "",
+              "views": ["bindfit_data_view", "bindfit_options_view", "bindfit_params_view"]
+            },
+            {
+              "name": "params",
+              "title": "Model",
+              "icon": "",
+              "views": ["bindfit_params_view"]
+            },
+            {
+              "name": "graph",
+              "title": "Fit graph",
+              "icon": "",
+              "views": ["bindfit_fit_graph_view"]
+            },
+            {
+              "name": "table",
+              "title": "Fit table",
+              "icon": "",
+              "views": ["bindfit_fit_table_view"]
+            },
+            {
+              "name": "statistics",
+              "title": "Fit statistics",
+              "icon": "",
+              "views": ["bindfit_result_fit_statistics_view"]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
