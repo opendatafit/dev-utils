@@ -1,0 +1,298 @@
+{
+  "title": "Bindfit",
+  "description": "Binding constant fitter",
+  "algorithms": [
+    {
+      "name": "bindfit",
+      "title": "Bindfit",
+      "code": "ZGVmIG1haW4oCiAgICBkYXRhLAogICAgcGFyYW1zLAogICAgb3B0aW9ucywKICAgICoqa3dhcmdzLAopOgogICAgaW1wb3J0IG51bXB5IGFzIG5wCiAgICBpbXBvcnQgcGFuZGFzIGFzIHBkCgogICAgaW1wb3J0IGJpbmRmaXQKCgogICAgIyBDb252ZXJ0IHBhcmFtcyB0byBCaW5kZml0IGZvcm1hdAogICAgIyBUT0RPOiBNb2RpZnkgbGlicmFyeSB0byBhY2NlcHQgRnJpY3Rpb25sZXNzIHBhcmFtcyBmb3JtYXQKICAgIGJpbmRmaXRfcGFyYW1zID0ge30KCiAgICBmb3Iga2V5LCBwYXJhbSBpbiBwYXJhbXNbImRhdGEiXS5pdGVtcygpOgogICAgICAgIGJpbmRmaXRfcGFyYW1zLnVwZGF0ZSh7CiAgICAgICAgICAgIGtleTogewogICAgICAgICAgICAgICAgImluaXQiOiBwYXJhbVsidmFsdWUiXSwKICAgICAgICAgICAgICAgICJib3VuZHMiOiB7CiAgICAgICAgICAgICAgICAgICAgIm1pbiI6IHBhcmFtWyJsb3dlckJvdW5kIl0sCiAgICAgICAgICAgICAgICAgICAgIm1heCI6IHBhcmFtWyJ1cHBlckJvdW5kIl0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9CiAgICAgICAgfSkKCiAgICAjIEJpbmRmaXQgb3B0aW9ucwogICAgbW9kZWwgPSBvcHRpb25zWyJkYXRhIl1bIm1vZGVsIl0KICAgIG1ldGhvZCA9IG9wdGlvbnNbImRhdGEiXVsibWV0aG9kIl0KICAgIG5vcm1hbGlzZSA9IG9wdGlvbnNbImRhdGEiXVsibm9ybWFsaXNlIl0KICAgIGRpbHV0ZSA9IG9wdGlvbnNbImRhdGEiXVsiZGlsdXRlIl0KICAgIGZsYXZvdXIgPSBvcHRpb25zWyJkYXRhIl1bImZsYXZvdXIiXQoKICAgICMgTG9hZCBkYXRhCiAgICBkZWYgZGF0YXBhY2thZ2VfdG9fZGF0YWZyYW1lKGRwKToKICAgICAgICBkZiA9IHBkLkRhdGFGcmFtZS5mcm9tX2RpY3QoZHBbImRhdGEiXSkKICAgICAgICAjIFJlb3JkZXIgY29sdW1ucyBieSBzY2hlbWEgZmllbGQgb3JkZXIKICAgICAgICBjb2xzID0gWyBmaWVsZFsibmFtZSJdIGZvciBmaWVsZCBpbiBkcFsic2NoZW1hIl1bImZpZWxkcyJdIF0KICAgICAgICBwcmludCgiPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09IikKICAgICAgICBwcmludChjb2xzKQogICAgICAgIHByaW50KCI9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0iKQogICAgICAgIGRmID0gZGZbY29sc10KICAgICAgICByZXR1cm4gZGYKCiAgICBkZiA9IGRhdGFwYWNrYWdlX3RvX2RhdGFmcmFtZShkYXRhKQogICAgcHJpbnQoIj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSIpCiAgICBpbXBvcnQgcHByaW50CiAgICBwcHJpbnQucHByaW50KGRmKQogICAgcHJpbnQoIj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSIpCiAgICAjIEJpbmRmaXQgZXhwZWN0cyBlYWNoIHZhcmlhYmxlIGFzIHJvd3MKICAgIGRhdGFfeCA9IG5wLnRyYW5zcG9zZShkZi5pbG9jWzosIDoyXS50b19udW1weSgpKQogICAgZGF0YV95ID0gbnAudHJhbnNwb3NlKGRmLmlsb2NbOiwgMjpdLnRvX251bXB5KCkpCgogICAgIyBBcHBseSBkaWx1dGlvbiBjb3JyZWN0aW9uCiAgICAjIFRPRE86IFRoaW5rIGFib3V0IHdoZXJlIHRoaXMgc2hvdWxkIGdvIC0gZml0dGVyIG9yIGZ1bmN0aW9uPwogICAgIyBPciBqdXN0IGFwcGx5IGl0IGJlZm9yZSB0aGUgZml0PwogICAgaWYgZGlsdXRlOgogICAgICAgIGRhdGFfeSA9IGJpbmRmaXQuaGVscGVycy5kaWx1dGUoZGF0YV94WzBdLCBkYXRhX3kpCgogICAgZnVuY3Rpb24gPSBiaW5kZml0LmZ1bmN0aW9ucy5jb25zdHJ1Y3QoCiAgICAgICAgbW9kZWwsCiAgICAgICAgbm9ybWFsaXNlPW5vcm1hbGlzZSwKICAgICAgICBmbGF2b3VyPWZsYXZvdXIsCiAgICApCgogICAgZml0dGVyID0gYmluZGZpdC5maXR0ZXIuRml0dGVyKAogICAgICAgIGRhdGFfeCwgZGF0YV95LCBmdW5jdGlvbiwgbm9ybWFsaXNlPW5vcm1hbGlzZSwgcGFyYW1zPWJpbmRmaXRfcGFyYW1zCiAgICApCgogICAgZml0dGVyLnJ1bl9zY2lweShiaW5kZml0X3BhcmFtcywgbWV0aG9kPW1ldGhvZCkKCiAgICBzdW1tYXJ5ID0gewogICAgICAgICJmaXR0ZXIiOiBtb2RlbCwKICAgICAgICAiZml0IjogewogICAgICAgICAgICAieSI6IGZpdHRlci5maXQsCiAgICAgICAgICAgICJjb2VmZnNfcmF3IjogZml0dGVyLmNvZWZmc19yYXcsCiAgICAgICAgICAgICJjb2VmZnMiOiBmaXR0ZXIuY29lZmZzLAogICAgICAgICAgICAibW9sZWZyYWNfcmF3IjogZml0dGVyLm1vbGVmcmFjX3JhdywKICAgICAgICAgICAgIm1vbGVmcmFjIjogZml0dGVyLm1vbGVmcmFjLAogICAgICAgICAgICAicGFyYW1zIjogZml0dGVyLnBhcmFtcywKICAgICAgICAgICAgIm5feSI6IG5wLmFycmF5KGZpdHRlci5maXQpLnNpemUsCiAgICAgICAgICAgICJuX3BhcmFtcyI6IGxlbihmaXR0ZXIucGFyYW1zKSArIG5wLmFycmF5KGZpdHRlci5jb2VmZnNfcmF3KS5zaXplLAogICAgICAgIH0sCiAgICAgICAgInFvZiI6IHsKICAgICAgICAgICAgInJlc2lkdWFscyI6IGZpdHRlci5yZXNpZHVhbHMsCiAgICAgICAgICAgICJzc3IiOiBiaW5kZml0LmhlbHBlcnMuc3NyKGZpdHRlci5yZXNpZHVhbHMpLAogICAgICAgICAgICAicm1zIjogYmluZGZpdC5oZWxwZXJzLnJtcyhmaXR0ZXIucmVzaWR1YWxzKSwKICAgICAgICAgICAgImNvdiI6IGJpbmRmaXQuaGVscGVycy5jb3YoZGF0YV95LCBmaXR0ZXIucmVzaWR1YWxzKSwKICAgICAgICAgICAgInJtc190b3RhbCI6IGJpbmRmaXQuaGVscGVycy5ybXMoZml0dGVyLnJlc2lkdWFscywgdG90YWw9VHJ1ZSksCiAgICAgICAgICAgICJjb3ZfdG90YWwiOiBiaW5kZml0LmhlbHBlcnMuY292KGRhdGFfeSwgZml0dGVyLnJlc2lkdWFscywgdG90YWw9VHJ1ZSksCiAgICAgICAgfSwKICAgICAgICAidGltZSI6IGZpdHRlci50aW1lLAogICAgICAgICJvcHRpb25zIjogewogICAgICAgICAgICAiZGlsdXRlIjogZGlsdXRlLAogICAgICAgICAgICAibm9ybWFsaXNlIjogbm9ybWFsaXNlLAogICAgICAgICAgICAibWV0aG9kIjogbWV0aG9kLAogICAgICAgICAgICAiZmxhdm91ciI6IGZsYXZvdXIsCiAgICAgICAgfSwKICAgIH0KCiAgICByZXR1cm4gc3VtbWFyeQo=",
+      "inputs": [
+        {
+          "name": "data",
+          "type": "resource",
+          "resource": "data"
+        },
+        {
+          "name": "params",
+          "type": "resource",
+          "resource": "inputParams"
+        },
+        {
+          "name": "options",
+          "type": "resource",
+          "resource": "options"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "params",
+          "type": "resource",
+          "resource": "outputParams"
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "data",
+      "title": "Data",
+      "description": "Input data",
+      "profile": "tabular-data-resource",
+      "data": [],
+      "schema": {
+        "primaryKey": "H",
+        "fields": [
+          {
+            "name": "H",
+            "type": "number",
+            "title": "",
+            "unit": ""
+          },
+          {
+            "name": "G",
+            "type": "number",
+            "title": "",
+            "unit": ""
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParams",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "data": {
+        "k": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "outputParams",
+      "title": "Optimised parameters",
+      "description": "Optimised parameter values",
+      "profile": "parameter-data-resource"
+    },
+    {
+      "name": "options",
+      "title": "Fit options",
+      "description": "Fit options",
+      "profile": "options-data-resource",
+      "data": {
+        "model": "nmr1to1",
+        "method": "Nelder-Mead",
+        "normalise": true,
+        "dilute": false,
+        "flavour": "none"
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "model",
+            "title": "Fit model",
+            "description": "The model to fit to the data",
+            "type": "object",
+            "objectFields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              }
+            ],
+            "constraints": {
+              "enum": [
+                {
+                  "title": "NMR 1:1",
+                  "name": "nmr1to1"
+                }
+              ]
+            }
+          },
+          {
+            "name": "method",
+            "title": "Fit method",
+            "description": "The optimisation method to use for fitting",
+            "type": "object",
+            "objectFields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              }
+            ],
+            "constraints": {
+              "enum": [
+                {
+                  "title": "Nelder-Mead",
+                  "name": "Nelder-Mead"
+                },
+                {
+                  "title": "L-BFGS-B",
+                  "name": "L-BFGS-B"
+                }
+              ]
+            }
+          },
+          {
+            "name": "normalise",
+            "title": "Subtract initial values",
+            "description": "Subtract initial values from data before fitting",
+            "type": "boolean"
+          },
+          {
+            "name": "dilute",
+            "title": "Dilution correction",
+            "description": "Apply dilution correction to data",
+            "type": "boolean"
+          },
+          {
+            "name": "flavour",
+            "title": "Flavour",
+            "description": "Fitting algorithm flavour",
+            "type": "object",
+            "objectFields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              }
+            ],
+            "constraints": {
+              "enum": [
+                {
+                  "title": "None (Full)",
+                  "name": "none"
+                },
+                {
+                  "title": "Non-cooperative",
+                  "name": "noncoop"
+                },
+                {
+                  "title": "Additive",
+                  "name": "add"
+                },
+                {
+                  "title": "Statistical",
+                  "name": "stat"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "views": [
+    {
+      "name": "data",
+      "specType": "opendatafit-upload",
+      "spec": {},
+      "resources": [
+        "data"
+      ]
+    },
+    {
+      "name": "params",
+      "title": "Parameters",
+      "specType": "opendatafit-params",
+      "spec": {
+        "keys": [
+          {
+            "name": "k"
+          }
+        ]
+      },
+      "resources": [
+        "inputParams",
+        "outputParams"
+      ]
+    }
+  ],
+  "displays": [
+    {
+      "name": "main",
+      "algorithms": [
+        "bindfit"
+      ],
+      "layout": {
+        "type": "bindfit",
+        "spec": {
+          "panes": [
+            {
+              "name": "control",
+              "tabs": [
+                "data",
+                "params"
+              ]
+            },
+            {
+              "name": "main",
+              "tabs": []
+            }
+          ],
+          "tabs": [
+            {
+              "name": "data",
+              "title": "Data",
+              "icon": "",
+              "views": [
+                "data"
+              ]
+            },
+            {
+              "name": "params",
+              "title": "Parameters",
+              "icon": "",
+              "views": [
+                "params"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

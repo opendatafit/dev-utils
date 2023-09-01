@@ -50,4 +50,17 @@ datapackage_id = create_datapackage(
     view_permission="public",
 )
 
-print("Created datapackage:", datapackage_id)
+print("Created SAS datapackage:", datapackage_id)
+
+# Create Bindfit datapackage
+with open("./datapackage_bindfit.json") as f:
+    datapackage = json.load(f)
+
+datapackage_id = create_datapackage(
+    db=db,
+    datapackage=datapackage,
+    user_id=opendatafit["id"],
+    view_permission="public",
+)
+
+print("Created Bindfit datapackage:", datapackage_id)
