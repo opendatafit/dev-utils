@@ -5,22 +5,42 @@
     {
       "name": "bindfit",
       "title": "Bindfit",
-      "code": "ZGVmIG1haW4oCiAgICBkYXRhLAogICAgcGFyYW1zLAogICAgb3B0aW9ucywKICAgICoqa3dhcmdzLAopOgogICAgZnJvbSBjb3B5IGltcG9ydCBkZWVwY29weQoKICAgIGltcG9ydCBudW1weSBhcyBucAogICAgaW1wb3J0IHBhbmRhcyBhcyBwZAoKICAgIGltcG9ydCBiaW5kZml0CgoKICAgICMgQ29udmVydCBwYXJhbXMgdG8gQmluZGZpdCBmb3JtYXQKICAgICMgVE9ETzogTW9kaWZ5IGxpYnJhcnkgdG8gYWNjZXB0IEZyaWN0aW9ubGVzcyBwYXJhbXMgZm9ybWF0CiAgICBiaW5kZml0X3BhcmFtcyA9IHt9CgogICAgZm9yIGtleSwgcGFyYW0gaW4gcGFyYW1zWyJkYXRhIl0uaXRlbXMoKToKICAgICAgICBiaW5kZml0X3BhcmFtcy51cGRhdGUoewogICAgICAgICAgICBrZXk6IHsKICAgICAgICAgICAgICAgICJpbml0IjogcGFyYW1bInZhbHVlIl0sCiAgICAgICAgICAgICAgICAiYm91bmRzIjogewogICAgICAgICAgICAgICAgICAgICJtaW4iOiBwYXJhbVsibG93ZXJCb3VuZCJdLAogICAgICAgICAgICAgICAgICAgICJtYXgiOiBwYXJhbVsidXBwZXJCb3VuZCJdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgfQogICAgICAgIH0pCgogICAgIyBCaW5kZml0IG9wdGlvbnMKICAgIG1vZGVsID0gb3B0aW9uc1siZGF0YSJdWyJtb2RlbCJdCiAgICBtZXRob2QgPSBvcHRpb25zWyJkYXRhIl1bIm1ldGhvZCJdCiAgICBub3JtYWxpc2UgPSBvcHRpb25zWyJkYXRhIl1bIm5vcm1hbGlzZSJdCiAgICBkaWx1dGUgPSBvcHRpb25zWyJkYXRhIl1bImRpbHV0ZSJdCiAgICBmbGF2b3VyID0gb3B0aW9uc1siZGF0YSJdWyJmbGF2b3VyIl0KCiAgICAjIExvYWQgZGF0YQogICAgIyBUT0RPOiBTcGxpdCB0aGlzIGZ1bmN0aW9uIG91dCBpbnRvIGRhdGFwYWNrYWdlLXV0aWxpdGllcyBsaWJyYXJ5CiAgICBkZWYgZGF0YXBhY2thZ2VfdG9fZGF0YWZyYW1lKGRwKToKICAgICAgICBkZiA9IHBkLkRhdGFGcmFtZS5mcm9tX2RpY3QoZHBbImRhdGEiXSkKICAgICAgICAjIFJlb3JkZXIgY29sdW1ucyBieSBzY2hlbWEgZmllbGQgb3JkZXIKICAgICAgICBjb2xzID0gWyBmaWVsZFsibmFtZSJdIGZvciBmaWVsZCBpbiBkcFsic2NoZW1hIl1bImZpZWxkcyJdIF0KICAgICAgICBkZiA9IGRmW2NvbHNdCiAgICAgICAgcmV0dXJuIGRmCgogICAgZGYgPSBkYXRhcGFja2FnZV90b19kYXRhZnJhbWUoZGF0YSkKCiAgICAjIEJpbmRmaXQgZXhwZWN0cyBlYWNoIHZhcmlhYmxlIGFzIHJvd3MKICAgIGRhdGFfeCA9IG5wLnRyYW5zcG9zZShkZi5pbG9jWzosIDoyXS50b19udW1weSgpKQogICAgZGF0YV95ID0gbnAudHJhbnNwb3NlKGRmLmlsb2NbOiwgMjpdLnRvX251bXB5KCkpCgogICAgIyBBcHBseSBkaWx1dGlvbiBjb3JyZWN0aW9uCiAgICAjIFRPRE86IFRoaW5rIGFib3V0IHdoZXJlIHRoaXMgc2hvdWxkIGdvIC0gZml0dGVyIG9yIGZ1bmN0aW9uPwogICAgIyBPciBqdXN0IGFwcGx5IGl0IGJlZm9yZSB0aGUgZml0PwogICAgaWYgZGlsdXRlOgogICAgICAgIGRhdGFfeSA9IGJpbmRmaXQuaGVscGVycy5kaWx1dGUoZGF0YV94WzBdLCBkYXRhX3kpCgogICAgZnVuY3Rpb24gPSBiaW5kZml0LmZ1bmN0aW9ucy5jb25zdHJ1Y3QoCiAgICAgICAgbW9kZWwsCiAgICAgICAgbm9ybWFsaXNlPW5vcm1hbGlzZSwKICAgICAgICBmbGF2b3VyPWZsYXZvdXIsCiAgICApCgogICAgZml0dGVyID0gYmluZGZpdC5maXR0ZXIuRml0dGVyKAogICAgICAgIGRhdGFfeCwgZGF0YV95LCBmdW5jdGlvbiwgbm9ybWFsaXNlPW5vcm1hbGlzZSwgcGFyYW1zPWJpbmRmaXRfcGFyYW1zCiAgICApCgogICAgZml0dGVyLnJ1bl9zY2lweShiaW5kZml0X3BhcmFtcywgbWV0aG9kPW1ldGhvZCkKCiAgICBzdW1tYXJ5ID0gewogICAgICAgICJmaXR0ZXIiOiBtb2RlbCwKICAgICAgICAiZml0IjogewogICAgICAgICAgICAieSI6IGZpdHRlci5maXQsCiAgICAgICAgICAgICJjb2VmZnNfcmF3IjogZml0dGVyLmNvZWZmc19yYXcsCiAgICAgICAgICAgICJjb2VmZnMiOiBmaXR0ZXIuY29lZmZzLAogICAgICAgICAgICAibW9sZWZyYWNfcmF3IjogZml0dGVyLm1vbGVmcmFjX3JhdywKICAgICAgICAgICAgIm1vbGVmcmFjIjogZml0dGVyLm1vbGVmcmFjLAogICAgICAgICAgICAicGFyYW1zIjogZml0dGVyLnBhcmFtcywKICAgICAgICAgICAgIm5feSI6IG5wLmFycmF5KGZpdHRlci5maXQpLnNpemUsCiAgICAgICAgICAgICJuX3BhcmFtcyI6IGxlbihmaXR0ZXIucGFyYW1zKSArIG5wLmFycmF5KGZpdHRlci5jb2VmZnNfcmF3KS5zaXplLAogICAgICAgIH0sCiAgICAgICAgInFvZiI6IHsKICAgICAgICAgICAgInJlc2lkdWFscyI6IGZpdHRlci5yZXNpZHVhbHMsCiAgICAgICAgICAgICJzc3IiOiBiaW5kZml0LmhlbHBlcnMuc3NyKGZpdHRlci5yZXNpZHVhbHMpLAogICAgICAgICAgICAicm1zIjogYmluZGZpdC5oZWxwZXJzLnJtcyhmaXR0ZXIucmVzaWR1YWxzKSwKICAgICAgICAgICAgImNvdiI6IGJpbmRmaXQuaGVscGVycy5jb3YoZGF0YV95LCBmaXR0ZXIucmVzaWR1YWxzKSwKICAgICAgICAgICAgInJtc190b3RhbCI6IGJpbmRmaXQuaGVscGVycy5ybXMoZml0dGVyLnJlc2lkdWFscywgdG90YWw9VHJ1ZSksCiAgICAgICAgICAgICJjb3ZfdG90YWwiOiBiaW5kZml0LmhlbHBlcnMuY292KGRhdGFfeSwgZml0dGVyLnJlc2lkdWFscywgdG90YWw9VHJ1ZSksCiAgICAgICAgfSwKICAgICAgICAidGltZSI6IGZpdHRlci50aW1lLAogICAgICAgICJvcHRpb25zIjogewogICAgICAgICAgICAiZGlsdXRlIjogZGlsdXRlLAogICAgICAgICAgICAibm9ybWFsaXNlIjogbm9ybWFsaXNlLAogICAgICAgICAgICAibWV0aG9kIjogbWV0aG9kLAogICAgICAgICAgICAiZmxhdm91ciI6IGZsYXZvdXIsCiAgICAgICAgfSwKICAgIH0KCiAgICBvdXRwdXRfcGFyYW1zID0gZGVlcGNvcHkocGFyYW1zKQogICAgb3V0cHV0X3BhcmFtc1sidGl0bGUiXSA9ICJPdXRwdXQgcGFyYW1ldGVyIHZhbHVlcyIKICAgIG91dHB1dF9wYXJhbXNbIm5hbWUiXSA9ICJvdXRwdXRQYXJhbXMiCgogICAgZm9yIGtleSwgcGFyYW0gaW4gb3V0cHV0X3BhcmFtc1siZGF0YSJdLml0ZW1zKCk6CiAgICAgICAgcGFyYW1bInZhbHVlIl0gPSBmaXR0ZXIucGFyYW1zW2tleV1bInZhbHVlIl0KICAgICAgICBwYXJhbVsic3RkZXJyIl0gPSBmaXR0ZXIucGFyYW1zW2tleV1bInN0ZGVyciJdCgogICAgcHJpbnQoIj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSIpCiAgICBpbXBvcnQgcHByaW50CiAgICBwcHJpbnQucHByaW50KGZpdHRlci5wYXJhbXMpCiAgICBwcmludCgiPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09IikKICAgIHBwcmludC5wcHJpbnQob3V0cHV0X3BhcmFtcykKICAgIHByaW50KCI9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0iKQoKICAgICMgcmV0dXJuIHN1bW1hcnkKICAgIHJldHVybiB7CiAgICAgICAgInBhcmFtcyI6IG91dHB1dF9wYXJhbXMsCiAgICB9Cg==",
+      "code": "ZGVmIG1haW4oCiAgICBkYXRhcGFja2FnZSwKICAgIHBhcmFtcywKICAgIG9wdGlvbnMsCiAgICBkYXRhLAogICAgb3V0cHV0cywKICAgICoqa3dhcmdzLAopOgogICAgaW1wb3J0IG51bXB5IGFzIG5wCiAgICBpbXBvcnQgcGFuZGFzIGFzIHBkCgogICAgaW1wb3J0IGJpbmRmaXQKCgogICAgIyBDb252ZXJ0IHBhcmFtcyB0byBCaW5kZml0IGZvcm1hdAogICAgIyBUT0RPOiBNb2RpZnkgbGlicmFyeSB0byBhY2NlcHQgRnJpY3Rpb25sZXNzIHBhcmFtcyBmb3JtYXQKICAgIGJpbmRmaXRfcGFyYW1zID0ge30KCiAgICBmb3Iga2V5LCBwYXJhbSBpbiBwYXJhbXNbImRhdGEiXS5pdGVtcygpOgogICAgICAgIGJpbmRmaXRfcGFyYW1zLnVwZGF0ZSh7CiAgICAgICAgICAgIGtleTogewogICAgICAgICAgICAgICAgImluaXQiOiBwYXJhbVsidmFsdWUiXSwKICAgICAgICAgICAgICAgICJib3VuZHMiOiB7CiAgICAgICAgICAgICAgICAgICAgIm1pbiI6IHBhcmFtWyJsb3dlckJvdW5kIl0sCiAgICAgICAgICAgICAgICAgICAgIm1heCI6IHBhcmFtWyJ1cHBlckJvdW5kIl0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9CiAgICAgICAgfSkKCiAgICBtb2RlbCA9IHBhcmFtc1sibWV0YWRhdGEiXVsibW9kZWwiXVsibmFtZSJdCiAgICBmbGF2b3VyID0gcGFyYW1zWyJtZXRhZGF0YSJdWyJtb2RlbCJdLmdldCgiZmxhdm91ciIsIE5vbmUpCgogICAgIyBCaW5kZml0IG9wdGlvbnMKICAgIG1ldGhvZCA9IG9wdGlvbnNbImRhdGEiXVsibWV0aG9kIl1bIm5hbWUiXQogICAgbm9ybWFsaXNlID0gb3B0aW9uc1siZGF0YSJdWyJub3JtYWxpc2UiXQogICAgZGlsdXRlID0gb3B0aW9uc1siZGF0YSJdWyJkaWx1dGUiXQoKICAgICMgTG9hZCBkYXRhCiAgICAjIFRPRE86IFNwbGl0IHRoaXMgZnVuY3Rpb24gb3V0IGludG8gZGF0YXBhY2thZ2UtdXRpbGl0aWVzIGxpYnJhcnkKICAgIGRlZiBkYXRhcGFja2FnZV90b19kYXRhZnJhbWUoZHApOgogICAgICAgIGRmID0gcGQuRGF0YUZyYW1lLmZyb21fZGljdChkcFsiZGF0YSJdKQogICAgICAgICMgUmVvcmRlciBjb2x1bW5zIGJ5IHNjaGVtYSBmaWVsZCBvcmRlcgogICAgICAgIGNvbHMgPSBbIGZpZWxkWyJuYW1lIl0gZm9yIGZpZWxkIGluIGRwWyJzY2hlbWEiXVsiZmllbGRzIl0gXQogICAgICAgIGRmID0gZGZbY29sc10KICAgICAgICByZXR1cm4gZGYKCiAgICBkZiA9IGRhdGFwYWNrYWdlX3RvX2RhdGFmcmFtZShkYXRhKQoKICAgICMgQmluZGZpdCBleHBlY3RzIGVhY2ggdmFyaWFibGUgYXMgcm93cwogICAgZGF0YV94ID0gbnAudHJhbnNwb3NlKGRmLmlsb2NbOiwgOjJdLnRvX251bXB5KCkpCiAgICBkYXRhX3kgPSBucC50cmFuc3Bvc2UoZGYuaWxvY1s6LCAyOl0udG9fbnVtcHkoKSkKCiAgICAjIEFwcGx5IGRpbHV0aW9uIGNvcnJlY3Rpb24KICAgICMgVE9ETzogVGhpbmsgYWJvdXQgd2hlcmUgdGhpcyBzaG91bGQgZ28gLSBmaXR0ZXIgb3IgZnVuY3Rpb24/CiAgICAjIE9yIGp1c3QgYXBwbHkgaXQgYmVmb3JlIHRoZSBmaXQ/CiAgICBpZiBkaWx1dGU6CiAgICAgICAgZGF0YV95ID0gYmluZGZpdC5oZWxwZXJzLmRpbHV0ZShkYXRhX3hbMF0sIGRhdGFfeSkKCiAgICBmdW5jdGlvbiA9IGJpbmRmaXQuZnVuY3Rpb25zLmNvbnN0cnVjdCgKICAgICAgICBtb2RlbCwKICAgICAgICBub3JtYWxpc2U9bm9ybWFsaXNlLAogICAgICAgIGZsYXZvdXI9Zmxhdm91ciwKICAgICkKCiAgICBmaXR0ZXIgPSBiaW5kZml0LmZpdHRlci5GaXR0ZXIoCiAgICAgICAgZGF0YV94LCBkYXRhX3ksIGZ1bmN0aW9uLCBub3JtYWxpc2U9bm9ybWFsaXNlLCBwYXJhbXM9YmluZGZpdF9wYXJhbXMKICAgICkKCiAgICBmaXR0ZXIucnVuX3NjaXB5KGJpbmRmaXRfcGFyYW1zLCBtZXRob2Q9bWV0aG9kKQoKICAgIHN1bW1hcnkgPSB7CiAgICAgICAgImZpdHRlciI6IG1vZGVsLAogICAgICAgICJmaXQiOiB7CiAgICAgICAgICAgICJ5IjogZml0dGVyLmZpdCwKICAgICAgICAgICAgImNvZWZmc19yYXciOiBmaXR0ZXIuY29lZmZzX3JhdywKICAgICAgICAgICAgImNvZWZmcyI6IGZpdHRlci5jb2VmZnMsCiAgICAgICAgICAgICJtb2xlZnJhY19yYXciOiBmaXR0ZXIubW9sZWZyYWNfcmF3LAogICAgICAgICAgICAibW9sZWZyYWMiOiBmaXR0ZXIubW9sZWZyYWMsCiAgICAgICAgICAgICJwYXJhbXMiOiBmaXR0ZXIucGFyYW1zLAogICAgICAgICAgICAibl95IjogbnAuYXJyYXkoZml0dGVyLmZpdCkuc2l6ZSwKICAgICAgICAgICAgIm5fcGFyYW1zIjogbGVuKGZpdHRlci5wYXJhbXMpICsgbnAuYXJyYXkoZml0dGVyLmNvZWZmc19yYXcpLnNpemUsCiAgICAgICAgfSwKICAgICAgICAicW9mIjogewogICAgICAgICAgICAicmVzaWR1YWxzIjogZml0dGVyLnJlc2lkdWFscywKICAgICAgICAgICAgInNzciI6IGJpbmRmaXQuaGVscGVycy5zc3IoZml0dGVyLnJlc2lkdWFscyksCiAgICAgICAgICAgICJybXMiOiBiaW5kZml0LmhlbHBlcnMucm1zKGZpdHRlci5yZXNpZHVhbHMpLAogICAgICAgICAgICAiY292IjogYmluZGZpdC5oZWxwZXJzLmNvdihkYXRhX3ksIGZpdHRlci5yZXNpZHVhbHMpLAogICAgICAgICAgICAicm1zX3RvdGFsIjogYmluZGZpdC5oZWxwZXJzLnJtcyhmaXR0ZXIucmVzaWR1YWxzLCB0b3RhbD1UcnVlKSwKICAgICAgICAgICAgImNvdl90b3RhbCI6IGJpbmRmaXQuaGVscGVycy5jb3YoZGF0YV95LCBmaXR0ZXIucmVzaWR1YWxzLCB0b3RhbD1UcnVlKSwKICAgICAgICB9LAogICAgICAgICJ0aW1lIjogZml0dGVyLnRpbWUsCiAgICAgICAgIm9wdGlvbnMiOiB7CiAgICAgICAgICAgICJkaWx1dGUiOiBkaWx1dGUsCiAgICAgICAgICAgICJub3JtYWxpc2UiOiBub3JtYWxpc2UsCiAgICAgICAgICAgICJtZXRob2QiOiBtZXRob2QsCiAgICAgICAgICAgICJmbGF2b3VyIjogZmxhdm91ciwKICAgICAgICB9LAogICAgfQoKICAgICMgVE9ETzogVGhpcyBjb252ZXJzaW9uIHNob3VsZCBiZSBtb3ZlZCB0byBCaW5kZml0IGxpYnJhcnkKICAgIGZvciBrZXksIHBhcmFtIGluIGZpdHRlci5wYXJhbXMuaXRlbXMoKToKICAgICAgICB0cnk6CiAgICAgICAgICAgIG91dHB1dHNbInBhcmFtcyJdWyJkYXRhIl0udXBkYXRlKHsKICAgICAgICAgICAgICAgIGtleTogewogICAgICAgICAgICAgICAgICAgICJ2YWx1ZSI6IHBhcmFtWyJ2YWx1ZSJdLAogICAgICAgICAgICAgICAgICAgICJzdGRlcnIiOiBwYXJhbVsic3RkZXJyIl0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9KQogICAgICAgIGV4Y2VwdCBLZXlFcnJvcjoKICAgICAgICAgICAgIyBObyBleGlzdGluZyBkYXRhIGtleSwgY3JlYXRlCiAgICAgICAgICAgIG91dHB1dHNbInBhcmFtcyJdID0gewogICAgICAgICAgICAgICAgImRhdGEiOiB7CiAgICAgICAgICAgICAgICAgICAga2V5OiB7CiAgICAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZSI6IHBhcmFtWyJ2YWx1ZSJdLAogICAgICAgICAgICAgICAgICAgICAgICAic3RkZXJyIjogcGFyYW1bInN0ZGVyciJdLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9CgogICAgIyBUT0RPOiBUaGluayBvZiBhIGJldHRlciB3YXkgb2YgZG9pbmcgdGhpcz8KICAgICMgUG9wdWxhdGUgb3V0cHV0IHBhcmFtcyBzY2hlbWEgYW5kIG1ldGFkYXRhIGZyb20gaW5wdXQgcGFyYW1zCiAgICBvdXRwdXRzWyJwYXJhbXMiXVsibWV0YWRhdGEiXSA9IHBhcmFtc1sibWV0YWRhdGEiXQogICAgb3V0cHV0c1sicGFyYW1zIl1bInNjaGVtYSJdID0gcGFyYW1zWyJzY2hlbWEiXQoKICAgICMgVHJhbnNsYXRlIGZpdHRlci5maXQgaW50byBKU09OIGZvciB0YWJ1bGFyIGRhdGEgc2NoZW1hCiAgICAjIFRPRE86IFRoaXMgc2hvdWxkIGJlIGRvbmUgYnkgdGhlIEJpbmRmaXQgbGlicmFyeQogICAgZGVmIGZpdF90b19qc29uKGRhdGEsIGZpdCk6CiAgICAgICAgeF9maWVsZHMgPSBbIGlbIm5hbWUiXSBmb3IgaSBpbiBkYXRhWyJzY2hlbWEiXVsiZmllbGRzIl1bOjJdIF0KICAgICAgICB5X2ZpZWxkcyA9IFsgaVsibmFtZSJdIGZvciBpIGluIGRhdGFbInNjaGVtYSJdWyJmaWVsZHMiXVsyOl0gXQoKICAgICAgICBmaXRfZGF0YSA9IFtdCgogICAgICAgIGZvciBkYXRhX3JvdywgZml0X3JvdyBpbiB6aXAoZGF0YVsiZGF0YSJdLCBmaXQuVCk6CiAgICAgICAgICAgIHJvdyA9IHt9CgogICAgICAgICAgICBmb3IgZmllbGQgaW4geF9maWVsZHM6CiAgICAgICAgICAgICAgICByb3dbZmllbGRdID0gZGF0YV9yb3dbZmllbGRdCgogICAgICAgICAgICBmb3IgaSwgZmllbGQgaW4gZW51bWVyYXRlKHlfZmllbGRzKToKICAgICAgICAgICAgICAgIHJvd1tmaWVsZF0gPSBmaXRfcm93W2ldCgogICAgICAgICAgICBmaXRfZGF0YS5hcHBlbmQocm93KQoKICAgICAgICByZXR1cm4gZml0X2RhdGEKCiAgICBvdXRwdXRzWyJmaXQiXVsiZGF0YSJdID0gZml0X3RvX2pzb24oZGF0YSwgZml0dGVyLmZpdCkKICAgIG91dHB1dHNbImZpdCJdWyJzY2hlbWEiXSA9IGRhdGFbInNjaGVtYSJdCgogICAgb3V0cHV0c1sicmVzaWR1YWxzIl1bImRhdGEiXSA9IGZpdF90b19qc29uKGRhdGEsIGZpdHRlci5maXQgLSBkYXRhX3kpCiAgICBvdXRwdXRzWyJyZXNpZHVhbHMiXVsic2NoZW1hIl0gPSBkYXRhWyJzY2hlbWEiXQoKICAgIHJldHVybiBvdXRwdXRzCg==",
       "inputs": [
+        {
+          "name": "params",
+          "type": "algorithmParams",
+          "resource": {
+            "params": "inputParamsNMR12",
+            "options": "inputOptionsNMR"
+          },
+          "resources": [
+            {
+              "params": "inputParamsNMR11",
+              "options": "inputOptionsNMR"
+            },
+            {
+              "params": "inputParamsNMR12",
+              "options": "inputOptionsNMR"
+            },
+            {
+              "params": "inputParamsNMR12Add",
+              "options": "inputOptionsNMR"
+            },
+            {
+              "params": "inputParamsNMR12Noncoop",
+              "options": "inputOptionsNMR"
+            },
+            {
+              "params": "inputParamsNMR12Stat",
+              "options": "inputOptionsNMR"
+            }
+          ]
+        },
         {
           "name": "data",
           "type": "resource",
-          "resource": "data"
-        },
-        {
-          "name": "params",
-          "type": "resource",
-          "resource": "inputParams"
-        },
-        {
-          "name": "options",
-          "type": "resource",
-          "resource": "options"
+          "resource": "inputData"
         }
       ],
       "outputs": [
@@ -28,42 +48,101 @@
           "name": "params",
           "type": "resource",
           "resource": "outputParams"
+        },
+        {
+          "name": "fit",
+          "type": "resource",
+          "resource": "outputFit"
+        },
+        {
+          "name": "residuals",
+          "type": "resource",
+          "resource": "outputResiduals"
         }
       ]
     }
   ],
   "resources": [
     {
-      "name": "data",
-      "title": "Data",
+      "name": "inputData",
+      "title": "Input data",
       "description": "Input data",
       "profile": "tabular-data-resource",
       "data": [],
       "schema": {
-        "primaryKey": "H",
-        "fields": [
+        "primaryKey": "",
+        "fields": []
+      }
+    },
+    {
+      "name": "inputParamsNMR11",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "nmr1to1",
+          "title": "NMR 1:1"
+        }
+      },
+      "data": {
+        "k": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": 1000
+        }
+      },
+      "schema": {
+        "keys": [
           {
-            "name": "H",
-            "type": "number",
-            "title": "",
-            "unit": ""
-          },
-          {
-            "name": "G",
-            "type": "number",
-            "title": "",
-            "unit": ""
+            "name": "k",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
           }
         ]
       }
     },
     {
-      "name": "inputParams",
+      "name": "inputParamsNMR12",
       "title": "Input parameters",
       "description": "Initial parameter values",
       "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "nmr1to2",
+          "title": "NMR 1:2"
+        }
+      },
       "data": {
-        "k": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        },
+        "k12": {
           "vary": true,
           "value": 100,
           "lowerBound": 0,
@@ -73,7 +152,33 @@
       "schema": {
         "keys": [
           {
-            "name": "k",
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "k12",
             "unit": "M^{-1}",
             "fields": [
               {
@@ -102,17 +207,35 @@
       }
     },
     {
-      "name": "outputParams",
-      "title": "Optimised parameters",
-      "description": "Optimised parameter values",
+      "name": "inputParamsNMR12Add",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
       "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "nmr1to2",
+          "title": "NMR 1:2 - Additive",
+          "flavour": "add"
+        }
+      },
       "data": {
-        "k": {}
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        },
+        "k12": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": null
+        }
       },
       "schema": {
         "keys": [
           {
-            "name": "k",
+            "name": "k11",
             "unit": "M^{-1}",
             "fields": [
               {
@@ -126,8 +249,29 @@
                 "type": "number"
               },
               {
-                "name": "stderr",
-                "title": "Error",
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "k12",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
                 "type": "number"
               },
               {
@@ -146,43 +290,122 @@
       }
     },
     {
-      "name": "options",
+      "name": "inputParamsNMR12Noncoop",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "nmr1to2",
+          "title": "NMR 1:2 - Non-cooperative",
+          "flavour": "noncoop"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsNMR12Stat",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "nmr1to2",
+          "title": "NMR 1:2 - Statistical",
+          "flavour": "stat"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputOptionsNMR",
       "title": "Fit options",
       "description": "Fit options",
       "profile": "options-data-resource",
       "data": {
-        "model": "nmr1to1",
-        "method": "Nelder-Mead",
+        "method": {
+          "title": "Nelder-Mead",
+          "name": "nelder-mead"
+        },
         "normalise": true,
-        "dilute": false,
-        "flavour": "none"
+        "dilute": false
       },
       "schema": {
         "fields": [
-          {
-            "name": "model",
-            "title": "Fit model",
-            "description": "The model to fit to the data",
-            "type": "object",
-            "objectFields": [
-              {
-                "name": "title",
-                "type": "string"
-              },
-              {
-                "name": "name",
-                "type": "string"
-              }
-            ],
-            "constraints": {
-              "enum": [
-                {
-                  "title": "NMR 1:1",
-                  "name": "nmr1to1"
-                }
-              ]
-            }
-          },
           {
             "name": "method",
             "title": "Fit method",
@@ -222,70 +445,250 @@
             "title": "Dilution correction",
             "description": "Apply dilution correction to data",
             "type": "boolean"
-          },
-          {
-            "name": "flavour",
-            "title": "Flavour",
-            "description": "Fitting algorithm flavour",
-            "type": "object",
-            "objectFields": [
-              {
-                "name": "title",
-                "type": "string"
-              },
-              {
-                "name": "name",
-                "type": "string"
-              }
-            ],
-            "constraints": {
-              "enum": [
-                {
-                  "title": "None (Full)",
-                  "name": "none"
-                },
-                {
-                  "title": "Non-cooperative",
-                  "name": "noncoop"
-                },
-                {
-                  "title": "Additive",
-                  "name": "add"
-                },
-                {
-                  "title": "Statistical",
-                  "name": "stat"
-                }
-              ]
-            }
           }
         ]
+      }
+    },
+    {
+      "name": "outputParams",
+      "title": "Optimised parameters",
+      "description": "Optimised parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {},
+      "data": {},
+      "schema": {}
+    },
+    {
+      "name": "outputFit",
+      "title": "Fit",
+      "description": "Output fit",
+      "profile": "tabular-data-resource",
+      "data": [],
+      "schema": {
+        "primaryKey": "",
+        "fields": []
+      }
+    },
+    {
+      "name": "outputResiduals",
+      "title": "Residuals",
+      "description": "Fit residuals",
+      "profile": "tabular-data-resource",
+      "data": [],
+      "schema": {
+        "primaryKey": "",
+        "fields": []
       }
     }
   ],
   "views": [
     {
-      "name": "data",
+      "name": "upload",
       "specType": "opendatafit-upload",
       "spec": {},
       "resources": [
-        "data"
+        "inputData"
       ]
     },
     {
-      "name": "params",
-      "title": "Parameters",
-      "specType": "opendatafit-params",
-      "spec": {
-        "keys": [
-          {
-            "name": "k"
-          }
-        ]
-      },
+      "name": "algorithm",
+      "title": "Algorithm parameters",
+      "specType": "opendatafit-algorithm-params",
+      "algorithm": "bindfit",
+      "resources": {
+        "options": {
+          "type": "algorithmOptions"
+        },
+        "input": {
+          "type": "algorithmParams"
+        },
+        "output": {
+          "type": "resource",
+          "name": "outputParams"
+        }
+      }
+    },
+    {
+      "name": "dataTable",
+      "title": "Input data",
+      "spec": {},
+      "specType": "opendatafit-table",
       "resources": [
-        "inputParams",
-        "outputParams"
+        "inputData"
+      ]
+    },
+    {
+      "name": "fitTable",
+      "title": "Fit data",
+      "spec": {},
+      "specType": "opendatafit-table",
+      "resources": [
+        "outputFit"
+      ]
+    },
+    {
+      "name": "fitGraph",
+      "spec": {
+        "data": [
+          {
+            "name": "inputData",
+            "x": {
+              "transform": {
+                "type": "formula",
+                "expr": "datum[1]/datum[0]"
+              }
+            },
+            "y": {
+              "transform": {
+                "type": "formula",
+                "expr": "datum.slice(2)"
+              }
+            },
+            "colors": {
+              "attributePath": "marker.color",
+              "values": [
+                "darkcyan",
+                "darkslateblue",
+                "darkmagenta",
+                "crimson"
+              ]
+            },
+            "config": {
+              "mode": "markers",
+              "type": "scatter",
+              "marker": {
+                "size": 8,
+                "color": "",
+                "symbol": "circle-open-dot"
+              }
+            }
+          },
+          {
+            "name": "outputFit",
+            "x": {
+              "transform": {
+                "type": "formula",
+                "expr": "datum[1]/datum[0]"
+              }
+            },
+            "y": {
+              "transform": {
+                "type": "formula",
+                "expr": "datum.slice(2)"
+              }
+            },
+            "colors": {
+              "attributePath": "line.color",
+              "values": [
+                "darkcyan",
+                "darkslateblue",
+                "darkmagenta",
+                "crimson"
+              ]
+            },
+            "config": {
+              "mode": "lines",
+              "type": "scatter",
+              "line": {
+                "width": 1,
+                "color": "",
+                "shape": "spline"
+              }
+            }
+          },
+          {
+            "name": "outputResiduals",
+            "x": {
+              "transform": {
+                "type": "formula",
+                "expr": "datum[1]/datum[0]"
+              }
+            },
+            "y": {
+              "transform": {
+                "type": "formula",
+                "expr": "datum.slice(2)"
+              }
+            },
+            "colors": {
+              "attributePath": "line.color",
+              "values": [
+                "darkcyan",
+                "darkslateblue",
+                "darkmagenta",
+                "crimson"
+              ]
+            },
+            "config": {
+              "mode": "lines",
+              "type": "scatter",
+              "yaxis": "y2",
+              "line": {
+                "width": 1,
+                "color": ""
+              }
+            }
+          }
+        ],
+        "layout": {
+          "title": {
+            "text": "Bindfit"
+          },
+          "xaxis": {
+            "title": {
+              "text": "Equivalent total [G]<sub>0</sub>/[H]<sub>0</sub>"
+            },
+            "exponentformat": "power",
+            "domain": [
+              0,
+              1
+            ],
+            "side": "bottom",
+            "type": "linear",
+            "autorange": true,
+            "automargin": true
+          },
+          "yaxis": {
+            "title": {
+              "text": "$\\delta$"
+            },
+            "ticksuffix": " ppm",
+            "exponentformat": "power",
+            "domain": [
+              0.375,
+              1
+            ],
+            "side": "left",
+            "type": "linear",
+            "autorange": true
+          },
+          "yaxis2": {
+            "title": {
+              "text": "Residuals"
+            },
+            "ticksuffix": " ppm",
+            "exponentformat": "power",
+            "domain": [
+              0,
+              0.25
+            ],
+            "side": "left",
+            "type": "linear",
+            "autorange": true
+          },
+          "autosize": true,
+          "hovermode": "x",
+          "showlegend": true,
+          "legend": {
+            "traceorder": "grouped"
+          }
+        }
+      },
+      "specType": "plotly",
+      "resources": [
+        "inputData",
+        "outputFit",
+        "outputResiduals"
       ]
     }
   ],
@@ -302,30 +705,42 @@
             {
               "name": "control",
               "tabs": [
-                "data",
-                "params"
+                "control"
               ]
             },
             {
               "name": "main",
-              "tabs": []
+              "tabs": [
+                "fit",
+                "data"
+              ]
             }
           ],
           "tabs": [
+            {
+              "name": "control",
+              "title": "Options",
+              "icon": "",
+              "views": [
+                "upload",
+                "algorithm"
+              ]
+            },
+            {
+              "name": "fit",
+              "title": "Fit",
+              "icon": "",
+              "views": [
+                "fitGraph"
+              ]
+            },
             {
               "name": "data",
               "title": "Data",
               "icon": "",
               "views": [
-                "data"
-              ]
-            },
-            {
-              "name": "params",
-              "title": "Parameters",
-              "icon": "",
-              "views": [
-                "params"
+                "dataTable",
+                "fitTable"
               ]
             }
           ]
