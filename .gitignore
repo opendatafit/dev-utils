@@ -1,6 +1,9 @@
 sasview_data.json
 db-data
 
+.direnv
+nohup.out
+
 # https://github.com/github/gitignore/blob/master/Global/Vim.gitignore
 # Swap
 [._]*.s[a-v][a-z]
