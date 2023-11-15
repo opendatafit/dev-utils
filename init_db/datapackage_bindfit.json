@@ -1,6 +1,11 @@
 {
   "title": "Bindfit",
   "description": "Binding constant fitter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opendatafit/bindfit-datapackage",
+    "name": "opendatafit/bindfit-datapackage"
+  },
   "algorithms": [
     {
       "name": "bindfit",
@@ -100,13 +105,7 @@
               "name": "uvdimer",
               "title": "UV Dimer Aggregation",
               "params": "inputParamsUVDimer",
-              "options": "inputOptionsUVAgg"
-            },
-            {
-              "name": "uvcoek",
-              "title": "UV CoEK Aggregation",
-              "params": "inputParamsUVCoEK",
-              "options": "inputOptionsUVAgg"
+              "options": "inputOptionsUVDimer"
             }
           ]
         },
@@ -1518,88 +1517,6 @@
       }
     },
     {
-      "name": "inputParamsUVCoEK",
-      "title": "Input parameters",
-      "description": "Initial parameter values",
-      "profile": "parameter-data-resource",
-      "metadata": {
-        "model": {
-          "name": "uvcoek",
-          "title": "UV CoEK Aggregation"
-        }
-      },
-      "data": {
-        "ke": {
-          "vary": true,
-          "value": 2700,
-          "lowerBound": 0,
-          "upperBound": null
-        },
-        "rho": {
-          "vary": true,
-          "value": 0.003,
-          "lowerBound": 0,
-          "upperBound": null
-        }
-      },
-      "schema": {
-        "keys": [
-          {
-            "name": "ke",
-            "unit": "M^{-1}",
-            "fields": [
-              {
-                "name": "vary",
-                "title": "Vary",
-                "type": "boolean"
-              },
-              {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
-              {
-                "name": "lowerBound",
-                "title": "Lower bound",
-                "type": "number"
-              },
-              {
-                "name": "upperBound",
-                "title": "Upper bound",
-                "type": "number"
-              }
-            ]
-          },
-          {
-            "name": "rho",
-            "unit": "",
-            "fields": [
-              {
-                "name": "vary",
-                "title": "Vary",
-                "type": "boolean"
-              },
-              {
-                "name": "value",
-                "title": "Value",
-                "type": "number"
-              },
-              {
-                "name": "lowerBound",
-                "title": "Lower bound",
-                "type": "number"
-              },
-              {
-                "name": "upperBound",
-                "title": "Upper bound",
-                "type": "number"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
       "name": "inputOptionsNMR",
       "title": "Fit options",
       "description": "Fit options",
@@ -1716,7 +1633,7 @@
       }
     },
     {
-      "name": "inputOptionsUVAgg",
+      "name": "inputOptionsUVDimer",
       "title": "Fit options",
       "description": "Fit options",
       "profile": "options-data-resource",
