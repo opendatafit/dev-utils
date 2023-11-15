@@ -5,35 +5,108 @@
     {
       "name": "bindfit",
       "title": "Bindfit",
-      "code": "ZGVmIG1haW4oCiAgICBkYXRhcGFja2FnZSwKICAgIHBhcmFtcywKICAgIG9wdGlvbnMsCiAgICBkYXRhLAogICAgb3V0cHV0cywKICAgICoqa3dhcmdzLAopOgogICAgaW1wb3J0IG51bXB5IGFzIG5wCiAgICBpbXBvcnQgcGFuZGFzIGFzIHBkCgogICAgaW1wb3J0IGJpbmRmaXQKCgogICAgIyBDb252ZXJ0IHBhcmFtcyB0byBCaW5kZml0IGZvcm1hdAogICAgIyBUT0RPOiBNb2RpZnkgbGlicmFyeSB0byBhY2NlcHQgRnJpY3Rpb25sZXNzIHBhcmFtcyBmb3JtYXQKICAgIGJpbmRmaXRfcGFyYW1zID0ge30KCiAgICBmb3Iga2V5LCBwYXJhbSBpbiBwYXJhbXNbImRhdGEiXS5pdGVtcygpOgogICAgICAgIGJpbmRmaXRfcGFyYW1zLnVwZGF0ZSh7CiAgICAgICAgICAgIGtleTogewogICAgICAgICAgICAgICAgImluaXQiOiBwYXJhbVsidmFsdWUiXSwKICAgICAgICAgICAgICAgICJib3VuZHMiOiB7CiAgICAgICAgICAgICAgICAgICAgIm1pbiI6IHBhcmFtWyJsb3dlckJvdW5kIl0sCiAgICAgICAgICAgICAgICAgICAgIm1heCI6IHBhcmFtWyJ1cHBlckJvdW5kIl0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9CiAgICAgICAgfSkKCiAgICBtb2RlbCA9IHBhcmFtc1sibWV0YWRhdGEiXVsibW9kZWwiXVsibmFtZSJdCiAgICBmbGF2b3VyID0gcGFyYW1zWyJtZXRhZGF0YSJdWyJtb2RlbCJdLmdldCgiZmxhdm91ciIsIE5vbmUpCgogICAgIyBCaW5kZml0IG9wdGlvbnMKICAgIG1ldGhvZCA9IG9wdGlvbnNbImRhdGEiXVsibWV0aG9kIl1bIm5hbWUiXQogICAgbm9ybWFsaXNlID0gb3B0aW9uc1siZGF0YSJdWyJub3JtYWxpc2UiXQogICAgZGlsdXRlID0gb3B0aW9uc1siZGF0YSJdWyJkaWx1dGUiXQoKICAgICMgTG9hZCBkYXRhCiAgICAjIFRPRE86IFNwbGl0IHRoaXMgZnVuY3Rpb24gb3V0IGludG8gZGF0YXBhY2thZ2UtdXRpbGl0aWVzIGxpYnJhcnkKICAgIGRlZiBkYXRhcGFja2FnZV90b19kYXRhZnJhbWUoZHApOgogICAgICAgIGRmID0gcGQuRGF0YUZyYW1lLmZyb21fZGljdChkcFsiZGF0YSJdKQogICAgICAgICMgUmVvcmRlciBjb2x1bW5zIGJ5IHNjaGVtYSBmaWVsZCBvcmRlcgogICAgICAgIGNvbHMgPSBbIGZpZWxkWyJuYW1lIl0gZm9yIGZpZWxkIGluIGRwWyJzY2hlbWEiXVsiZmllbGRzIl0gXQogICAgICAgIGRmID0gZGZbY29sc10KICAgICAgICByZXR1cm4gZGYKCiAgICBkZiA9IGRhdGFwYWNrYWdlX3RvX2RhdGFmcmFtZShkYXRhKQoKICAgICMgQmluZGZpdCBleHBlY3RzIGVhY2ggdmFyaWFibGUgYXMgcm93cwogICAgZGF0YV94ID0gbnAudHJhbnNwb3NlKGRmLmlsb2NbOiwgOjJdLnRvX251bXB5KCkpCiAgICBkYXRhX3kgPSBucC50cmFuc3Bvc2UoZGYuaWxvY1s6LCAyOl0udG9fbnVtcHkoKSkKCiAgICAjIEFwcGx5IGRpbHV0aW9uIGNvcnJlY3Rpb24KICAgICMgVE9ETzogVGhpbmsgYWJvdXQgd2hlcmUgdGhpcyBzaG91bGQgZ28gLSBmaXR0ZXIgb3IgZnVuY3Rpb24/CiAgICAjIE9yIGp1c3QgYXBwbHkgaXQgYmVmb3JlIHRoZSBmaXQ/CiAgICBpZiBkaWx1dGU6CiAgICAgICAgZGF0YV95ID0gYmluZGZpdC5oZWxwZXJzLmRpbHV0ZShkYXRhX3hbMF0sIGRhdGFfeSkKCiAgICBmdW5jdGlvbiA9IGJpbmRmaXQuZnVuY3Rpb25zLmNvbnN0cnVjdCgKICAgICAgICBtb2RlbCwKICAgICAgICBub3JtYWxpc2U9bm9ybWFsaXNlLAogICAgICAgIGZsYXZvdXI9Zmxhdm91ciwKICAgICkKCiAgICBmaXR0ZXIgPSBiaW5kZml0LmZpdHRlci5GaXR0ZXIoCiAgICAgICAgZGF0YV94LCBkYXRhX3ksIGZ1bmN0aW9uLCBub3JtYWxpc2U9bm9ybWFsaXNlLCBwYXJhbXM9YmluZGZpdF9wYXJhbXMKICAgICkKCiAgICBmaXR0ZXIucnVuX3NjaXB5KGJpbmRmaXRfcGFyYW1zLCBtZXRob2Q9bWV0aG9kKQoKICAgIHN1bW1hcnkgPSB7CiAgICAgICAgImZpdHRlciI6IG1vZGVsLAogICAgICAgICJmaXQiOiB7CiAgICAgICAgICAgICJ5IjogZml0dGVyLmZpdCwKICAgICAgICAgICAgImNvZWZmc19yYXciOiBmaXR0ZXIuY29lZmZzX3JhdywKICAgICAgICAgICAgImNvZWZmcyI6IGZpdHRlci5jb2VmZnMsCiAgICAgICAgICAgICJtb2xlZnJhY19yYXciOiBmaXR0ZXIubW9sZWZyYWNfcmF3LAogICAgICAgICAgICAibW9sZWZyYWMiOiBmaXR0ZXIubW9sZWZyYWMsCiAgICAgICAgICAgICJwYXJhbXMiOiBmaXR0ZXIucGFyYW1zLAogICAgICAgICAgICAibl95IjogbnAuYXJyYXkoZml0dGVyLmZpdCkuc2l6ZSwKICAgICAgICAgICAgIm5fcGFyYW1zIjogbGVuKGZpdHRlci5wYXJhbXMpICsgbnAuYXJyYXkoZml0dGVyLmNvZWZmc19yYXcpLnNpemUsCiAgICAgICAgfSwKICAgICAgICAicW9mIjogewogICAgICAgICAgICAicmVzaWR1YWxzIjogZml0dGVyLnJlc2lkdWFscywKICAgICAgICAgICAgInNzciI6IGJpbmRmaXQuaGVscGVycy5zc3IoZml0dGVyLnJlc2lkdWFscyksCiAgICAgICAgICAgICJybXMiOiBiaW5kZml0LmhlbHBlcnMucm1zKGZpdHRlci5yZXNpZHVhbHMpLAogICAgICAgICAgICAiY292IjogYmluZGZpdC5oZWxwZXJzLmNvdihkYXRhX3ksIGZpdHRlci5yZXNpZHVhbHMpLAogICAgICAgICAgICAicm1zX3RvdGFsIjogYmluZGZpdC5oZWxwZXJzLnJtcyhmaXR0ZXIucmVzaWR1YWxzLCB0b3RhbD1UcnVlKSwKICAgICAgICAgICAgImNvdl90b3RhbCI6IGJpbmRmaXQuaGVscGVycy5jb3YoZGF0YV95LCBmaXR0ZXIucmVzaWR1YWxzLCB0b3RhbD1UcnVlKSwKICAgICAgICB9LAogICAgICAgICJ0aW1lIjogZml0dGVyLnRpbWUsCiAgICAgICAgIm9wdGlvbnMiOiB7CiAgICAgICAgICAgICJkaWx1dGUiOiBkaWx1dGUsCiAgICAgICAgICAgICJub3JtYWxpc2UiOiBub3JtYWxpc2UsCiAgICAgICAgICAgICJtZXRob2QiOiBtZXRob2QsCiAgICAgICAgICAgICJmbGF2b3VyIjogZmxhdm91ciwKICAgICAgICB9LAogICAgfQoKICAgICMgVE9ETzogVGhpcyBjb252ZXJzaW9uIHNob3VsZCBiZSBtb3ZlZCB0byBCaW5kZml0IGxpYnJhcnkKICAgIGZvciBrZXksIHBhcmFtIGluIGZpdHRlci5wYXJhbXMuaXRlbXMoKToKICAgICAgICB0cnk6CiAgICAgICAgICAgIG91dHB1dHNbInBhcmFtcyJdWyJkYXRhIl0udXBkYXRlKHsKICAgICAgICAgICAgICAgIGtleTogewogICAgICAgICAgICAgICAgICAgICJ2YWx1ZSI6IHBhcmFtWyJ2YWx1ZSJdLAogICAgICAgICAgICAgICAgICAgICJzdGRlcnIiOiBwYXJhbVsic3RkZXJyIl0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9KQogICAgICAgIGV4Y2VwdCBLZXlFcnJvcjoKICAgICAgICAgICAgIyBObyBleGlzdGluZyBkYXRhIGtleSwgY3JlYXRlCiAgICAgICAgICAgIG91dHB1dHNbInBhcmFtcyJdID0gewogICAgICAgICAgICAgICAgImRhdGEiOiB7CiAgICAgICAgICAgICAgICAgICAga2V5OiB7CiAgICAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZSI6IHBhcmFtWyJ2YWx1ZSJdLAogICAgICAgICAgICAgICAgICAgICAgICAic3RkZXJyIjogcGFyYW1bInN0ZGVyciJdLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9CgogICAgIyBUT0RPOiBUaGluayBvZiBhIGJldHRlciB3YXkgb2YgZG9pbmcgdGhpcz8KICAgICMgUG9wdWxhdGUgb3V0cHV0IHBhcmFtcyBzY2hlbWEgYW5kIG1ldGFkYXRhIGZyb20gaW5wdXQgcGFyYW1zCiAgICBvdXRwdXRzWyJwYXJhbXMiXVsibWV0YWRhdGEiXSA9IHBhcmFtc1sibWV0YWRhdGEiXQogICAgb3V0cHV0c1sicGFyYW1zIl1bInNjaGVtYSJdID0gcGFyYW1zWyJzY2hlbWEiXQoKICAgICMgVHJhbnNsYXRlIGZpdHRlci5maXQgaW50byBKU09OIGZvciB0YWJ1bGFyIGRhdGEgc2NoZW1hCiAgICAjIFRPRE86IFRoaXMgc2hvdWxkIGJlIGRvbmUgYnkgdGhlIEJpbmRmaXQgbGlicmFyeQogICAgZGVmIGZpdF90b19qc29uKGRhdGEsIGZpdCk6CiAgICAgICAgeF9maWVsZHMgPSBbIGlbIm5hbWUiXSBmb3IgaSBpbiBkYXRhWyJzY2hlbWEiXVsiZmllbGRzIl1bOjJdIF0KICAgICAgICB5X2ZpZWxkcyA9IFsgaVsibmFtZSJdIGZvciBpIGluIGRhdGFbInNjaGVtYSJdWyJmaWVsZHMiXVsyOl0gXQoKICAgICAgICBmaXRfZGF0YSA9IFtdCgogICAgICAgIGZvciBkYXRhX3JvdywgZml0X3JvdyBpbiB6aXAoZGF0YVsiZGF0YSJdLCBmaXQuVCk6CiAgICAgICAgICAgIHJvdyA9IHt9CgogICAgICAgICAgICBmb3IgZmllbGQgaW4geF9maWVsZHM6CiAgICAgICAgICAgICAgICByb3dbZmllbGRdID0gZGF0YV9yb3dbZmllbGRdCgogICAgICAgICAgICBmb3IgaSwgZmllbGQgaW4gZW51bWVyYXRlKHlfZmllbGRzKToKICAgICAgICAgICAgICAgIHJvd1tmaWVsZF0gPSBmaXRfcm93W2ldCgogICAgICAgICAgICBmaXRfZGF0YS5hcHBlbmQocm93KQoKICAgICAgICByZXR1cm4gZml0X2RhdGEKCiAgICBvdXRwdXRzWyJmaXQiXVsiZGF0YSJdID0gZml0X3RvX2pzb24oZGF0YSwgZml0dGVyLmZpdCkKICAgIG91dHB1dHNbImZpdCJdWyJzY2hlbWEiXSA9IGRhdGFbInNjaGVtYSJdCgogICAgb3V0cHV0c1sicmVzaWR1YWxzIl1bImRhdGEiXSA9IGZpdF90b19qc29uKGRhdGEsIGZpdHRlci5maXQgLSBkYXRhX3kpCiAgICBvdXRwdXRzWyJyZXNpZHVhbHMiXVsic2NoZW1hIl0gPSBkYXRhWyJzY2hlbWEiXQoKICAgICMgVHJhbnNsYXRlIGZpdHRlci5tb2xlZnJhYyBpbnRvIEpTT04gZm9yIHRhYnVsYXIgZGF0YSBzY2hlbWEKICAgICMgVE9ETzogVGhpcyBzaG91bGQgYmUgZG9uZSBieSB0aGUgQmluZGZpdCBsaWJyYXJ5CiAgICBkZWYgbW9sZWZyYWNfdG9fanNvbihkYXRhLCBtb2xlZnJhYyk6CiAgICAgICAgIyBUT0RPOiBQbGVhc2UgZ2V0IHJpZCBvZiB0aGlzIFhECiAgICAgICAgIyBUaGlzIG1hcHBpbmcgc2hvdWxkIGhhcHBlbiBpbnNpZGUgQmluZGZpdCBsaWJyYXJ5CiAgICAgICAgeV9maWVsZF9uYW1lX21hcCA9IHsKICAgICAgICAgICAgIm5tcjF0bzEiOiBbIkgiLCAiSEciXSwKICAgICAgICAgICAgIm5tcjF0bzIiOiBbIkgiLCAiSEciLCAiSEcyIl0sCiAgICAgICAgfQoKICAgICAgICB4X2ZpZWxkcyA9IFsgaVsibmFtZSJdIGZvciBpIGluIGRhdGFbInNjaGVtYSJdWyJmaWVsZHMiXVs6Ml0gXQogICAgICAgIHlfZmllbGRzID0geV9maWVsZF9uYW1lX21hcFttb2RlbF0KCiAgICAgICAgbW9sZWZyYWNfZGF0YSA9IFtdCgogICAgICAgIGZvciBkYXRhX3JvdywgbW9sZWZyYWNfcm93IGluIHppcChkYXRhWyJkYXRhIl0sIG1vbGVmcmFjLlQpOgogICAgICAgICAgICByb3cgPSB7fQoKICAgICAgICAgICAgZm9yIGZpZWxkIGluIHhfZmllbGRzOgogICAgICAgICAgICAgICAgcm93W2ZpZWxkXSA9IGRhdGFfcm93W2ZpZWxkXQoKICAgICAgICAgICAgZm9yIGksIGZpZWxkIGluIGVudW1lcmF0ZSh5X2ZpZWxkcyk6CiAgICAgICAgICAgICAgICByb3dbZmllbGRdID0gbW9sZWZyYWNfcm93W2ldCgogICAgICAgICAgICBtb2xlZnJhY19kYXRhLmFwcGVuZChyb3cpCgogICAgICAgIG1vbGVmcmFjX3NjaGVtYSA9IHsKICAgICAgICAgICAgInByaW1hcnlLZXkiOiBkYXRhWyJzY2hlbWEiXVsicHJpbWFyeUtleSJdLAogICAgICAgICAgICAiZmllbGRzIjogZGF0YVsic2NoZW1hIl1bImZpZWxkcyJdWzoyXSArCiAgICAgICAgICAgIFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAibmFtZSI6IGksCiAgICAgICAgICAgICAgICAgICAgInRpdGxlIjogaSwKICAgICAgICAgICAgICAgICAgICAidHlwZSI6ICJudW1iZXIiLAogICAgICAgICAgICAgICAgICAgICJ1bml0IjogIiIsCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBmb3IgaSBpbiB5X2ZpZWxkcwogICAgICAgICAgICBdLAogICAgICAgIH0KCiAgICAgICAgcmV0dXJuIG1vbGVmcmFjX2RhdGEsIG1vbGVmcmFjX3NjaGVtYQoKICAgIG91dHB1dHNbIm1vbGVmcmFjcyJdWyJkYXRhIl0sIG91dHB1dHNbIm1vbGVmcmFjcyJdWyJzY2hlbWEiXSA9IG1vbGVmcmFjX3RvX2pzb24oZGF0YSwgZml0dGVyLm1vbGVmcmFjKQoKICAgIG91dHB1dHNbImZpdERldGFpbHMiXVsiZGF0YSJdID0gWwogICAgICAgIHsKICAgICAgICAgICAgInRpbWUiOiBmaXR0ZXIudGltZSwKICAgICAgICAgICAgInNzciI6IGJpbmRmaXQuaGVscGVycy5zc3IoZml0dGVyLnJlc2lkdWFscyksCiAgICAgICAgICAgICJuX3kiOiBucC5hcnJheShmaXR0ZXIuZml0KS5zaXplLAogICAgICAgICAgICAibl9wYXJhbXMiOiBsZW4oZml0dGVyLnBhcmFtcykgKyBucC5hcnJheShmaXR0ZXIuY29lZmZzX3Jhdykuc2l6ZSwKICAgICAgICB9CiAgICBdCgogICAgIyBUT0RPOiBPdXRwdXQgZGF0YSBzaG91bGQgYmUgc3RyaXBwZWQgYmVmb3JlIGJlaW5nIHBhc3NlZCB0byBhbGdvcml0aG0KICAgICMgc28gd2UgZG9uJ3QgaGF2ZSB0byByZXNldCBpdCBiZWZvcmVoYW5kCiAgICBvdXRwdXRzWyJxb2YiXVsiZGF0YSJdID0gW10KCiAgICB5X25hbWVzID0gWyBpWyJuYW1lIl0gZm9yIGkgaW4gZGF0YVsic2NoZW1hIl1bImZpZWxkcyJdWzI6XSBdCiAgICBybXMgPSBiaW5kZml0LmhlbHBlcnMucm1zKGZpdHRlci5yZXNpZHVhbHMpCiAgICBjb3YgPSBiaW5kZml0LmhlbHBlcnMuY292KGRhdGFfeSwgZml0dGVyLnJlc2lkdWFscykKICAgIGZvciBuYW1lLCByLCBjIGluIHppcCh5X25hbWVzLCBybXMsIGNvdik6CiAgICAgICAgb3V0cHV0c1sicW9mIl1bImRhdGEiXS5hcHBlbmQoewogICAgICAgICAgICAibmFtZSI6IG5hbWUsCiAgICAgICAgICAgICJybXMiOiByLAogICAgICAgICAgICAiY292IjogYywKICAgICAgICB9KQoKICAgIG91dHB1dHNbInFvZiJdWyJkYXRhIl0uYXBwZW5kKHsKICAgICAgICAibmFtZSI6ICJUb3RhbCIsCiAgICAgICAgInJtcyI6IGJpbmRmaXQuaGVscGVycy5ybXMoZml0dGVyLnJlc2lkdWFscywgdG90YWw9VHJ1ZSksCiAgICAgICAgImNvdiI6IGJpbmRmaXQuaGVscGVycy5jb3YoZGF0YV95LCBmaXR0ZXIucmVzaWR1YWxzLCB0b3RhbD1UcnVlKSwKICAgIH0pCgogICAgIyBUT0RPOiBPdXRwdXQgZGF0YSBzaG91bGQgYmUgc3RyaXBwZWQgYmVmb3JlIGJlaW5nIHBhc3NlZCB0byBhbGdvcml0aG0KICAgICMgc28gd2UgZG9uJ3QgaGF2ZSB0byByZXNldCBpdCBiZWZvcmVoYW5kCiAgICBvdXRwdXRzWyJjb2VmZnMiXVsiZGF0YSJdID0gW10KCiAgICAjIFRPRE86IFBsZWFzZSBnZXQgcmlkIG9mIHRoaXMgWEQKICAgICMgVGhpcyBtYXBwaW5nIHNob3VsZCBoYXBwZW4gaW5zaWRlIEJpbmRmaXQgbGlicmFyeQogICAgIyBDb3BpZWQgZnJvbSBtb2xlZnJhY190b19qc29uIGFib3ZlCiAgICBjb2VmZl9maWVsZF9uYW1lX21hcCA9IHsKICAgICAgICAibm1yMXRvMSI6IFsiSCIsICJIRyJdLAogICAgICAgICJubXIxdG8yIjogWyJIIiwgIkhHIiwgIkhHMiJdLAogICAgfQoKICAgIHlfZmllbGRzID0gWyBpWyJuYW1lIl0gZm9yIGkgaW4gZGF0YVsic2NoZW1hIl1bImZpZWxkcyJdWzI6XSBdCiAgICBjb2VmZl9maWVsZHMgPSBjb2VmZl9maWVsZF9uYW1lX21hcFttb2RlbF0KCiAgICBvdXRwdXRzWyJjb2VmZnMiXVsic2NoZW1hIl0gPSB7CiAgICAgICAgInByaW1hcnlLZXkiOiAibmFtZSIsCiAgICAgICAgImZpZWxkcyI6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgIm5hbWUiOiAibmFtZSIsCiAgICAgICAgICAgICAgICAidGl0bGUiOiAiTmFtZSIsCiAgICAgICAgICAgICAgICAidHlwZSI6ICJzdHJpbmciLAogICAgICAgICAgICAgICAgInVuaXQiOiAiIiwKICAgICAgICAgICAgfQogICAgICAgIF0gKwogICAgICAgIFsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgIm5hbWUiOiBpLAogICAgICAgICAgICAgICAgInRpdGxlIjogaSwKICAgICAgICAgICAgICAgICJ0eXBlIjogIm51bWJlciIsCiAgICAgICAgICAgICAgICAidW5pdCI6ICIiLAogICAgICAgICAgICB9CiAgICAgICAgICAgIGZvciBpIGluIGNvZWZmX2ZpZWxkcwogICAgICAgIF0sCiAgICB9CgogICAgZm9yIG5hbWUsIGMgaW4gemlwKHlfZmllbGRzLCB6aXAoKmZpdHRlci5jb2VmZnMpKToKICAgICAgICBjb2VmZl9yb3cgPSB7CiAgICAgICAgICAgICJuYW1lIjogbmFtZSwKICAgICAgICAgICAgKipkaWN0KHppcChjb2VmZl9maWVsZHMsIGMpKQogICAgICAgIH0KCiAgICAgICAgb3V0cHV0c1siY29lZmZzIl1bImRhdGEiXS5hcHBlbmQoY29lZmZfcm93KQoKICAgIHJldHVybiBvdXRwdXRzCg==",
+      "code": "ZGVmIG1haW4oCiAgICBkYXRhcGFja2FnZSwKICAgIHBhcmFtcywKICAgIG9wdGlvbnMsCiAgICBkYXRhLAogICAgb3V0cHV0cywKICAgICoqa3dhcmdzLAopOgogICAgaW1wb3J0IGJpbmRmaXQKCiAgICBpZiBub3QgZGF0YVsiZGF0YSJdOgogICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoIk5vIGRhdGEgcGFzc2VkIHRvIGFsZ29yaXRobSIpCgogICAgb3V0cHV0cy51cGRhdGUoYmluZGZpdC5kYXRhcGFja2FnZS5maXQoZGF0YXBhY2thZ2UpKQoKICAgIHJldHVybiBvdXRwdXRzCg==",
       "inputs": [
         {
           "name": "params",
           "type": "algorithmParams",
-          "resource": {
-            "params": "inputParamsNMR12",
+          "parameterSpace": {
+            "name": "nmr1to1",
+            "title": "NMR 1:1",
+            "params": "inputParamsNMR11",
             "options": "inputOptionsNMR"
           },
-          "resources": [
+          "parameterSpaceMetadata": {
+            "title": "Model",
+            "params": {
+              "title": "Flavour",
+              "null": false
+            },
+            "options": {
+              "title": "Options",
+              "null": false
+            }
+          },
+          "parameterSpaceGroups": [
             {
+              "name": "nmr1to1",
+              "title": "NMR 1:1",
               "params": "inputParamsNMR11",
               "options": "inputOptionsNMR"
             },
             {
-              "params": "inputParamsNMR12",
+              "name": "nmr1to2",
+              "title": "NMR 1:2",
+              "params": [
+                "inputParamsNMR12",
+                "inputParamsNMR12Add",
+                "inputParamsNMR12Noncoop",
+                "inputParamsNMR12Stat"
+              ],
               "options": "inputOptionsNMR"
             },
             {
-              "params": "inputParamsNMR12Add",
+              "name": "nmr2to1",
+              "title": "NMR 2:1",
+              "params": [
+                "inputParamsNMR21",
+                "inputParamsNMR21Add",
+                "inputParamsNMR21Noncoop",
+                "inputParamsNMR21Stat"
+              ],
               "options": "inputOptionsNMR"
             },
             {
-              "params": "inputParamsNMR12Noncoop",
+              "name": "nmrdimer",
+              "title": "NMR Dimer Aggregation",
+              "params": "inputParamsNMRDimer",
               "options": "inputOptionsNMR"
             },
             {
-              "params": "inputParamsNMR12Stat",
+              "name": "nmrcoek",
+              "title": "NMR CoEK Aggregation",
+              "params": "inputParamsNMRCoEK",
               "options": "inputOptionsNMR"
+            },
+            {
+              "name": "uv1to1",
+              "title": "UV 1:1",
+              "params": "inputParamsUV11",
+              "options": "inputOptionsUV"
+            },
+            {
+              "name": "uv1to2",
+              "title": "UV 1:2",
+              "params": [
+                "inputParamsUV12",
+                "inputParamsUV12Add",
+                "inputParamsUV12Noncoop",
+                "inputParamsUV12Stat"
+              ],
+              "options": "inputOptionsUV"
+            },
+            {
+              "name": "uv2to1",
+              "title": "UV 2:1",
+              "params": [
+                "inputParamsUV21",
+                "inputParamsUV21Add",
+                "inputParamsUV21Noncoop",
+                "inputParamsUV21Stat"
+              ],
+              "options": "inputOptionsUV"
+            },
+            {
+              "name": "uvdimer",
+              "title": "UV Dimer Aggregation",
+              "params": "inputParamsUVDimer",
+              "options": "inputOptionsUVAgg"
+            },
+            {
+              "name": "uvcoek",
+              "title": "UV CoEK Aggregation",
+              "params": "inputParamsUVCoEK",
+              "options": "inputOptionsUVAgg"
             }
           ]
         },
@@ -152,7 +225,7 @@
       "metadata": {
         "model": {
           "name": "nmr1to2",
-          "title": "NMR 1:2"
+          "title": "NMR 1:2 - Full"
         }
       },
       "data": {
@@ -412,6 +485,1121 @@
       }
     },
     {
+      "name": "inputParamsNMR21",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "nmr2to1",
+          "title": "NMR 2:1 - Full"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        },
+        "k21": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "k21",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsNMR21Add",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "nmr2to1",
+          "title": "NMR 2:1 - Additive",
+          "flavour": "add"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        },
+        "k21": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "k21",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsNMR21Noncoop",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "nmr2to1",
+          "title": "NMR 2:1 - Non-cooperative",
+          "flavour": "noncoop"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsNMR21Stat",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "nmr2to1",
+          "title": "NMR 2:1 - Statistical",
+          "flavour": "stat"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsNMRDimer",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "nmrdimer",
+          "title": "NMR Dimer Aggregation"
+        }
+      },
+      "data": {
+        "ke": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": 1000
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "ke",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsNMRCoEK",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "nmrcoek",
+          "title": "NMR CoEK Aggregation"
+        }
+      },
+      "data": {
+        "ke": {
+          "vary": true,
+          "value": 200,
+          "lowerBound": 0,
+          "upperBound": null
+        },
+        "rho": {
+          "vary": true,
+          "value": 0.3,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "ke",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "rho",
+            "unit": "",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsUV11",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "uv1to1",
+          "title": "UV 1:1"
+        }
+      },
+      "data": {
+        "k": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": 1000
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsUV12",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "uv1to2",
+          "title": "UV 1:2 - Full"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        },
+        "k12": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "k12",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsUV12Add",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "uv1to2",
+          "title": "UV 1:2 - Additive",
+          "flavour": "add"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        },
+        "k12": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "k12",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsUV12Noncoop",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "uv1to2",
+          "title": "UV 1:2 - Non-cooperative",
+          "flavour": "noncoop"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsUV12Stat",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "uv1to2",
+          "title": "UV 1:2 - Statistical",
+          "flavour": "stat"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsUV21",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "uv2to1",
+          "title": "UV 2:1 - Full"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        },
+        "k21": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "k21",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsUV21Add",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "uv2to1",
+          "title": "UV 2:1 - Additive",
+          "flavour": "add"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        },
+        "k21": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "k21",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsUV21Noncoop",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "uv2to1",
+          "title": "UV 2:1 - Non-cooperative",
+          "flavour": "noncoop"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsUV21Stat",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "uv2to1",
+          "title": "UV 2:1 - Statistical",
+          "flavour": "stat"
+        }
+      },
+      "data": {
+        "k11": {
+          "vary": true,
+          "value": 1000,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "k11",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsUVDimer",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "uvdimer",
+          "title": "UV Dimer Aggregation"
+        }
+      },
+      "data": {
+        "ke": {
+          "vary": true,
+          "value": 100,
+          "lowerBound": 0,
+          "upperBound": 1000
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "ke",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputParamsUVCoEK",
+      "title": "Input parameters",
+      "description": "Initial parameter values",
+      "profile": "parameter-data-resource",
+      "metadata": {
+        "model": {
+          "name": "uvcoek",
+          "title": "UV CoEK Aggregation"
+        }
+      },
+      "data": {
+        "ke": {
+          "vary": true,
+          "value": 2700,
+          "lowerBound": 0,
+          "upperBound": null
+        },
+        "rho": {
+          "vary": true,
+          "value": 0.003,
+          "lowerBound": 0,
+          "upperBound": null
+        }
+      },
+      "schema": {
+        "keys": [
+          {
+            "name": "ke",
+            "unit": "M^{-1}",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "rho",
+            "unit": "",
+            "fields": [
+              {
+                "name": "vary",
+                "title": "Vary",
+                "type": "boolean"
+              },
+              {
+                "name": "value",
+                "title": "Value",
+                "type": "number"
+              },
+              {
+                "name": "lowerBound",
+                "title": "Lower bound",
+                "type": "number"
+              },
+              {
+                "name": "upperBound",
+                "title": "Upper bound",
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "name": "inputOptionsNMR",
       "title": "Fit options",
       "description": "Fit options",
@@ -422,6 +1610,122 @@
           "name": "nelder-mead"
         },
         "normalise": true,
+        "dilute": false
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "method",
+            "title": "Fit method",
+            "description": "The optimisation method to use for fitting",
+            "type": "object",
+            "objectFields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              }
+            ],
+            "constraints": {
+              "enum": [
+                {
+                  "title": "Nelder-Mead",
+                  "name": "Nelder-Mead"
+                },
+                {
+                  "title": "L-BFGS-B",
+                  "name": "L-BFGS-B"
+                }
+              ]
+            }
+          },
+          {
+            "name": "normalise",
+            "title": "Subtract initial values",
+            "description": "Subtract initial values from data before fitting",
+            "type": "boolean"
+          },
+          {
+            "name": "dilute",
+            "title": "Dilution correction",
+            "description": "Apply dilution correction to data",
+            "type": "boolean"
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputOptionsUV",
+      "title": "Fit options",
+      "description": "Fit options",
+      "profile": "options-data-resource",
+      "data": {
+        "method": {
+          "title": "Nelder-Mead",
+          "name": "nelder-mead"
+        },
+        "normalise": true,
+        "dilute": true
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "method",
+            "title": "Fit method",
+            "description": "The optimisation method to use for fitting",
+            "type": "object",
+            "objectFields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              }
+            ],
+            "constraints": {
+              "enum": [
+                {
+                  "title": "Nelder-Mead",
+                  "name": "Nelder-Mead"
+                },
+                {
+                  "title": "L-BFGS-B",
+                  "name": "L-BFGS-B"
+                }
+              ]
+            }
+          },
+          {
+            "name": "normalise",
+            "title": "Subtract initial values",
+            "description": "Subtract initial values from data before fitting",
+            "type": "boolean"
+          },
+          {
+            "name": "dilute",
+            "title": "Dilution correction",
+            "description": "Apply dilution correction to data",
+            "type": "boolean"
+          }
+        ]
+      }
+    },
+    {
+      "name": "inputOptionsUVAgg",
+      "title": "Fit options",
+      "description": "Fit options",
+      "profile": "options-data-resource",
+      "data": {
+        "method": {
+          "title": "Nelder-Mead",
+          "name": "nelder-mead"
+        },
+        "normalise": false,
         "dilute": false
       },
       "schema": {
@@ -599,14 +1903,20 @@
       "algorithm": "bindfit",
       "resources": {
         "options": {
-          "type": "algorithmOptions"
+          "type": "algorithmOptions",
+          "name": "options"
         },
         "input": {
-          "type": "algorithmParams"
+          "type": "algorithmParams",
+          "name": {
+            "params": "params"
+          }
         },
         "output": {
           "type": "resource",
-          "name": "outputParams"
+          "name": {
+            "params": "outputParams"
+          }
         }
       }
     },
