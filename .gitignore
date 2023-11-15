@@ -1,5 +1,7 @@
 sasview_data.json
 db-data
+input-data
+input.json
 .direnv
 nohup.out
 
